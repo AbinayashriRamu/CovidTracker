@@ -6,12 +6,12 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.covidTracker.pojo.PatientDetail;
 
-public interface PatientDetailRepository extends CrudRepository<PatientDetail, Integer> {
-	PatientDetail findById(int id);
+public interface PatientDetailRepository extends CrudRepository<PatientDetail, Long> {
+	PatientDetail findById(long id);
 
 	PatientDetail save(PatientDetail pd);
 
-	void deleteById(int id);
+	void deleteById(long id);
 
 	List<PatientDetail> findAll();
 

@@ -28,7 +28,7 @@ public class PatientDetailController {
 	}
 
 	@GetMapping("/findpatientid")
-	public String findById(@RequestParam("id") int id, Model model) {
+	public String findById(@RequestParam("id") long id, Model model) {
 		PatientDetail pd = pdservice.findById(id);
 		model.addAttribute("getPatient", pd);
 		return "find-Patient-id-form";
@@ -38,7 +38,7 @@ public class PatientDetailController {
 	public String showPatient(Model model) {
 		PatientDetail pd = new PatientDetail();
 		model.addAttribute("addpantientid", pd);
-		return "add-patient-id_form";
+		return "add-patient-id-form";
 	}
 
 	@PostMapping("/addPatient")
@@ -48,13 +48,13 @@ public class PatientDetailController {
 	}
 
 	@GetMapping("/deletePatient")
-	public String deleteStaff(@RequestParam("patient_id") int id) {
+	public String deleteStaff(@RequestParam("patient_id") long id) {
 		pdservice.deleteById(id);
 		return "redirect:/patientdetail/list";
 	}
 
 	@GetMapping("/updatePatientform")
-	public String showUpdatePatient(@RequestParam("patient_id") int id, Model model) {
+	public String showUpdatePatient(@RequestParam("patient_id") long id, Model model) {
 		PatientDetail pd = pdservice.findById(id);
 		model.addAttribute("updatepatientid", pd);
 		return "update-patient-id-form";

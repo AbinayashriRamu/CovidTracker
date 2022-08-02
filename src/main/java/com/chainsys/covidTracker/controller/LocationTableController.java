@@ -44,12 +44,12 @@ public class LocationTableController {
 		ltservice.save(lt);
 		return "redirect:/detail/locationdetail";
 	}
-	@GetMapping("/deleteLocation")
+	@GetMapping("/deletelocation")
 	public String deleteLocation(@RequestParam("location_id")int id) {
 		ltservice.deleteById(id);
 		return "redirect:/detail/locationdetail";
 	}
-	@GetMapping("/updateLocationform")
+	@GetMapping("/updatelocationform")
 	public String showUpdatelocation(@RequestParam("location_id")int id,Model model) {
 		LocationTable lt=ltservice.findById(id);
 		model.addAttribute("updatelocation", lt);

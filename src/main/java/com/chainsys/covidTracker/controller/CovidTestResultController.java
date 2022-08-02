@@ -54,7 +54,7 @@ public class CovidTestResultController {
 		model.addAttribute("updatetestresult", ctr);
 		return "update-Test-Result-form";
 	}
-	@PostMapping("updateTestresult")
+	@PostMapping("updatetestresult")
 	public String updateResult(@ModelAttribute("updatetestresult")CovidTestResult ctr) {
 		ctrservice.save(ctr);
 		return "redirect:/testdetail/list";

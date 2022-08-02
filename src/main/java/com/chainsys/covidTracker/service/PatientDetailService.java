@@ -22,12 +22,14 @@ public class PatientDetailService {
 		return repo.save(pd);
 	}
 
-	public PatientDetail findById(int id) {
+	public PatientDetail findById(long id) {
 		return repo.findById(id);
 	}
 
-	public void deleteById(int id) {
+	public void deleteById(long id) {
 		repo.deleteById(id);
 	}
+
+	
 
 }

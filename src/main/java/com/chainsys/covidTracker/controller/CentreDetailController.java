@@ -43,13 +43,13 @@ public class CentreDetailController {
 		cdservice.save(cd);
 		return "redirect:/detail/centredetail";
 	}
-	@GetMapping("/deleteCentre")
+	@GetMapping("/deletecentre")
 	public String deleteCentre(@RequestParam("center_id")int id) {
 		cdservice.deleteById(id);
 		return "redirect:/centredetail/list";
 	}
 	@GetMapping("/updatecentreform")
-	public String showUpdateCentre(@RequestParam("Centre_id")int id,Model model) {
+	public String showUpdateCentre(@RequestParam("centre_id")int id,Model model) {
 		CentreDetail cd=cdservice.findById(id);
 		model.addAttribute("updatecentre", cd);
 		return "update-centre-form";

@@ -43,7 +43,7 @@ public class CentreStaffController {
 		csservice.save(cs);
 		return "redirect:/staffdetail/list";
 	}
-	@GetMapping("/deleteStaff")
+	@GetMapping("/deletestaff")
 	public String deleteStaff(@RequestParam("center_id")int id) {
 		csservice.deleteById(id);
 		return "redirect:/staffdetail/list";
@@ -54,7 +54,7 @@ public class CentreStaffController {
 		model.addAttribute("updatecenstaff", cs);
 		return "update-centre-staff-form";
 	}
-	@PostMapping("updateStaff")
+	@PostMapping("updatestaff")
 	public String updatestaff(@ModelAttribute("updatecenstaff")CentreStaff cs) {
 		csservice.save(cs);
 		return "redirect:/staffdetail/list";

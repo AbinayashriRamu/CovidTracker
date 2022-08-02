@@ -2,29 +2,44 @@ package com.chainsys.covidTracker.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PATIENT_SYMPTOMS")
 public class PatientSymptom {
-	private long aadhar_no;
-	private Date symptoms_date;
+	@Id
+	@Column(name = "aadhar_no")
+	private long aadharno;
+	@Column(name = "symptoms_date")
+	private Date symptomsdate;
+	@Column(name = "temperature")
 	private float temperature;
+	@Column(name = "cold")
 	private String cold;
+	@Column(name = "cough")
 	private String cough;
+	@Column(name = "smell")
 	private String smell;
+	@Column(name = "taste")
 	private String taste;
 
-	public long getAadhar_no() {
-		return aadhar_no;
+	public long getAadharno() {
+		return aadharno;
 	}
 
-	public void setAadhar_no(long aadhar_no) {
-		this.aadhar_no = aadhar_no;
+	public void setAadharno(long aadharno) {
+		this.aadharno = aadharno;
 	}
 
-	public Date getSymptoms_date() {
-		return symptoms_date;
+	public Date getSymptomsdate() {
+		return symptomsdate;
 	}
 
-	public void setSymptoms_date(Date symptoms_date) {
-		this.symptoms_date = symptoms_date;
+	public void setSymptomsdate(Date symptomsdate) {
+		this.symptomsdate = symptomsdate;
 	}
 
 	public float getTemperature() {

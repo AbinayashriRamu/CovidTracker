@@ -1,43 +1,25 @@
 package com.chainsys.covidTracker.pojo;
 
 import java.util.Date;
-@Entity
-public class PatientAdmit {
-	private long aadhar_no;
-	private int centre_id;
-	private Date admit_date;
-	private String admitted_id;
 
-	public long getAadhar_no() {
-		return aadhar_no;
-	}
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	public void setAadhar_no(long aadhar_no) {
-		this.aadhar_no = aadhar_no;
-	}
+@Table(name = "PATIENT_ADMIT")
+public class PatientAdmit  {
+	@Id
+	@Column(name = "aadhar_no")
+	private long aadharNo;
+	@Id
+	@Column(name = "centre_id")
+	private int centreId;
+	@Column(name = "admit_date")
+	private Date admitDate;
+	@Column(name = "admitted_by")
+	private String admittedBy;
+	
 
-	public int getCentre_id() {
-		return centre_id;
-	}
-
-	public void setCentre_id(int centre_id) {
-		this.centre_id = centre_id;
-	}
-
-	public Date getAdmit_date() {
-		return admit_date;
-	}
-
-	public void setAdmit_date(Date admit_date) {
-		this.admit_date = admit_date;
-	}
-
-	public String getAdmitted_id() {
-		return admitted_id;
-	}
-
-	public void setAdmitted_id(String admitted_id) {
-		this.admitted_id = admitted_id;
-	}
-
+	
 }

@@ -1,5 +1,8 @@
 package com.chainsys.covidTracker.pojo;
-@Entity
+
+import javax.persistence.Entity;
+
+
 public class PatientCentreDetail {
 	private long aadhar_no;
 	private int centre_id;
