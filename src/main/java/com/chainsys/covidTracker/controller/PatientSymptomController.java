@@ -11,59 +11,59 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidTracker.pojo.PatientSymptom;
+import com.chainsys.covidTracker.model.PatientSymptom;
 import com.chainsys.covidTracker.service.PatientSymptomService;
 
 @Controller
-@RequestMapping("/patsymdetail")
+@RequestMapping("/patientsymptomdetail")
 public class PatientSymptomController {
 	@Autowired
-	PatientSymptomService psservice;
+	PatientSymptomService patientsymptomservice;
 
-	@GetMapping("/list")
-	public String getAllPatsymDetail(Model model) {
-		List<PatientSymptom> ps = psservice.getPatSymptomDetail();
-		model.addAttribute("allpatientsymp", ps);
-		return "list-patsymdetail";
+	@GetMapping("/patientsymptomlist")
+	public String getAllPatientsymptomDetail(Model model) {
+		List<PatientSymptom> patientsymptom = patientsymptomservice.getPatientSymptomDetail();
+		model.addAttribute("allPatientSymptoms", patientsymptom);
+		return "patientsymptomlist-patientsymptomdetail";
 	}
 
-	@GetMapping("/findpatsymid")
+	@GetMapping("/findpatatientsymptomid")
 	public String findById(@RequestParam("id") long id, Model model) {
-		PatientSymptom ps = psservice.findById(id);
-		model.addAttribute("getPatientsymp", ps);
-		return "find-Patientsymp-id-form";
+		PatientSymptom patientsymptom = patientsymptomservice.findById(id);
+		model.addAttribute("getPatientSymptoms", patientsymptom);
+		return "find-patient-symptom-form";
 	}
 
-	@GetMapping("addpatientsympform")
-	public String showPatientsymp(Model model) {
-		PatientSymptom ps = new PatientSymptom();
-		model.addAttribute("addpantientsympid", ps);
-		return "add-patientsymp-id-form";
+	@GetMapping("addpatientsymptomform")
+	public String showPatientsymptom(Model model) {
+		PatientSymptom patientsymptom = new PatientSymptom();
+		model.addAttribute("addPatientSymptoms", patientsymptom);
+		return "add-patient-symptom-form";
 	}
 
-	@PostMapping("/addPatientsymp")
-	public String addNewPatientsymp(@ModelAttribute("addpatientsympid") PatientSymptom ps) {
-		psservice.save(ps);
-		return "redirect:/patsymdetail/list";
+	@PostMapping("/addpatientsymptom")
+	public String addNewPatientsymptom(@ModelAttribute("addPatientSymptoms") PatientSymptom Patientsymptom) {
+		patientsymptomservice.save(Patientsymptom);
+		return "redirect:/patientsymptomdetail/patientsymptomlist";
 	}
 
-	@GetMapping("/deletePatientsymp")
-	public String deletepatientsymp(@RequestParam("aadhar_no") long id) {
-		psservice.deleteById(id);
-		return "redirect:/patsymdetail/list";
+	@GetMapping("/deletepatientsymptom")
+	public String deletepatientsymptom(@RequestParam("aadharNo") long id) {
+		patientsymptomservice.deleteById(id);
+		return "redirect:/patientsymptomdetail/patientsymptomlist";
 	}
 
-	@GetMapping("/updatePatientdsympform")
-	public String showUpdatePatientsymp(@RequestParam("aadhar_no") long id, Model model) {
-		PatientSymptom ps = psservice.findById(id);
-		model.addAttribute("updatepatientsympid", ps);
-		return "update-patientsymp-id-form";
+	@GetMapping("/updatepatientsymptomform")
+	public String showUpdatePatientsymp(@RequestParam("aadharNo") long id, Model model) {
+		PatientSymptom patientsymptom = patientsymptomservice.findById(id);
+		model.addAttribute("updatePatientSymptoms", patientsymptom);
+		return "update-patient-symptom-form";
 	}
 
-	@PostMapping("updatePatientsymp")
-	public String updatepatientsymp(@ModelAttribute("updatepatient") PatientSymptom ps) {
-		psservice.save(ps);
-		return "redirect:/patsymdetail/list";
+	@PostMapping("updatepatientsymptom")
+	public String updatepatientsymptom(@ModelAttribute("updatePatientSymptoms") PatientSymptom patientsymptom) {
+		patientsymptomservice.save(patientsymptom);
+		return "redirect:/patientsymptomdetail/patientsymptomlist";
 	}
 
 }

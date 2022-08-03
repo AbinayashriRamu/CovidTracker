@@ -11,53 +11,53 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidTracker.pojo.CentreDetail;
+import com.chainsys.covidTracker.model.CentreDetail;
 import com.chainsys.covidTracker.service.CentreDetailService;
 
 @Controller
 @RequestMapping("/centredetail")
 public class CentreDetailController {
 	@Autowired
-	CentreDetailService cdservice;
+	CentreDetailService centredetailservice;
 
-	@GetMapping("/list")
+	@GetMapping("/centrelist")
 	public String getAllCentreDetail(Model model) {
-		List<CentreDetail> cd = cdservice.getAllCentreDetail();
-		model.addAttribute("allcentredetail", cd);
-		return "list-centredetail";
+		List<CentreDetail> centredetail = centredetailservice.getAllCentreDetail();
+		model.addAttribute("allcentredetails", centredetail);
+		return "centrelist-centredetail";
 	}
-	@GetMapping("/findcenid")
+	@GetMapping("/findcentre")
 	public String findById(@RequestParam("id") int id,Model model) {
-		CentreDetail cd=cdservice.findById(id);
-		model.addAttribute("getCentre",cd);
-		return "find-centre-id-form";
+		CentreDetail centredetail=centredetailservice.findById(id);
+		model.addAttribute("getcentres",centredetail);
+		return "find-centredetail-form";
 	}
-	@GetMapping("addcentreform")
-	public String showCentre(Model model) {
-		CentreDetail cd=new CentreDetail();
-		model.addAttribute("addcenid", cd);
-		return "add-centre-form";
+	@GetMapping("/addcentreform")
+	public String showCentreDetail(Model model) {
+		CentreDetail centredetail=new CentreDetail();
+		model.addAttribute("addcentres", centredetail);
+		return "add-centredetail-form";
 	}
 	@PostMapping("/addcentre")
-	public String addNewCentre(@ModelAttribute("addcenid") CentreDetail cd) {
-		cdservice.save(cd);
-		return "redirect:/detail/centredetail";
+	public String addNewCentreDetail(@ModelAttribute("addcentres") CentreDetail centredetail) {
+		centredetailservice.save(centredetail);
+		return "redirect:/centredetail/centrelist";
 	}
 	@GetMapping("/deletecentre")
-	public String deleteCentre(@RequestParam("center_id")int id) {
-		cdservice.deleteById(id);
-		return "redirect:/centredetail/list";
+	public String deleteCentreDetail(@RequestParam("centreId")int id) {
+		centredetailservice.deleteById(id);
+		return "redirect:/centredetail/centrelist";
 	}
 	@GetMapping("/updatecentreform")
-	public String showUpdateCentre(@RequestParam("centre_id")int id,Model model) {
-		CentreDetail cd=cdservice.findById(id);
-		model.addAttribute("updatecentre", cd);
-		return "update-centre-form";
+	public String showUpdateCentreDetail(@RequestParam("centreId")int id,Model model) {
+		CentreDetail centredetail=centredetailservice.findById(id);
+		model.addAttribute("updatecentres", centredetail);
+		return "update-centredetail-form";
 	}
-	@PostMapping("updateCentre")
-	public String updateCentre(@ModelAttribute("updatecentre")CentreDetail cd) {
-		cdservice.save(cd);
-		return "redirect:/centredetail/list";
+	@PostMapping("/updatecentre")
+	public String updateCentreDetail(@ModelAttribute("updatecentres")CentreDetail centredetail) {
+		centredetailservice.save(centredetail);
+		return "redirect:/centredetail/centrelist";
 	}
 
 }

@@ -11,8 +11,8 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="updateStaff" method="post"
-				modelAttribute="updatecenstaff">
+			<form:form action="updatecentrestaff" method="post"
+				modelAttribute="updatecentrestaffs">
 				<div>
 					<label for="centreId">centreId</label>
 					<div>
@@ -38,7 +38,7 @@
 					</div>
 				</div>
 				<div>
-					<form:button>Update Location</form:button>
+					<form:button>Update Centre Staff</form:button>
 				</div>
 			</form:form>
 		</div>

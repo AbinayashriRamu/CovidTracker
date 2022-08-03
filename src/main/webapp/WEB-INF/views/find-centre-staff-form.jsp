@@ -11,7 +11,7 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="getCenstaff">
+			<form:form action="" method="post" modelAttribute="getAllCentreStaffs">
 				<div>
 					<label for="centreId">CentreId</label>
 					<div>

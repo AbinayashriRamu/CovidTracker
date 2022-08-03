@@ -12,7 +12,7 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="addlocation" method="post"
-				modelAttribute="addlocid">
+				modelAttribute="addlocations">
 				<div>
 					<label for="locationId">locationId</label>
 					<div>

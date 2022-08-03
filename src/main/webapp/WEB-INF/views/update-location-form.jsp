@@ -12,7 +12,7 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="updatelocation" method="post"
-				modelAttribute="updateLocation">
+				modelAttribute="updatelocations">
 				<div>
 					<label for="locationId">locationId</label>
 					<div>
@@ -35,6 +35,12 @@
 					<label for="stateName">stateName</label>
 					<div>
 						<form:input path="stateName" />
+					</div>
+				</div>
+				<div>
+					<label for="country">country</label>
+					<div>
+						<form:input path="country" />
 					</div>
 				</div>
 				<div>

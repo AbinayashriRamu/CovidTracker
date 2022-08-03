@@ -11,8 +11,8 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="addstaff" method="post"
-				modelAttribute="addcenstaffid">
+			<form:form action="addcentrestaff" method="post"
+				modelAttribute="addcentrestaffs">
 				<div>
 					<label for="centreId">centreId</label>
 					<div>

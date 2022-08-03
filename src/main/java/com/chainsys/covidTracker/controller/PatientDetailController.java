@@ -11,59 +11,59 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidTracker.pojo.PatientDetail;
+import com.chainsys.covidTracker.model.PatientDetail;
 import com.chainsys.covidTracker.service.PatientDetailService;
 
 @Controller
 @RequestMapping("/patientdetail")
 public class PatientDetailController {
 	@Autowired
-	PatientDetailService pdservice;
+	PatientDetailService patientdetailservice;
 
-	@GetMapping("/list")
+	@GetMapping("/patientlist")
 	public String getAllPatientDetail(Model model) {
-		List<PatientDetail> pd = pdservice.getPatientDetail();
-		model.addAttribute("allpatient", pd);
-		return "list-patientdetail";
+		List<PatientDetail> patientdetail = patientdetailservice.getPatientDetail();
+		model.addAttribute("allPatientDetails", patientdetail);
+		return "patientlist-patientdetail";
 	}
 
-	@GetMapping("/findpatientid")
+	@GetMapping("/findpatientdetail")
 	public String findById(@RequestParam("id") long id, Model model) {
-		PatientDetail pd = pdservice.findById(id);
-		model.addAttribute("getPatient", pd);
-		return "find-Patient-id-form";
+		PatientDetail patientdetail = patientdetailservice.findById(id);
+		model.addAttribute("getPatientDetails", patientdetail);
+		return "find-Patient-detail-form";
 	}
 
-	@GetMapping("addpatientform")
+	@GetMapping("/addpatientdetailform")
 	public String showPatient(Model model) {
-		PatientDetail pd = new PatientDetail();
-		model.addAttribute("addpantientid", pd);
-		return "add-patient-id-form";
+		PatientDetail patientdetail = new PatientDetail();
+		model.addAttribute("addPatientDetails", patientdetail);
+		return "add-patient-detail-form";
 	}
 
-	@PostMapping("/addPatient")
-	public String addNewPatient(@ModelAttribute("addpatientid") PatientDetail pd) {
-		pdservice.save(pd);
-		return "redirect:/patientdetail/list";
+	@PostMapping("/addpatient")
+	public String addNewPatient(@ModelAttribute("addPatientDetails") PatientDetail patientdetail) {
+		patientdetailservice.save(patientdetail);
+		return "redirect:/patientdetail/patientlist";
 	}
 
-	@GetMapping("/deletePatient")
-	public String deleteStaff(@RequestParam("patient_id") long id) {
-		pdservice.deleteById(id);
-		return "redirect:/patientdetail/list";
+	@GetMapping("/deletepatient")
+	public String deletePatient(@RequestParam("aadharNo") long id) {
+		patientdetailservice.deleteById(id);
+		return "redirect:/patientdetail/patientlist";
 	}
 
-	@GetMapping("/updatePatientform")
-	public String showUpdatePatient(@RequestParam("patient_id") long id, Model model) {
-		PatientDetail pd = pdservice.findById(id);
-		model.addAttribute("updatepatientid", pd);
-		return "update-patient-id-form";
+	@GetMapping("/updatepatientform")
+	public String showUpdatePatient(@RequestParam("aadharNo") long id, Model model) {
+		PatientDetail patientdetail = patientdetailservice.findById(id);
+		model.addAttribute("updatePatientDetails", patientdetail);
+		return "update-patient-detail-form";
 	}
 
-	@PostMapping("updatePatient")
-	public String updatepatient(@ModelAttribute("updatepatient") PatientDetail pd) {
-		pdservice.save(pd);
-		return "redirect:/patientdetail/list";
+	@PostMapping("/updatepatient")
+	public String updatepatient(@ModelAttribute("updatePatientDetails") PatientDetail patientdetail) {
+		patientdetailservice.save(patientdetail);
+		return "redirect:/patientdetail/patientlist";
 	}
 
 }

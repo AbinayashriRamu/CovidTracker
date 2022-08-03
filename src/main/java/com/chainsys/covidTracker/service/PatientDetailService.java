@@ -5,29 +5,29 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.covidTracker.pojo.PatientDetail;
+import com.chainsys.covidTracker.model.PatientDetail;
 import com.chainsys.covidTracker.repository.PatientDetailRepository;
 
 @Service
 public class PatientDetailService {
 	@Autowired
-	private PatientDetailRepository repo;
+	private PatientDetailRepository repository;
 
 	public List<PatientDetail> getPatientDetail() {
-		List<PatientDetail> patientlist = repo.findAll();
+		List<PatientDetail> patientlist = repository.findAll();
 		return patientlist;
 	}
 
-	public PatientDetail save(PatientDetail pd) {
-		return repo.save(pd);
+	public PatientDetail save(PatientDetail patientdetail) {
+		return repository.save(patientdetail);
 	}
 
 	public PatientDetail findById(long id) {
-		return repo.findById(id);
+		return repository.findById(id);
 	}
 
 	public void deleteById(long id) {
-		repo.deleteById(id);
+		repository.deleteById(id);
 	}
 
 	

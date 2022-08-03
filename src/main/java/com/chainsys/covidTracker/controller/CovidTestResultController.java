@@ -11,53 +11,53 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidTracker.pojo.CovidTestResult;
+import com.chainsys.covidTracker.model.CovidTestResult;
 import com.chainsys.covidTracker.service.CovidTestResultService;
 
 @Controller
-@RequestMapping("/testdetail")
+@RequestMapping("/testresultdetail")
 public class CovidTestResultController {
 	@Autowired
-	CovidTestResultService ctrservice;
+	CovidTestResultService covidtestresultservice;
 
-	@GetMapping("/list")
-	public String getAllTestResultDetail(Model model) {
-		List<CovidTestResult> ctr = ctrservice.getAllTestResultDetail();
-		model.addAttribute("alltestresult", ctr);
-		return "list-testdetail";
+	@GetMapping("/testresultlist")
+	public String getAllCovidTestResult(Model model) {
+		List<CovidTestResult> covidtestresult = covidtestresultservice.getAllCovidTestResultDetail();
+		model.addAttribute("allCovidTestResults", covidtestresult);
+		return "testresultlist-testresultdetail";
 	}
-	@GetMapping("/findtestid")
+	@GetMapping("/findtestresult")
 	public String findById(@RequestParam("id")long id,Model model) {
-		CovidTestResult ctr=ctrservice.findById(id);
-		model.addAttribute("gettestid",ctr);
-		return "find-test-id-form";
+		CovidTestResult covidtestresult=covidtestresultservice.findById(id);
+		model.addAttribute("getTestResults",covidtestresult);
+		return "find-test-result-form";
 	}
-	@GetMapping("addtestform")
+	@GetMapping("addtestresultform")
 	public String showTestResult(Model model) {
-		CovidTestResult ctr=new CovidTestResult();
-		model.addAttribute("addtestid", ctr);
-		return "add-test-id_form";
+		CovidTestResult covidtestresult=new CovidTestResult();
+		model.addAttribute("addTestResults", covidtestresult);
+		return "add-test-result-form";
 	}
-	@PostMapping("/addtestid")
-	public String addNewTestId(@ModelAttribute("addtestId") CovidTestResult ctr) {
-		ctrservice.save(ctr);
-		return "redirect:/testdetail/list";
+	@PostMapping("/addtestresult")
+	public String addNewTestResult(@ModelAttribute("addTestResults") CovidTestResult covidtestresult) {
+		covidtestresultservice.save(covidtestresult);
+		return "redirect:/testresultdetail/testresultlist";
 	}
-	@GetMapping("/deletetestid")
-	public String deleteTestResult(@RequestParam("test_id")int id) {
-		ctrservice.deleteById(id);
-		return "redirect:/testdetail/list";
+	@GetMapping("/deletetestresult")
+	public String deleteTestResult(@RequestParam("testId")long id) {
+		covidtestresultservice.deleteById(id);
+		return "redirect:/testresultdetail/testresultlist";
 	}
 	@GetMapping("/updatetestresultform")
-	public String showUpdateResult(@RequestParam("test_id")int id,Model model) {
-		CovidTestResult ctr=ctrservice.findById(id);
-		model.addAttribute("updatetestresult", ctr);
+	public String showUpdateTestResult(@RequestParam("testId")long id,Model model) {
+		CovidTestResult covidtestresult=covidtestresultservice.findById(id);
+		model.addAttribute("updateTestresults", covidtestresult);
 		return "update-Test-Result-form";
 	}
 	@PostMapping("updatetestresult")
-	public String updateResult(@ModelAttribute("updatetestresult")CovidTestResult ctr) {
-		ctrservice.save(ctr);
-		return "redirect:/testdetail/list";
+	public String updateResult(@ModelAttribute("updateTestResults")CovidTestResult covidtestresult) {
+		covidtestresultservice.save(covidtestresult);
+		return "redirect:/testresultdetail/testresultlist";
 	}
 
 }
