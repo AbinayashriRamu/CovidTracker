@@ -1,11 +1,11 @@
-package com.chainsys.covidTracker.repository;
+package com.chainsys.covidtracker.repository;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.covidTracker.model.CentreStaff;
+import com.chainsys.covidtracker.model.CentreStaff;
 
 public interface CentreStaffRepository extends CrudRepository<CentreStaff, Integer> {
 	CentreStaff findById(int id);

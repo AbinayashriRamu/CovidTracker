@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,78 +40,41 @@
 			</form:form>
 		</div>
 	</div>
-	<div id="root">
-		<div id="form">
-			<form:form action="" method="post" modelAttribute="getpatientDetail">
-				<div>
-					<label for="patientName">patientName</label>
-					<div>
-						<form:input path="patientName" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="aadharNo">aadharNo</label>
-					<div>
-						<form:input path="aadharNo" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="street">street</label>
-					<div>
-						<form:input path="street" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="staffId">staffId</label>
-					<div>
-						<form:input path="staffId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="centreId">centreId</label>
-					<div>
-						<form:input path="centreId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="pinCode">pinCode</label>
-					<div>
-						<form:input path="pinCode" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="bloodGroup">bloodGroup</label>
-					<div>
-						<form:input path="bloodGroup" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="phoneNo">phoneNo</label>
-					<div>
-						<form:input path="phoneNo" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="testResult">testResult</label>
-					<div>
-						<form:input path="testResult" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="activeStatus">activeStatus</label>
-					<div>
-						<form:input path="activeStatus" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="deadDate">deadDate</label>
-					<div>
-						<form:input path="deadDate" readonly="true" />
-					</div>
-				</div>
-			</form:form>
-		</div>
-	</div>
+	<div id="getpatientDetail">
 
+		<table>
+			<thead>
+				<tr>
+					<th>patientName</th>
+					<th>aadharNo</th>
+					<th>street</th>
+					<th>staffId</th>
+					<th>centreId</th>
+					<th>pinCode</th>
+					<th>bloodGroup</th>
+					<th>phoneNo</th>
+					<th>street</th>
+					<th>activeStatus</th>
+					<th>deadDate</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="cen" items="${getpatientDetail}">
+					<tr>
+						<td>${cen.patientName}</td>
+						<td>${cen.aadharNo}</td>
+						<td>${cen.street}</td>
+						<td>${cen.staffId}</td>
+						<td>${cen.centreId}</td>
+						<td>${cen.pinCode}</td>
+						<td>${cen.bloodGroup}</td>
+						<td>${cen.phoneNo}</td>
+						<td>${cen.testResult}</td>
+						<td>${cen.activeStatus}</td>
+						<td>${cen.deadDate}</td>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

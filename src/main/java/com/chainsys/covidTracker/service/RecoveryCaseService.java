@@ -1,12 +1,12 @@
-package com.chainsys.covidTracker.service;
+package com.chainsys.covidtracker.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.covidTracker.model.RecoveryCase;
-import com.chainsys.covidTracker.repository.RecoveryCaseRepository;
+import com.chainsys.covidtracker.model.RecoveryCase;
+import com.chainsys.covidtracker.repository.RecoveryCaseRepository;
 
 @Service
 public class RecoveryCaseService {

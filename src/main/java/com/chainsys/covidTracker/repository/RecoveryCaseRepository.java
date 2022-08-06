@@ -1,10 +1,10 @@
-package com.chainsys.covidTracker.repository;
+package com.chainsys.covidtracker.repository;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.covidTracker.model.RecoveryCase;
+import com.chainsys.covidtracker.model.RecoveryCase;
 
 public interface RecoveryCaseRepository extends CrudRepository<RecoveryCase, Long> {
 	RecoveryCase findById(long id);

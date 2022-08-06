@@ -1,6 +1,7 @@
-package com.chainsys.covidTracker.controller;
+package com.chainsys.covidtracker.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidTracker.model.CentreStaff;
-import com.chainsys.covidTracker.service.CentreStaffService;
+import com.chainsys.covidtracker.model.CentreStaff;
+import com.chainsys.covidtracker.service.CentreStaffService;
 
 @Controller
 @RequestMapping("/centrestaffdetail")

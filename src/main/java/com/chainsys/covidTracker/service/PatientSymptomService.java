@@ -1,12 +1,12 @@
-package com.chainsys.covidTracker.service;
+package com.chainsys.covidtracker.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.covidTracker.model.PatientSymptom;
-import com.chainsys.covidTracker.repository.PatientSymptomRepository;
+import com.chainsys.covidtracker.model.PatientSymptom;
+import com.chainsys.covidtracker.repository.PatientSymptomRepository;
 
 @Service
 public class PatientSymptomService {

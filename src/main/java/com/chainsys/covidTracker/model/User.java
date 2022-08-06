@@ -1,4 +1,4 @@
-package com.chainsys.covidTracker.model;
+package com.chainsys.covidtracker.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

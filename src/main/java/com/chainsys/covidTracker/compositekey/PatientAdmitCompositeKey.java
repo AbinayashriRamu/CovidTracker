@@ -1,4 +1,4 @@
-package com.chainsys.covidTracker.compositekey;
+package com.chainsys.covidtracker.compositekey;
 
 import java.io.Serializable;
 

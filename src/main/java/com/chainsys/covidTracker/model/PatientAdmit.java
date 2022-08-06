@@ -1,4 +1,4 @@
-package com.chainsys.covidTracker.model;
+package com.chainsys.covidtracker.model;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
 
-import com.chainsys.covidTracker.compositekey.PatientAdmitCompositeKey;
+import com.chainsys.covidtracker.compositekey.PatientAdmitCompositeKey;
 
 @Entity
 @Table(name = "PATIENT_ADMIT")

@@ -1,12 +1,13 @@
-package com.chainsys.covidTracker.DTO;
+package com.chainsys.covidtracker.dto;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.chainsys.covidTracker.model.LocationTable;
-import com.chainsys.covidTracker.model.PatientDetail;
+import com.chainsys.covidtracker.model.LocationTable;
+import com.chainsys.covidtracker.model.PatientDetail;
 
 public class LocationTableDTO {
 	@Autowired

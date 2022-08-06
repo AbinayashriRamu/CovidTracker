@@ -1,4 +1,4 @@
-package com.chainsys.covidTracker.service;
+package com.chainsys.covidtracker.service;
 
 import java.util.Iterator;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.covidTracker.DTO.LocationTableDTO;
-import com.chainsys.covidTracker.model.LocationTable;
-import com.chainsys.covidTracker.model.PatientDetail;
-import com.chainsys.covidTracker.repository.LocationTableRepository;
-import com.chainsys.covidTracker.repository.PatientDetailRepository;
+import com.chainsys.covidtracker.dto.LocationTableDTO;
+import com.chainsys.covidtracker.model.LocationTable;
+import com.chainsys.covidtracker.model.PatientDetail;
+import com.chainsys.covidtracker.repository.LocationTableRepository;
+import com.chainsys.covidtracker.repository.PatientDetailRepository;
 
 @Service
 public class LocationTableService {
@@ -39,11 +39,11 @@ public class LocationTableService {
 		LocationTable locationTable=findById(id);
 		LocationTableDTO dto=new LocationTableDTO();
 		dto.setLocationTable(locationTable);
-		List<PatientDetail>patientDetail=patientrepository.findByPin_code(id);
-		Iterator<PatientDetail>itr=patientDetail.iterator();
-		while(itr.hasNext()) {
-			dto.addPatientDetail((PatientDetail)itr.next());
-		}
+//		List<PatientDetail>patientDetail=patientrepository.findBypinCode(id);
+//		Iterator<PatientDetail>itr=patientDetail.iterator();
+//		while(itr.hasNext()) {
+//			dto.addPatientDetail((PatientDetail)itr.next());
+//		}
 		return dto;
 	}
 

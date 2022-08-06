@@ -1,4 +1,4 @@
-package com.chainsys.covidTracker.model;
+package com.chainsys.covidtracker.model;
 
 import java.util.List;
 
@@ -23,13 +23,13 @@ public class LocationTable {
 	private String country;
 
 	@OneToMany(mappedBy = "locationTable", fetch = FetchType.LAZY)
-	private List<PatientDetail> patientDetail;
+	private PatientDetail patientDetail;
 
-	public List<PatientDetail> getPatientDetail() {
+	public PatientDetail getPatientDetail() {
 		return patientDetail;
 	}
 
-	public void setPatientDetail(List<PatientDetail> patientDetail) {
+	public void setPatientDetail(PatientDetail patientDetail) {
 		this.patientDetail = patientDetail;
 	}
 

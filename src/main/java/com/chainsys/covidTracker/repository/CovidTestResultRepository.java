@@ -1,10 +1,10 @@
-package com.chainsys.covidTracker.repository;
+package com.chainsys.covidtracker.repository;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.covidTracker.model.CovidTestResult;
+import com.chainsys.covidtracker.model.CovidTestResult;
 
 public interface CovidTestResultRepository extends CrudRepository<CovidTestResult, Long> {
 	CovidTestResult findById(long id);

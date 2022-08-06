@@ -1,4 +1,4 @@
-package com.chainsys.covidTracker.service;
+package com.chainsys.covidtracker.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.covidTracker.compositekey.PatientAdmitCompositeKey;
-import com.chainsys.covidTracker.model.PatientAdmit;
-import com.chainsys.covidTracker.repository.PatientAdmitRepository;
+import com.chainsys.covidtracker.compositekey.PatientAdmitCompositeKey;
+import com.chainsys.covidtracker.model.PatientAdmit;
+import com.chainsys.covidtracker.repository.PatientAdmitRepository;
 
 @Service
 public class PatientAdmitService {

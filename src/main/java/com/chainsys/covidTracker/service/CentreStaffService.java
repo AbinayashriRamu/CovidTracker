@@ -1,4 +1,4 @@
-package com.chainsys.covidTracker.service;
+package com.chainsys.covidtracker.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.covidTracker.model.CentreStaff;
-import com.chainsys.covidTracker.repository.CentreStaffRepository;
+import com.chainsys.covidtracker.model.CentreStaff;
+import com.chainsys.covidtracker.repository.CentreStaffRepository;
 
 @Service
 public class CentreStaffService {

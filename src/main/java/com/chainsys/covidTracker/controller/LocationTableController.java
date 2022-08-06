@@ -1,6 +1,7 @@
-package com.chainsys.covidTracker.controller;
+package com.chainsys.covidtracker.controller;
 
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidTracker.DTO.LocationTableDTO;
-import com.chainsys.covidTracker.model.LocationTable;
-import com.chainsys.covidTracker.service.LocationTableService;
+import com.chainsys.covidtracker.dto.LocationTableDTO;
+import com.chainsys.covidtracker.model.LocationTable;
+import com.chainsys.covidtracker.service.LocationTableService;
 
 @Controller
 @RequestMapping("/locationdetail")

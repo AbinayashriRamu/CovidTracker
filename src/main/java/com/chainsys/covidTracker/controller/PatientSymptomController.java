@@ -1,6 +1,7 @@
-package com.chainsys.covidTracker.controller;
+package com.chainsys.covidtracker.controller;
 
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidTracker.model.PatientSymptom;
-import com.chainsys.covidTracker.service.PatientSymptomService;
+import com.chainsys.covidtracker.model.PatientSymptom;
+import com.chainsys.covidtracker.service.PatientSymptomService;
 
 @Controller
 @RequestMapping("/patientsymptomdetail")

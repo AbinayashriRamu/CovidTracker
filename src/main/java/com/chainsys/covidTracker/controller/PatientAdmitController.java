@@ -1,6 +1,7 @@
-package com.chainsys.covidTracker.controller;
+package com.chainsys.covidtracker.controller;
 
 import java.util.List;
+
 
 import java.util.Optional;
 
@@ -13,9 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidTracker.compositekey.PatientAdmitCompositeKey;
-import com.chainsys.covidTracker.model.PatientAdmit;
-import com.chainsys.covidTracker.service.PatientAdmitService;
+import com.chainsys.covidtracker.compositekey.PatientAdmitCompositeKey;
+import com.chainsys.covidtracker.model.PatientAdmit;
+import com.chainsys.covidtracker.service.PatientAdmitService;
 
 @Controller
 @RequestMapping("/patientadmitdetail")

@@ -1,10 +1,10 @@
-package com.chainsys.covidTracker.repository;
+package com.chainsys.covidtracker.repository;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.covidTracker.model.LocationTable;
+import com.chainsys.covidtracker.model.LocationTable;
 
 public interface LocationTableRepository extends CrudRepository<LocationTable, Integer> {
 	LocationTable findById(int id);
