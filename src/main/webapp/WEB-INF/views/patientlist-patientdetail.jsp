@@ -16,7 +16,9 @@
 					<th>patientName</th>
 					<th>aadharNo</th>
 					<th>street</th>
-					<th>locationId</th>
+					<th>staffId</th>
+					<th>centreId</th>
+					<th>pinCode</th>
 					<th>bloodGroup</th>
 					<th>phoneNo</th>
 					<th>street</th>
@@ -30,7 +32,9 @@
 						<td>${cen.patientName}</td>
 						<td>${cen.aadharNo}</td>
 						<td>${cen.street}</td>
-						<td>${cen.locationId}</td>
+						<td>${cen.staffId}</td>
+						<td>${cen.centreId}</td>
+						<td>${cen.pinCode}</td>
 						<td>${cen.bloodGroup}</td>
 						<td>${cen.phoneNo}</td>
 						<td>${cen.testResult}</td>

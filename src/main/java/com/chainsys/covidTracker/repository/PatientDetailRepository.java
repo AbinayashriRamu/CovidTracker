@@ -15,4 +15,6 @@ public interface PatientDetailRepository extends CrudRepository<PatientDetail, L
 
 	List<PatientDetail> findAll();
 
+	List<PatientDetail> findByPin_code(int id);
+
 }

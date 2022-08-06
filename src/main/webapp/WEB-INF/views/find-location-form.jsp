@@ -13,12 +13,6 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getLocations">
 				<div>
-					<label for="locationId">locationId</label>
-					<div>
-						<form:input path="locationId" readonly="true" />
-					</div>
-				</div>
-				<div>
 					<label for="district">district</label>
 					<div>
 						<form:input path="district" readonly="true" />
@@ -46,5 +40,6 @@
 			</form:form>
 		</div>
 	</div>
+	
 </body>
 </html>

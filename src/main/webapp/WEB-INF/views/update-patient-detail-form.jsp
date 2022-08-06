@@ -32,9 +32,21 @@
 					</div>
 				</div>
 				<div>
-					<label for="locationId">locationId</label>
+					<label for="staffId">staffId</label>
 					<div>
-						<form:input path="locationId" />
+						<form:input path="staffId" />
+					</div>
+				</div>
+				<div>
+					<label for="centreId">centreId</label>
+					<div>
+						<form:input path="centreId" />
+					</div>
+				</div>
+				<div>
+					<label for="pinCode">pinCode</label>
+					<div>
+						<form:input path="pinCode" />
 					</div>
 				</div>
 				<div>

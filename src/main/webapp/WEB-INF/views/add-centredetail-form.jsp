@@ -11,7 +11,8 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="addcentre" method="post" modelAttribute="addcentres">
+			<form:form action="addcentre" method="post"
+				modelAttribute="addcentres">
 				<div>
 					<label for="centreId">centreId</label>
 					<div>
@@ -25,26 +26,33 @@
 					</div>
 				</div>
 				<div>
-					<label for="locationId">locationId</label>
+					<label for="pinCode">pinCode</label>
 					<div>
-						<form:input path="locationId" />
+						<form:input path="pincode" />
 					</div>
 				</div>
 				<div>
-					<label for="contactPersonName">contactPersonName</label>
 					<div>
-						<form:input path="contactPersonName" />
+						<label for="hospitalCity">hospitalCity</label>
+						<div>
+							<form:input path="hospitalCity" />
+						</div>
 					</div>
-				</div>
-				<div>
-					<label for="contactPersonPhoneNo">contactPersonPhoneNo</label>
 					<div>
-						<form:input path="contactPersonPhoneNo" />
+						<label for="contactPersonName">contactPersonName</label>
+						<div>
+							<form:input path="contactPersonName" />
+						</div>
 					</div>
-				</div>
-				<div>
-					<form:button>Add New</form:button>
-				</div>
+					<div>
+						<label for="contactPersonPhoneNo">contactPersonPhoneNo</label>
+						<div>
+							<form:input path="contactPersonPhoneNo" />
+						</div>
+					</div>
+					<div>
+						<form:button>Add New</form:button>
+					</div>
 			</form:form>
 		</div>
 	</div>

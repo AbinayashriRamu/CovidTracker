@@ -1,8 +1,12 @@
 package com.chainsys.covidTracker.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +21,17 @@ public class LocationTable {
 	private String stateName;
 	@Column(name = "country")
 	private String country;
+
+	@OneToMany(mappedBy = "locationTable", fetch = FetchType.LAZY)
+	private List<PatientDetail> patientDetail;
+
+	public List<PatientDetail> getPatientDetail() {
+		return patientDetail;
+	}
+
+	public void setPatientDetail(List<PatientDetail> patientDetail) {
+		this.patientDetail = patientDetail;
+	}
 
 	public int getPinCode() {
 		return pinCode;

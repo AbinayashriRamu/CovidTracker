@@ -14,12 +14,6 @@
 			<form:form action="addlocation" method="post"
 				modelAttribute="addlocations">
 				<div>
-					<label for="locationId">locationId</label>
-					<div>
-						<form:input path="locationId" />
-					</div>
-				</div>
-				<div>
 					<label for=district>district</label>
 					<div>
 						<form:input path="district" />

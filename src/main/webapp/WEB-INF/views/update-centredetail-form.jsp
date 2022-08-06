@@ -26,9 +26,15 @@
 					</div>
 				</div>
 				<div>
-					<label for="locationId">locationId</label>
+					<label for="pinCode">pinCode</label>
 					<div>
-						<form:input path="locationId" />
+						<form:input path="pinCode" />
+					</div>
+				</div>
+				<div>
+					<label for="hospitalCity">hospitalCity</label>
+					<div>
+						<form:input path="hospitalCity" />
 					</div>
 				</div>
 				<div>

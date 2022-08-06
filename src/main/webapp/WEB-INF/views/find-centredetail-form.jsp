@@ -19,15 +19,21 @@
 					</div>
 				</div>
 				<div>
-					<label for="centreName">locationId</label>
+					<label for="centreName">centreName</label>
 					<div>
 						<form:input path="centreName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="locationId">ContactPersonName</label>
+					<label for="pinCode">pinCode</label>
 					<div>
-						<form:input path="locationId" readonly="true" />
+						<form:input path="pinCode" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="hospitalCity">hospitalCity</label>
+					<div>
+						<form:input path="hospitalCity" readonly="true" />
 					</div>
 				</div>
 				<div>

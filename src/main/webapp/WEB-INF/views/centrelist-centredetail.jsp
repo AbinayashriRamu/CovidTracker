@@ -15,7 +15,8 @@
 				<tr>
 					<th>CentreId</th>
 					<th>CentreName</th>
-					<th>LocationId</th>
+					<th>pinCode</th>
+					<th>hospitalCity</th>
 					<th>ContactPersonName</th>
 					<th>ContactPersonPhoneNo</th>
 
@@ -26,7 +27,8 @@
 					<tr>
 						<td>${cen.centreId}</td>
 						<td>${cen.centreName}</td>
-						<td>${cen.locationId}</td>
+						<td>${cen.pinCode}</td>
+						<td>${cen.hospitalCity}</td>
 						<td>${cen.contactPersonName}</td>
 						<td>${cen.contactPersonPhoneNo}</td>
 				</c:forEach>

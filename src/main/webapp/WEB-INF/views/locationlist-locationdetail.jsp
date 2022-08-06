@@ -13,7 +13,7 @@
 		<table>
 			<thead>
 				<tr>
-					<th>locationId</th>
+					
 					<th>district</th>
 					<th>pinCode</th>
 					<th>stateName</th>
@@ -23,7 +23,6 @@
 			<tbody>
 				<c:forEach var="cen" items="${alllocations}">
 					<tr>
-						<td>${cen.locationId}</td>
 						<td>${cen.district}</td>
 						<td>${cen.pinCode}</td>
 						<td>${cen.stateName}</td>
