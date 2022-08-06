@@ -13,6 +13,7 @@ public interface CentreDetailRepository extends CrudRepository<CentreDetail, Int
 	CentreDetail save(CentreDetail centredetail);
 
 	void deleteById(int id);
+	
 	List<CentreDetail> findAll();
 
 }

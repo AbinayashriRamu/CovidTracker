@@ -14,9 +14,9 @@
 			<form:form action="addpatientsymptom" method="post"
 				modelAttribute="addPatientSymptoms">
 				<div>
-					<label for="aadharno">aadharno</label>
+					<label for="aadharNo">aadharNo</label>
 					<div>
-						<form:input path="aadharno" />
+						<form:input path="aadharNo" />
 					</div>
 				</div>
 				<div>

@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.covidTracker.model.RecoveryCase;
 
-public interface RecoveryCaseRepository extends CrudRepository <RecoveryCase, Long> {
+public interface RecoveryCaseRepository extends CrudRepository<RecoveryCase, Long> {
 	RecoveryCase findById(long id);
 
 	RecoveryCase save(RecoveryCase recoverycase);
@@ -14,4 +14,5 @@ public interface RecoveryCaseRepository extends CrudRepository <RecoveryCase, Lo
 	void deleteById(long id);
 
 	List<RecoveryCase> findAll();
+
 }

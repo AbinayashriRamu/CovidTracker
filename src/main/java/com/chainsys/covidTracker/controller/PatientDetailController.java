@@ -2,6 +2,7 @@ package com.chainsys.covidTracker.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.chainsys.covidTracker.model.PatientDetail;
 import com.chainsys.covidTracker.service.PatientDetailService;
+
 
 @Controller
 @RequestMapping("/patientdetail")
@@ -65,5 +66,7 @@ public class PatientDetailController {
 		patientdetailservice.save(patientdetail);
 		return "redirect:/patientdetail/patientlist";
 	}
+	
+
 
 }

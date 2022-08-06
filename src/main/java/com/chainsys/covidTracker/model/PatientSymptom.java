@@ -1,7 +1,6 @@
 package com.chainsys.covidTracker.model;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,7 +11,7 @@ import javax.persistence.Table;
 public class PatientSymptom {
 	@Id
 	@Column(name = "aadhar_no")
-	private long aadharno;
+	private long aadharNo;
 	@Column(name = "symptoms_date")
 	private Date symptomsdate;
 	@Column(name = "temperature")
@@ -26,12 +25,12 @@ public class PatientSymptom {
 	@Column(name = "taste")
 	private String taste;
 
-	public long getAadharno() {
-		return aadharno;
+	public long getAadharNo() {
+		return aadharNo;
 	}
 
-	public void setAadharno(long aadharno) {
-		this.aadharno = aadharno;
+	public void setAadharNo(long aadharNo) {
+		this.aadharNo = aadharNo;
 	}
 
 	public Date getSymptomsdate() {
@@ -81,5 +80,4 @@ public class PatientSymptom {
 	public void setTaste(String taste) {
 		this.taste = taste;
 	}
-
 }

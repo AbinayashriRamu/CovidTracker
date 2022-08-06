@@ -9,23 +9,21 @@ import javax.persistence.Table;
 @Table(name = "LOCATION_TABLE")
 public class LocationTable {
 	@Id
-	@Column(name = "location_id")
-	private int locationId;
-	@Column(name = "district")
-	private String district;
 	@Column(name = "pin_code")
 	private int pinCode;
+	@Column(name = "district")
+	private String district;
 	@Column(name = "state_name")
 	private String stateName;
 	@Column(name = "country")
 	private String country;
 
-	public int getLocationId() {
-		return locationId;
+	public int getPinCode() {
+		return pinCode;
 	}
 
-	public void setLocationId(int locationId) {
-		this.locationId = locationId;
+	public void setPinCode(int pinCode) {
+		this.pinCode = pinCode;
 	}
 
 	public String getDistrict() {
@@ -34,14 +32,6 @@ public class LocationTable {
 
 	public void setDistrict(String district) {
 		this.district = district;
-	}
-
-	public int getPinCode() {
-		return pinCode;
-	}
-
-	public void setPinCode(int pinCode) {
-		this.pinCode = pinCode;
 	}
 
 	public String getStateName() {

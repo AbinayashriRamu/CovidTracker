@@ -13,9 +13,9 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getPatientSymptoms">
 				<div>
-					<label for="aadharno">aadharno</label>
+					<label for="aadharNo">aadharNo</label>
 					<div>
-						<form:input path="aadharno" readonly="true" />
+						<form:input path="aadharNo" readonly="true" />
 					</div>
 				</div>
 				<div>

@@ -13,7 +13,7 @@
 		<table>
 			<thead>
 				<tr>
-					<th>aadharno</th>
+					<th>aadharNo</th>
 					<th>symptomsdate</th>
 					<th>temperature</th>
 					<th>cold</th>
@@ -25,7 +25,7 @@
 			<tbody>
 				<c:forEach var="cen" items="${allPatientSymptoms}">
 					<tr>
-						<td>${cen.aadharno}</td>
+						<td>${cen.aadharNo}</td>
 						<td>${cen.symptomsdate}</td>
 						<td>${cen.temperature}</td>
 						<td>${cen.cold}</td>

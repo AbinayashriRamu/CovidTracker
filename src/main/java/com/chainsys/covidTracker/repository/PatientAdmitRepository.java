@@ -17,4 +17,5 @@ public interface PatientAdmitRepository extends CrudRepository<PatientAdmit, Pat
 	void deleteById(PatientAdmitCompositeKey id);
 
 	List<PatientAdmit> findAll();
+
 }

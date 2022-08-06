@@ -1,5 +1,6 @@
 package com.chainsys.covidTracker.service;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,5 @@ public class PatientDetailService {
 	public void deleteById(long id) {
 		repository.deleteById(id);
 	}
-
-	
 
 }
