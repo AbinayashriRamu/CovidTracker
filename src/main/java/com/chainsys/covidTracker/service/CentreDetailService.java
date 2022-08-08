@@ -34,6 +34,10 @@ public class CentreDetailService {
 		return repository.findByCentreId(centreId);
 	}
 
+	public CentreDetail getCentreDetails(int staffId) {
+		return repository.findByCentreId(staffId);
+	}
+
 	public List<CentreDetail> fetchAllByPinCode(int pinCode) {
 		List<CentreDetail> centredetail = repository.findAllByPinCode(pinCode);
 		return centredetail;

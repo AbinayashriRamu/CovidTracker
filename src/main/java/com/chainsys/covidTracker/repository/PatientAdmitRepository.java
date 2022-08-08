@@ -1,5 +1,6 @@
 package com.chainsys.covidtracker.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import java.util.Optional;
@@ -28,5 +29,8 @@ public interface PatientAdmitRepository extends CrudRepository<PatientAdmit, Int
 	PatientAdmit findByCentreId(int CentreId);
 
 	List<PatientAdmit> findAllByCentreId(int centeId);
+	
+	
+	List<PatientAdmit> findAllByAdmitDate(Date admitDate);
 
 }

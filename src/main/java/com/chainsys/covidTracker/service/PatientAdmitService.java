@@ -1,5 +1,6 @@
 package com.chainsys.covidtracker.service;
 
+import java.util.Date;
 import java.util.List;
 
 import java.util.Optional;
@@ -47,6 +48,11 @@ public class PatientAdmitService {
 
 	public List<PatientAdmit> fetchAllByCentreId(int centreId) {
 		List<PatientAdmit> patientadmit = repository.findAllByCentreId(centreId);
+		return patientadmit;
+	}
+	
+	public List<PatientAdmit> fetchAllByAdmitDate(Date AdmitDate){
+		List<PatientAdmit>patientadmit=repository.findAllByAdmitDate(AdmitDate);
 		return patientadmit;
 	}
 

@@ -23,7 +23,7 @@ public class PatientAdmit {
 	@Column(name = "staff_id")
 	private int staffId;
 	@Column(name = "admit_date")
-	private String admitDate;
+	private Date admitDate;
 	@Column(name = "discharge_date")
 	private String dischargeDate;
 
@@ -39,17 +39,31 @@ public class PatientAdmit {
 		this.centrestaff = centrestaff;
 	}
 
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "Centre_id", nullable = false, insertable = false, updatable = false)
+//	private CentreStaff centreStaff;
+//
+//	public CentreStaff getCentreStaff() {
+//		return centrestaff;
+//	}
+//
+//	public void setCentreStaff(CentreStaff centreStaff) {
+//		this.centreStaff = centreStaff;
+//	}
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "Centre_id", nullable = false, insertable = false, updatable = false)
-	private CentreStaff centreStaff;
+	private CentreDetail centreDetail;
 
-	public CentreStaff getCentreStaff() {
-		return centrestaff;
+	public CentreDetail getCentreDetail() {
+		return centreDetail;
 	}
 
-	public void setCentreStaff(CentreStaff centreStaff) {
-		this.centreStaff = centreStaff;
+	public void setCentreDetail(CentreDetail centreDetail) {
+		this.centreDetail = centreDetail;
 	}
+	
+	
 
 	public int getAdmitId() {
 		return admitId;
@@ -83,11 +97,11 @@ public class PatientAdmit {
 		this.staffId = staffId;
 	}
 
-	public String getAdmitDate() {
+	public Date getAdmitDate() {
 		return admitDate;
 	}
 
-	public void setAdmitDate(String admitDate) {
+	public void setAdmitDate(Date admitDate) {
 		this.admitDate = admitDate;
 	}
 

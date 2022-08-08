@@ -14,15 +14,27 @@
 			<form:form action="addpatientadmit" method="post"
 				modelAttribute="addPatientAdmits">
 				<div>
-					<label for="aadharNo">aadharNo</label>
+					<label for="admitId">admitId</label>
+					<div>
+						<form:input path="admitId" />
+					</div>
+				</div>
+				<div>
+					<label for=aadharNo>aadharNo</label>
 					<div>
 						<form:input path="aadharNo" />
 					</div>
 				</div>
 				<div>
-					<label for=centreId>centreId</label>
+					<label for="centreId">centreId</label>
 					<div>
 						<form:input path="centreId" />
+					</div>
+				</div>
+				<div>
+					<label for="staffId">staffId</label>
+					<div>
+						<form:input path="staffId" />
 					</div>
 				</div>
 				<div>
@@ -32,9 +44,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="admittedBy">admittedBy</label>
+					<label for="dischargeDate">dischargeDate</label>
 					<div>
-						<form:input path="admittedBy" />
+						<form:input path="dischargeDate" />
 					</div>
 				</div>
 				

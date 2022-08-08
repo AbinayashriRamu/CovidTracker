@@ -38,7 +38,18 @@ public class CentreDetail {
 		this.locationtable = locationtable;
 	}
 
-	@OneToMany(mappedBy = "centreStaff", fetch = FetchType.LAZY)
+//	@OneToMany(mappedBy = "centreStaff", fetch = FetchType.LAZY)
+//	private List<PatientAdmit> patientadmit;
+//
+//	public List<PatientAdmit> getPatientadmit() {
+//		return patientadmit;
+//	}
+//
+//	public void setPatientadmit(List<PatientAdmit> patientadmit) {
+//		this.patientadmit = patientadmit;
+//	}
+
+	@OneToMany(mappedBy = "centreDetail", fetch = FetchType.LAZY)
 	private List<PatientAdmit> patientadmit;
 
 	public List<PatientAdmit> getPatientadmit() {
