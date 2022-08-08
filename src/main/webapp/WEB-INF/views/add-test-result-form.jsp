@@ -38,6 +38,12 @@
 					</div>
 				</div>
 				<div>
+					<label for="testBy">testBy</label>
+					<div>
+						<form:input path="testBy" />
+					</div>
+				</div>
+				<div>
 					<form:button>Add New</form:button>
 				</div>
 			</form:form>

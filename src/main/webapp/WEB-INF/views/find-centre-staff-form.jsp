@@ -11,7 +11,8 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="getAllCentreStaffs">
+			<form:form action="" method="post"
+				modelAttribute="getAllCentreStaffs">
 				<div>
 					<label for="centreId">CentreId</label>
 					<div>
@@ -36,6 +37,20 @@
 						<form:input path="staffRole" readonly="true" />
 					</div>
 				</div>
+				<div>
+					<label for="staffGender">staffGender</label>
+					<div>
+						<form:input path="staffGender" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="staffDateOfBirth">staffDateOfBirth</label>
+					<div>
+						<form:input path="staffDateOfBirth" readonly="true" />
+					</div>
+				</div>
+
+
 			</form:form>
 		</div>
 	</div>

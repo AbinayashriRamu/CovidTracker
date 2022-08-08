@@ -11,7 +11,8 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="LocationTablelist">
+			<form:form action="" method="post"
+				modelAttribute="fetchByCentreId">
 				<div>
 					<label for="district">district</label>
 					<div>
@@ -40,41 +41,31 @@
 			</form:form>
 		</div>
 	</div>
-	<div id="getpatientDetail">
+	<div id="table root">
 
 		<table>
 			<thead>
 				<tr>
-					<th>patientName</th>
-					<th>aadharNo</th>
-					<th>street</th>
-					<th>staffId</th>
-					<th>centreId</th>
+					<th>CentreId</th>
+					<th>CentreName</th>
 					<th>pinCode</th>
-					<th>bloodGroup</th>
-					<th>phoneNo</th>
-					<th>street</th>
-					<th>activeStatus</th>
-					<th>deadDate</th>
+					<th>ContactPersonName</th>
+					<th>ContactPersonPhoneNo</th>
+
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="cen" items="${getpatientDetail}">
+				<c:forEach var="cen" items="${fetchAllCentreloctionById}">
 					<tr>
-						<td>${cen.patientName}</td>
-						<td>${cen.aadharNo}</td>
-						<td>${cen.street}</td>
-						<td>${cen.staffId}</td>
 						<td>${cen.centreId}</td>
+						<td>${cen.centreName}</td>
 						<td>${cen.pinCode}</td>
-						<td>${cen.bloodGroup}</td>
-						<td>${cen.phoneNo}</td>
-						<td>${cen.testResult}</td>
-						<td>${cen.activeStatus}</td>
-						<td>${cen.deadDate}</td>
+						<td>${cen.contactPersonName}</td>
+						<td>${cen.contactPersonPhoneNo}</td>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
+
 </body>
 </html>

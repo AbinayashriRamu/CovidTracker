@@ -13,6 +13,12 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getPatientAdmits">
 				<div>
+					<label for="admitId">admitId</label>
+					<div>
+						<form:input path="admitId" readonly="true" />
+					</div>
+				</div>
+				<div>
 					<label for="aadharNo">aadharNo</label>
 					<div>
 						<form:input path="aadharNo" readonly="true" />
@@ -25,6 +31,12 @@
 					</div>
 				</div>
 				<div>
+					<label for="staffId">staffId</label>
+					<div>
+						<form:input path="staffId" readonly="true" />
+					</div>
+				</div>
+				<div>
 					<label for="admitDate">admitDate</label>
 					<div>
 						<form:input path="admitDate" readonly="true" />
@@ -32,9 +44,9 @@
 
 				</div>
 				<div>
-					<label for="admittedBy">admittedBy</label>
+					<label for="dischargeDate">dischargeDate</label>
 					<div>
-						<form:input path="admittedBy" readonly="true" />
+						<form:input path="dischargeDate" readonly="true" />
 					</div>
 				</div>
 			</form:form>

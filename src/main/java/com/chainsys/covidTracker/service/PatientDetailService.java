@@ -23,12 +23,23 @@ public class PatientDetailService {
 		return repository.save(patientdetail);
 	}
 
-	public PatientDetail findById(long id) {
-		return repository.findById(id);
+	public PatientDetail findBypinCode(int pinCode) {
+		return repository.findByPinCode(pinCode);
 	}
 
 	public void deleteById(long id) {
 		repository.deleteById(id);
 	}
 
+	public PatientDetail getPatientDetail(long aadharNo) {
+		return repository.findByAadharNo(aadharNo);
+
+	}
+
+	public List<PatientDetail> fetchAllByPinCode(int pinCode) {
+		List<PatientDetail> patientlist = repository.findAllByPinCode(pinCode);
+		return patientlist;
+
+	}
+	
 }

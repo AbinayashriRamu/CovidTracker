@@ -38,6 +38,18 @@
 					</div>
 				</div>
 				<div>
+					<label for="staffGender">staffGender</label>
+					<div>
+						<form:input path="staffGender" />
+					</div>
+				</div>
+				<div>
+					<label for="staffDateOfBirth">staffDateOfBirth</label>
+					<div>
+						<form:input path="staffDateOfBirth" />
+					</div>
+				</div>
+				<div>
 					<form:button>Update Centre Staff</form:button>
 				</div>
 			</form:form>

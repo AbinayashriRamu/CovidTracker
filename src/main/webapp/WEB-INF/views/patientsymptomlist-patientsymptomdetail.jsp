@@ -14,7 +14,9 @@
 			<thead>
 				<tr>
 					<th>aadharNo</th>
-					<th>symptomsdate</th>
+					<th>observationDate</th>
+					<th>observationId</th>
+					<th>observatedBy</th>
 					<th>temperature</th>
 					<th>cold</th>
 					<th>cough</th>
@@ -26,7 +28,9 @@
 				<c:forEach var="cen" items="${allPatientSymptoms}">
 					<tr>
 						<td>${cen.aadharNo}</td>
-						<td>${cen.symptomsdate}</td>
+						<td>${cen.observationDate}</td>
+						<td>${cen.observationId}</td>
+						<td>${cen.observatedBy}</td>
 						<td>${cen.temperature}</td>
 						<td>${cen.cold}</td>
 						<td>${cen.cough}</td>

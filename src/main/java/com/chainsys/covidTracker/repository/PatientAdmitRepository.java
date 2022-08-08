@@ -6,16 +6,27 @@ import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.covidtracker.compositekey.PatientAdmitCompositeKey;
 import com.chainsys.covidtracker.model.PatientAdmit;
 
-public interface PatientAdmitRepository extends CrudRepository<PatientAdmit, PatientAdmitCompositeKey> {
-	Optional<PatientAdmit> findById(PatientAdmitCompositeKey id);
+public interface PatientAdmitRepository extends CrudRepository<PatientAdmit, Integer> {
+	PatientAdmit findById(int id);
 
 	PatientAdmit save(PatientAdmit patientadmit);
 
-	void deleteById(PatientAdmitCompositeKey id);
+	void deleteById(int id);
 
 	List<PatientAdmit> findAll();
+
+	PatientAdmit findByAdmitId(int admitId);
+
+	
+	
+	PatientAdmit findByStaffId(int StaffId);
+
+	List<PatientAdmit> findAllByStaffId(int staffId);
+
+	PatientAdmit findByCentreId(int CentreId);
+
+	List<PatientAdmit> findAllByCentreId(int centeId);
 
 }

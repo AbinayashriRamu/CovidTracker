@@ -2,8 +2,6 @@ package com.chainsys.covidtracker.service;
 
 import java.util.List;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,10 +23,20 @@ public class CentreDetailService {
 	}
 
 	public CentreDetail findById(int id) {
-		return repository.findById(id);
+		return repository.findByCentreId(id);
 	}
+
 	public void deleteById(int id) {
 		repository.deleteById(id);
+	}
+
+	public CentreDetail getCentreDetail(int centreId) {
+		return repository.findByCentreId(centreId);
+	}
+
+	public List<CentreDetail> fetchAllByPinCode(int pinCode) {
+		List<CentreDetail> centredetail = repository.findAllByPinCode(pinCode);
+		return centredetail;
 	}
 
 }

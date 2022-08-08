@@ -36,6 +36,12 @@
 						<form:input path="aadharNo" readonly="true" />
 					</div>
 				</div>
+				<div>
+					<label for="testBy">testBy</label>
+					<div>
+						<form:input path="testBy" />
+					</div>
+				</div>
 			</form:form>
 		</div>
 	</div>

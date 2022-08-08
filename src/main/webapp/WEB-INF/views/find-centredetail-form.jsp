@@ -31,12 +31,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="hospitalCity">hospitalCity</label>
-					<div>
-						<form:input path="hospitalCity" readonly="true" />
-					</div>
-				</div>
-				<div>
 					<label for="contactPersonName">ContactPersonPhoneNumber</label>
 					<div>
 						<form:input path="contactPersonName" readonly="true" />

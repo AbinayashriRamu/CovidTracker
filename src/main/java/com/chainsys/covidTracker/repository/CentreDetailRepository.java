@@ -6,14 +6,19 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.covidtracker.model.CentreDetail;
 
-public interface CentreDetailRepository extends CrudRepository<CentreDetail, Integer> 
-{
+public interface CentreDetailRepository extends CrudRepository<CentreDetail, Integer> {
 	CentreDetail findById(int id);
 
 	CentreDetail save(CentreDetail centredetail);
 
 	void deleteById(int id);
-	
+
 	List<CentreDetail> findAll();
+
+	CentreDetail findByPinCode(int PinCode);
+
+	List<CentreDetail> findAllByPinCode(int pinCode);
+	
+	CentreDetail findByCentreId(int centreId);
 
 }

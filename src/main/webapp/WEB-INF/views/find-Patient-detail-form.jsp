@@ -31,18 +31,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="staffId">staffId</label>
-					<div>
-						<form:input path="staffId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="centreId">centreId</label>
-					<div>
-						<form:input path="centreId" readonly="true" />
-					</div>
-				</div>
-				<div>
 					<label for="pinCode">pinCode</label>
 					<div>
 						<form:input path="pinCode" readonly="true" />
@@ -61,9 +49,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="testResult">testResult</label>
+					<label for="lastTestId">lastTestId</label>
 					<div>
-						<form:input path="testResult" readonly="true" />
+						<form:input path="lastTestId" readonly="true" />
 					</div>
 				</div>
 				<div>

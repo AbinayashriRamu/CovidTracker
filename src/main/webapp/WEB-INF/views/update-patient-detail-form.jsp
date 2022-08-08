@@ -16,67 +16,55 @@
 				<div>
 					<label for="patientName">patientName</label>
 					<div>
-						<form:input path="patientName" />
+						<form:input path="patientName" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="aadharNo">aadharNo</label>
 					<div>
-						<form:input path="aadharNo" />
+						<form:input path="aadharNo" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for=street>street</label>
+					<label for="street">street</label>
 					<div>
-						<form:input path="street" />
-					</div>
-				</div>
-				<div>
-					<label for="staffId">staffId</label>
-					<div>
-						<form:input path="staffId" />
-					</div>
-				</div>
-				<div>
-					<label for="centreId">centreId</label>
-					<div>
-						<form:input path="centreId" />
+						<form:input path="street" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="pinCode">pinCode</label>
 					<div>
-						<form:input path="pinCode" />
+						<form:input path="pinCode" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="bloodGroup">bloodGroup</label>
 					<div>
-						<form:input path="bloodGroup" />
+						<form:input path="bloodGroup" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for=phoneNo>phoneNo</label>
+					<label for="phoneNo">phoneNo</label>
 					<div>
-						<form:input path="phoneNo" />
+						<form:input path="phoneNo" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="testResult">testResult</label>
+					<label for="lastTestId">lastTestId</label>
 					<div>
-						<form:input path="testResult" />
+						<form:input path="lastTestId" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="activeStatus">activeStatus</label>
 					<div>
-						<form:input path="activeStatus" />
+						<form:input path="activeStatus" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="deadDate">deadDate</label>
 					<div>
-						<form:input path="deadDate" />
+						<form:input path="deadDate" readonly="true" />
 					</div>
 				</div>
 				<div>

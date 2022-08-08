@@ -15,43 +15,55 @@
 				<div>
 					<label for="aadharNo">aadharNo</label>
 					<div>
-						<form:input path="aadharNo" readonly="true" />
+						<form:input path="aadharNo" />
 					</div>
 				</div>
 				<div>
-					<label for="symptomsdate">symptomsdate</label>
+					<label for="observationDate">observationDate</label>
 					<div>
-						<form:input path="symptomsdate" readonly="true" />
+						<form:input path="observationDate" />
 					</div>
 				</div>
 				<div>
-					<label for="temperature">temperature</label>
+					<label for="observationId">observationId</label>
 					<div>
-						<form:input path="temperature" readonly="true" />
+						<form:input path="observationId" />
+					</div>
+				</div>
+				<div>
+					<label for="observatedBy">observatedBy</label>
+					<div>
+						<form:input path="observatedBy" />
+					</div>
+				</div>
+				<div>
+					<label for=temperature>temperature</label>
+					<div>
+						<form:input path="temperature" />
 					</div>
 				</div>
 				<div>
 					<label for="cold">cold</label>
 					<div>
-						<form:input path="cold" readonly="true" />
+						<form:input path="cold" />
 					</div>
 				</div>
 				<div>
 					<label for="cough">cough</label>
 					<div>
-						<form:input path="cough" readonly="true" />
+						<form:input path="cough" />
 					</div>
 				</div>
 				<div>
-					<label for="smell">smell</label>
+					<label for=smell>smell</label>
 					<div>
-						<form:input path="smell" readonly="true" />
+						<form:input path="smell" />
 					</div>
 				</div>
 				<div>
 					<label for="taste">taste</label>
 					<div>
-						<form:input path="taste" readonly="true" />
+						<form:input path="taste" />
 					</div>
 				</div>
 			</form:form>

@@ -32,12 +32,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="hospitalCity">hospitalCity</label>
-					<div>
-						<form:input path="hospitalCity" />
-					</div>
-				</div>
-				<div>
 					<label for="contactPersonName">contactPersonName</label>
 					<div>
 						<form:input path="contactPersonName" />

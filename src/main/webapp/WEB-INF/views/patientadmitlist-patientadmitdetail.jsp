@@ -13,19 +13,23 @@
 		<table>
 			<thead>
 				<tr>
+				    <th>admitId</th>
+					<th>staffId</th>
 					<th>aadharNo</th>
 					<th>centreId</th>
 					<th>admitDate</th>
-					<th>admittedBy</th>
+					<th>dischargeDate</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="cen" items="${allAdmitResults}">
 					<tr>
+					    <td>${cen.admitId}</td>
+						<td>${cen.staffId}</td>
 						<td>${cen.aadharNo}</td>
 						<td>${cen.centreId}</td>
 						<td>${cen.admitDate}</td>
-						<td>${cen.admittedBy}</td>
+						<td>${cen.dischargeDate}</td>
 				</c:forEach>
 			</tbody>
 		</table>

@@ -19,33 +19,29 @@ public class PatientDetail {
 	private long aadharNo;
 	@Column(name = "street")
 	private String street;
-	@Column(name = "staff_id")
-	private String staffId;
-	@Column(name = "centre_id")
-	private int centreId;
 	@Column(name = "pin_code")
 	private int pinCode;
 	@Column(name = "blood_group")
 	private String bloodGroup;
 	@Column(name = "phone_no")
 	private long phoneNo;
-	@Column(name = "test_result")
-	private String testResult;
+	@Column(name = "last_test_id")
+	private long lastTestId;
 	@Column(name = "active_status")
 	private String activeStatus;
 	@Column(name = "dead_date")
 	private String deadDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "pin_code", nullable = false, insertable = false, updatable = false)
-	private LocationTable locationTable;
+	@JoinColumn(name = "Pin_code", nullable = false, insertable = false, updatable = false)
+	private LocationTable locationtable;
 
-	public LocationTable getLocationTable() {
-		return locationTable;
+	public LocationTable getlocationtable() {
+		return locationtable;
 	}
 
-	public void setLocationTable(LocationTable locationTable) {
-		this.locationTable = locationTable;
+	public void setLocpincode(LocationTable locationtable) {
+		this.locationtable = locationtable;
 	}
 
 	public String getPatientName() {
@@ -72,22 +68,6 @@ public class PatientDetail {
 		this.street = street;
 	}
 
-	public String getStaffId() {
-		return staffId;
-	}
-
-	public void setStaffId(String staffId) {
-		this.staffId = staffId;
-	}
-
-	public int getCentreId() {
-		return centreId;
-	}
-
-	public void setCentreId(int centreId) {
-		this.centreId = centreId;
-	}
-
 	public int getPinCode() {
 		return pinCode;
 	}
@@ -112,12 +92,12 @@ public class PatientDetail {
 		this.phoneNo = phoneNo;
 	}
 
-	public String getTestResult() {
-		return testResult;
+	public long getLastTestId() {
+		return lastTestId;
 	}
 
-	public void setTestResult(String testResult) {
-		this.testResult = testResult;
+	public void setLastTestId(long lastTestId) {
+		this.lastTestId = lastTestId;
 	}
 
 	public String getActiveStatus() {

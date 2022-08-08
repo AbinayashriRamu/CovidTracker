@@ -28,36 +28,42 @@ public class CentreStaffController {
 		model.addAttribute("allCentreStaffs", centrestaff);
 		return "centrestafflist-centrestaffdetail";
 	}
+
 	@GetMapping("/findcentrestaff")
-	public String findById(@RequestParam("id") int id,Model model) {
-		CentreStaff centrestaff=centrestaffservice.findById(id);
-		model.addAttribute("getAllCentreStaffs",centrestaff);
+	public String findById(@RequestParam("id") int id, Model model) {
+		CentreStaff centrestaff = centrestaffservice.findById(id);
+		model.addAttribute("getAllCentreStaffs", centrestaff);
 		return "find-centre-staff-form";
 	}
+
 	@GetMapping("addcentrestaffform")
 	public String showCentreStaff(Model model) {
-		CentreStaff centrestaff=new CentreStaff();
+		CentreStaff centrestaff = new CentreStaff();
 		model.addAttribute("addcentrestaffs", centrestaff);
 		return "add-centre-staff_form";
 	}
+
 	@PostMapping("/addcentrestaff")
 	public String addNewCentreStaff(@ModelAttribute("addcentrestaffs") CentreStaff centrestaff) {
 		centrestaffservice.save(centrestaff);
 		return "redirect:/centrestaffdetail/centrestafflist";
 	}
+
 	@GetMapping("/deletecentrestaff")
-	public String deleteCentreStaff(@RequestParam("centerId")int id) {
+	public String deleteCentreStaff(@RequestParam("centerId") int id) {
 		centrestaffservice.deleteById(id);
 		return "redirect:/centrestaffdetail/centrestafflist";
 	}
+
 	@GetMapping("/updatecentrestaffform")
-	public String showUpdateCentre(@RequestParam("centreId")int id,Model model) {
-		CentreStaff centrestaff=centrestaffservice.findById(id);
+	public String showUpdateCentre(@RequestParam("centreId") int id, Model model) {
+		CentreStaff centrestaff = centrestaffservice.findById(id);
 		model.addAttribute("updatecentrestaffs", centrestaff);
 		return "update-centre-staff-form";
 	}
+
 	@PostMapping("updatecentrestaff")
-	public String updatecentrestaff(@ModelAttribute("updatecentrestaffs")CentreStaff centrestaff) {
+	public String updatecentrestaff(@ModelAttribute("updatecentrestaffs") CentreStaff centrestaff) {
 		centrestaffservice.save(centrestaff);
 		return "redirect:/centrestaffdetail/centrestafflist";
 	}

@@ -26,10 +26,10 @@ public class CentreStaffService {
 	public CentreStaff findById(int id) {
 		return repository.findById(id);
 	}
+
 	public void deleteById(int id) {
 		repository.deleteById(id);
 	}
 
 	
-
 }

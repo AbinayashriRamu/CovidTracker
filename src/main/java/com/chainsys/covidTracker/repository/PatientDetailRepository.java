@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.chainsys.covidtracker.model.PatientDetail;
 
 public interface PatientDetailRepository extends CrudRepository<PatientDetail, Long> {
-	PatientDetail findById(long id);
+	PatientDetail findByPinCode(int PinCode);
 
 	PatientDetail save(PatientDetail patientdetail);
 
@@ -15,8 +15,8 @@ public interface PatientDetailRepository extends CrudRepository<PatientDetail, L
 
 	List<PatientDetail> findAll();
 
-	// List<PatientDetail> findBypinCode(int id);
+	PatientDetail findByAadharNo(long aadharNo);
 
-	PatientDetail findByPincode(int id);
+	List<PatientDetail> findAllByPinCode(int pinCode);
 
 }

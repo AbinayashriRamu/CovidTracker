@@ -20,13 +20,25 @@
 					</div>
 				</div>
 				<div>
-					<label for=symptomsdate>symptomsdate</label>
+					<label for="observationDate">observationDate</label>
 					<div>
-						<form:input path="symptomsdate" />
+						<form:input path="observationDate" />
 					</div>
 				</div>
 				<div>
-					<label for="temperature">temperature</label>
+					<label for="observationId">observationId</label>
+					<div>
+						<form:input path="observationId" />
+					</div>
+				</div>
+				<div>
+					<label for="observatedBy">observatedBy</label>
+					<div>
+						<form:input path="observatedBy" />
+					</div>
+				</div>
+				<div>
+					<label for=temperature>temperature</label>
 					<div>
 						<form:input path="temperature" />
 					</div>
@@ -44,7 +56,7 @@
 					</div>
 				</div>
 				<div>
-					<label for="smell">smell</label>
+					<label for=smell>smell</label>
 					<div>
 						<form:input path="smell" />
 					</div>
@@ -54,9 +66,6 @@
 					<div>
 						<form:input path="taste" />
 					</div>
-				</div>
-				<div>
-					<form:button>Add New</form:button>
 				</div>
 			</form:form>
 		</div>

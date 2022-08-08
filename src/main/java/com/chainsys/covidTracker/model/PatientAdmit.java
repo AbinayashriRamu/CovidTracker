@@ -4,26 +4,60 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.chainsys.covidtracker.compositekey.PatientAdmitCompositeKey;
 
 @Entity
 @Table(name = "PATIENT_ADMIT")
-@IdClass(PatientAdmitCompositeKey.class)
 public class PatientAdmit {
 	@Id
+	@Column(name = "admit_id")
+	private int admitId;
 	@Column(name = "aadhar_no")
 	private long aadharNo;
-	@Id
 	@Column(name = "centre_id")
 	private int centreId;
+	@Column(name = "staff_id")
+	private int staffId;
 	@Column(name = "admit_date")
-	private Date admitDate;
-	@Column(name = "admitted_by")
-	private String admittedBy;
+	private String admitDate;
+	@Column(name = "discharge_date")
+	private String dischargeDate;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "Staff_id", nullable = false, insertable = false, updatable = false)
+	private CentreStaff centrestaff;
+
+	public CentreStaff getCentrestaff() {
+		return centrestaff;
+	}
+
+	public void setCentrestaff(CentreStaff centrestaff) {
+		this.centrestaff = centrestaff;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "Centre_id", nullable = false, insertable = false, updatable = false)
+	private CentreStaff centreStaff;
+
+	public CentreStaff getCentreStaff() {
+		return centrestaff;
+	}
+
+	public void setCentreStaff(CentreStaff centreStaff) {
+		this.centreStaff = centreStaff;
+	}
+
+	public int getAdmitId() {
+		return admitId;
+	}
+
+	public void setAdmitId(int admitId) {
+		this.admitId = admitId;
+	}
 
 	public long getAadharNo() {
 		return aadharNo;
@@ -41,20 +75,28 @@ public class PatientAdmit {
 		this.centreId = centreId;
 	}
 
-	public Date getAdmitDate() {
+	public int getStaffId() {
+		return staffId;
+	}
+
+	public void setStaffId(int staffId) {
+		this.staffId = staffId;
+	}
+
+	public String getAdmitDate() {
 		return admitDate;
 	}
 
-	public void setAdmitDate(Date admitDate) {
+	public void setAdmitDate(String admitDate) {
 		this.admitDate = admitDate;
 	}
 
-	public String getAdmittedBy() {
-		return admittedBy;
+	public String getDischargeDate() {
+		return dischargeDate;
 	}
 
-	public void setAdmittedBy(String admittedBy) {
-		this.admittedBy = admittedBy;
+	public void setDischargeDate(String dischargeDate) {
+		this.dischargeDate = dischargeDate;
 	}
 
 }

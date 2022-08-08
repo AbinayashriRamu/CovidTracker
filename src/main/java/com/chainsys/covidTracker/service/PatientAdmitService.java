@@ -1,12 +1,13 @@
 package com.chainsys.covidtracker.service;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.covidtracker.compositekey.PatientAdmitCompositeKey;
+import com.chainsys.covidtracker.model.CentreDetail;
 import com.chainsys.covidtracker.model.PatientAdmit;
 import com.chainsys.covidtracker.repository.PatientAdmitRepository;
 
@@ -24,14 +25,29 @@ public class PatientAdmitService {
 		return repository.save(patientadmit);
 	}
 
-	public Optional<PatientAdmit> findById(PatientAdmitCompositeKey id) {
+	public PatientAdmit findById(int id) {
 		return repository.findById(id);
 	}
 
-	public void deleteById(PatientAdmitCompositeKey id) {
+	public void deleteById(int id) {
 		repository.deleteById(id);
 	}
 
-	
+	public PatientAdmit getPatientAdmit(int admitId) {
+		return repository.findByAdmitId(admitId);
+	}
+
+	public List<PatientAdmit> fetchAllByStaffId(int staffId) {
+		List<PatientAdmit> patientadmit = repository.findAllByStaffId(staffId);
+		return patientadmit;
+	}
+	public PatientAdmit getpatientadmit(int admitId) {
+		return repository.findByAdmitId(admitId);
+	}
+
+	public List<PatientAdmit> fetchAllByCentreId(int centreId) {
+		List<PatientAdmit> patientadmit = repository.findAllByCentreId(centreId);
+		return patientadmit;
+	}
 
 }

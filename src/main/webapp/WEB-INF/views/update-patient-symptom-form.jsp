@@ -20,9 +20,21 @@
 					</div>
 				</div>
 				<div>
-					<label for="symptomsdate">symptomsdate</label>
+					<label for="observationDate">observationDate</label>
 					<div>
-						<form:input path="symptomsdate" />
+						<form:input path="observationDate" />
+					</div>
+				</div>
+				<div>
+					<label for="observationId">observationId</label>
+					<div>
+						<form:input path="observationId" />
+					</div>
+				</div>
+				<div>
+					<label for="observatedBy">observatedBy</label>
+					<div>
+						<form:input path="observatedBy" />
 					</div>
 				</div>
 				<div>

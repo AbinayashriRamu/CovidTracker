@@ -14,27 +14,40 @@
 			<form:form action="updatepatientadmit" method="post"
 				modelAttribute="updatePatientAdmits">
 				<div>
+					<label for="admitId">admitId</label>
+					<div>
+						<form:input path="admitId" readonly="true" />
+					</div>
+				</div>
+				<div>
 					<label for="aadharNo">aadharNo</label>
 					<div>
-						<form:input path="aadharNo" />
+						<form:input path="aadharNo" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="centreId">centreId</label>
 					<div>
-						<form:input path="centreId" />
+						<form:input path="centreId" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="staffId">staffId</label>
+					<div>
+						<form:input path="staffId" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="admitDate">admitDate</label>
 					<div>
-						<form:input path="admitDate" />
+						<form:input path="admitDate" readonly="true" />
 					</div>
+
 				</div>
 				<div>
-					<label for="admittedBy">admittedBy</label>
+					<label for="dischargeDate">dischargeDate</label>
 					<div>
-						<form:input path="admittedBy" />
+						<form:input path="dischargeDate" readonly="true" />
 					</div>
 				</div>
 				<div>

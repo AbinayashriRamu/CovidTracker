@@ -1,5 +1,7 @@
 package com.chainsys.covidtracker.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,21 +11,23 @@ import javax.persistence.Table;
 @Table(name = "USER_LOGIN")
 public class User {
 	@Id
-	@Column(name = "user_name")
-	private String userName;
-	@Column(name = "pass_word")
-	private String passWord;
 	@Column(name = "e_mail")
 	private String eMail;
-	@Column(name = "gender")
-	private String gender;
+	@Column(name = "pass_word")
+	private String passWord;
+	@Column(name = "last_date_of_password_changed")
+	private String lastDateOfPasswordchanged;
+	@Column(name = "date_of_registration")
+	private Date dateOfRegistration;
+	@Column(name = "last_password")
+	private String lastPassword;
 
-	public String getUserName() {
-		return userName;
+	public String geteMail() {
+		return eMail;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void seteMail(String eMail) {
+		this.eMail = eMail;
 	}
 
 	public String getPassWord() {
@@ -34,20 +38,28 @@ public class User {
 		this.passWord = passWord;
 	}
 
-	public String geteMail() {
-		return eMail;
+	public String getLastDateOfPasswordchanged() {
+		return lastDateOfPasswordchanged;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setLastDateOfPasswordchanged(String lastDateOfPasswordchanged) {
+		this.lastDateOfPasswordchanged = lastDateOfPasswordchanged;
 	}
 
-	public String getGender() {
-		return gender;
+	public Date getDateOfRegistration() {
+		return dateOfRegistration;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setDateOfRegistration(Date dateOfRegistration) {
+		this.dateOfRegistration = dateOfRegistration;
+	}
+
+	public String getLastPassword() {
+		return lastPassword;
+	}
+
+	public void setLastPassword(String lastPassword) {
+		this.lastPassword = lastPassword;
 	}
 
 }

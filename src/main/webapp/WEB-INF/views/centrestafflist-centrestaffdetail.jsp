@@ -17,6 +17,8 @@
 					<th>staffName</th>
 					<th>staffId</th>
 					<th>staffRole</th>
+					<th>staffGender</th>
+					<th>staffDateOfBirth</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,6 +28,8 @@
 						<td>${cen.staffName}</td>
 						<td>${cen.staffId}</td>
 						<td>${cen.staffRole}</td>
+						<td>${staffGender}</td>
+						<td>${staffDateOfBirth}</td>
 				</c:forEach>
 			</tbody>
 		</table>

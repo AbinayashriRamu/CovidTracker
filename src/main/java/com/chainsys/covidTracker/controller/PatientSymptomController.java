@@ -2,7 +2,6 @@ package com.chainsys.covidtracker.controller;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,13 +48,13 @@ public class PatientSymptomController {
 	}
 
 	@GetMapping("/deletepatientsymptom")
-	public String deletepatientsymptom(@RequestParam("aadharNo") long id) {
+	public String deletepatientsymptom(@RequestParam("observationId") long id) {
 		patientsymptomservice.deleteById(id);
 		return "redirect:/patientsymptomdetail/patientsymptomlist";
 	}
 
 	@GetMapping("/updatepatientsymptomform")
-	public String showUpdatePatientsymp(@RequestParam("aadharNo") long id, Model model) {
+	public String showUpdatePatientsymp(@RequestParam("observationId") long id, Model model) {
 		PatientSymptom patientsymptom = patientsymptomservice.findById(id);
 		model.addAttribute("updatePatientSymptoms", patientsymptom);
 		return "update-patient-symptom-form";

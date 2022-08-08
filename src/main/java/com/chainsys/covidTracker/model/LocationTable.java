@@ -21,16 +21,26 @@ public class LocationTable {
 	private String stateName;
 	@Column(name = "country")
 	private String country;
+	@OneToMany(mappedBy = "locationtable", fetch = FetchType.LAZY)
+	private List<PatientDetail> patientdetail;
 
-	@OneToMany(mappedBy = "locationTable", fetch = FetchType.LAZY)
-	private PatientDetail patientDetail;
-
-	public PatientDetail getPatientDetail() {
-		return patientDetail;
+	public List<PatientDetail> getPatientdetail() {
+		return patientdetail;
 	}
 
-	public void setPatientDetail(PatientDetail patientDetail) {
-		this.patientDetail = patientDetail;
+	public void setPatientdetail(List<PatientDetail> patientdetail) {
+		this.patientdetail = patientdetail;
+	}
+
+	@OneToMany(mappedBy = "locationtable", fetch = FetchType.LAZY)
+	private List<CentreDetail> centreDetail;
+
+	public List<CentreDetail> getCentreDetail() {
+		return centreDetail;
+	}
+
+	public void setCentreDetail(List<CentreDetail> centreDetail) {
+		this.centreDetail = centreDetail;
 	}
 
 	public int getPinCode() {

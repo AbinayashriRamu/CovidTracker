@@ -5,27 +5,38 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>recovery detail</title>
+<title>Insert title here</title>
 </head>
+<body>
 <body>
 	<div id="table root">
 
 		<table>
 			<thead>
 				<tr>
+					<th>admitId</th>
+					<th>staffId</th>
 					<th>aadharNo</th>
+					<th>centreId</th>
+					<th>admitDate</th>
 					<th>dischargeDate</th>
-
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="cen" items="${allRecoveryCases}">
+				<c:forEach var="cen" items="${fetchAllCentreAdmitById}">
 					<tr>
+						<td>${cen.admitId}</td>
+						<td>${cen.staffId}</td>
 						<td>${cen.aadharNo}</td>
+						<td>${cen.centreId}</td>
+						<td>${cen.admitDate}</td>
 						<td>${cen.dischargeDate}</td>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
+
 </body>
+
+
 </html>

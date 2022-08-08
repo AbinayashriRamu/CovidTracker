@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>test detail</title>
+<title>patient admit detail</title>
 </head>
 <body>
 	<div id="table root">
@@ -13,21 +13,23 @@
 		<table>
 			<thead>
 				<tr>
-					<th>testId</th>
-					<th>testingDate</th>
-					<th>testResult</th>
+					<th>admitId</th>
+					<th>staffId</th>
 					<th>aadharNo</th>
-					<th>testBy</th>
+					<th>centreId</th>
+					<th>admitDate</th>
+					<th>dischargeDate</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="cen" items="${allCovidTestResults}">
+				<c:forEach var="cen" items="${fetchAllStaffAdmitById}">
 					<tr>
-						<td>${cen.testId}</td>
-						<td>${cen.testingDate}</td>
-						<td>${cen.testResult}</td>
+						<td>${cen.admitId}</td>
+						<td>${cen.staffId}</td>
 						<td>${cen.aadharNo}</td>
-						<td>${cen.testBy}</td>
+						<td>${cen.centreId}</td>
+						<td>${cen.admitDate}</td>
+						<td>${cen.dischargeDate}</td>
 				</c:forEach>
 			</tbody>
 		</table>
