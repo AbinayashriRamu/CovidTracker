@@ -13,12 +13,12 @@
 		<table>
 			<thead>
 				<tr>
-					<th>centreId</th>
-					<th>staffName</th>
-					<th>staffId</th>
-					<th>staffRole</th>
-					<th>staffGender</th>
-					<th>staffDateOfBirth</th>
+					<th>CentreId</th>
+					<th>StaffName</th>
+					<th>StaffId</th>
+					<th>StaffRole</th>
+					<th>StaffGender</th>
+					<th>StaffDateOfBirth</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,8 +28,8 @@
 						<td>${cen.staffName}</td>
 						<td>${cen.staffId}</td>
 						<td>${cen.staffRole}</td>
-						<td>${staffGender}</td>
-						<td>${staffDateOfBirth}</td>
+						<td>${cen.staffGender}</td>
+						<td>${cen.staffDateOfBirth}</td>
 				</c:forEach>
 			</tbody>
 		</table>

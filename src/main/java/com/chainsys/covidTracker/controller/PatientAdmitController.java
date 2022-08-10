@@ -85,9 +85,9 @@ public class PatientAdmitController {
 	public String getAdmitCentreStaffById(@RequestParam("admitId") int admitId, Model model) {
 		PatientAdmit patientadmit = patientadmitservice.getPatientAdmit(admitId);
 		model.addAttribute("fetchByAdmitId", patientadmit);
-		model.addAttribute("fetchStaffAdmitById", centrestaffservice.findById(patientadmit.getStaffId()));
+		model.addAttribute("fetchStaffAdmitById", centrestaffservice.findByStaffId(patientadmit.getStaffId()));
 		model.addAttribute("fetchCentreAdmitById", centredetailservice.findById(patientadmit.getCentreId()));
-		model.addAttribute("fetchPatientDetailById", patientDetailService.getPatientDetail(patientadmit.getAadharNo()));
+		model.addAttribute("fetchPatientDetailById", patientDetailService.getPatientDetail(patientadmit.getAadharNumber()));
 		return "find-by-id-admit-centrestaff-form";
 	}
 
@@ -125,7 +125,7 @@ public class PatientAdmitController {
 
 	@GetMapping("/getStaffAdmitdetail")
 	public String getStaffAdmitById(@RequestParam("staffId") int staffId, Model model) {
-		CentreStaff centrestaff = centrestaffservice.findById(staffId);
+		CentreStaff centrestaff = centrestaffservice.findByStaffId(staffId);
 		List<PatientAdmit> patientadmit = patientadmitservice.fetchAllByStaffId(staffId);
 		model.addAttribute("findByStaffId", centrestaff);
 		model.addAttribute("fetchadmitDetail", patientadmit);

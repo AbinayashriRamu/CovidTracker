@@ -60,7 +60,7 @@ public class PatientSymptomController {
 		return "update-patient-symptom-form";
 	}
 
-	@PostMapping("updatepatientsymptom")
+	@PostMapping("/updatepatientsymptom")
 	public String updatepatientsymptom(@ModelAttribute("updatePatientSymptoms") PatientSymptom patientsymptom) {
 		patientsymptomservice.save(patientsymptom);
 		return "redirect:/patientsymptomdetail/patientsymptomlist";

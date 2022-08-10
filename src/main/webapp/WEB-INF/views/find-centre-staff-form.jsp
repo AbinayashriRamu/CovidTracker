@@ -20,31 +20,31 @@
 					</div>
 				</div>
 				<div>
-					<label for="staffName">staffId</label>
+					<label for="staffName">StaffId</label>
 					<div>
 						<form:input path="staffName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffId">staffRole</label>
+					<label for="staffId">StaffRole</label>
 					<div>
 						<form:input path="staffId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffRole">staffRole</label>
+					<label for="staffRole">StaffRole</label>
 					<div>
 						<form:input path="staffRole" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffGender">staffGender</label>
+					<label for="staffGender">StaffGender</label>
 					<div>
 						<form:input path="staffGender" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffDateOfBirth">staffDateOfBirth</label>
+					<label for="staffDateOfBirth">StaffDateOfBirth</label>
 					<div>
 						<form:input path="staffDateOfBirth" readonly="true" />
 					</div>

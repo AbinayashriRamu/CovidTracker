@@ -19,31 +19,31 @@
 					</div>
 				</div>
 				<div>
-					<label for="staffName">staffId</label>
+					<label for="staffName">StaffId</label>
 					<div>
 						<form:input path="staffName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffId">staffRole</label>
+					<label for="staffId">StaffRole</label>
 					<div>
 						<form:input path="staffId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffRole">staffRole</label>
+					<label for="staffRole">StaffRole</label>
 					<div>
 						<form:input path="staffRole" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffGender">staffGender</label>
+					<label for="staffGender">StaffGender</label>
 					<div>
 						<form:input path="staffGender" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffDateOfBirth">staffDateOfBirth</label>
+					<label for="staffDateOfBirth">StaffDateOfBirth</label>
 					<div>
 						<form:input path="staffDateOfBirth" readonly="true" />
 					</div>
@@ -59,12 +59,12 @@
 		<table>
 			<thead>
 				<tr>
-					<th>admitId</th>
-					<th>staffId</th>
-					<th>aadharNo</th>
-					<th>centreId</th>
-					<th>admitDate</th>
-					<th>dischargeDate</th>
+					<th>AdmitId</th>
+					<th>StaffId</th>
+					<th>AadharNumber</th>
+					<th>CentreId</th>
+					<th>AdmitDate</th>
+					<th>DischargeDate</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -72,7 +72,7 @@
 					<tr>
 						<td>${cen.admitId}</td>
 						<td>${cen.staffId}</td>
-						<td>${cen.aadharNo}</td>
+						<td>${cen.aadharNumber}</td>
 						<td>${cen.centreId}</td>
 						<td>${cen.admitDate}</td>
 						<td>${cen.dischargeDate}</td>

@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.chainsys.covidtracker.model.CentreStaff;
 
 public interface CentreStaffRepository extends CrudRepository<CentreStaff, Integer> {
-	CentreStaff findById(int id);
+	CentreStaff findByStaffId(int id);
 
 	CentreStaff save(CentreStaff centrestaff);
 

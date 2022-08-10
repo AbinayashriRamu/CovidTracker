@@ -13,26 +13,26 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getLocations">
 				<div>
-					<label for="district">district</label>
+					<label for="district">District</label>
 					<div>
 						<form:input path="district" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="pinCode">pinCode</label>
+					<label for="pinCode">PinCode</label>
 					<div>
 						<form:input path="pinCode" readonly="true" />
 					</div>
 
 				</div>
 				<div>
-					<label for="stateName">stateName</label>
+					<label for="stateName">StateName</label>
 					<div>
 						<form:input path="stateName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="country">country</label>
+					<label for="country">Country</label>
 					<div>
 						<form:input path="country" readonly="true" />
 					</div>

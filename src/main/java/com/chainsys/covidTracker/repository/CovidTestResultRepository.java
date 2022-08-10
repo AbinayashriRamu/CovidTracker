@@ -1,5 +1,6 @@
 package com.chainsys.covidtracker.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
@@ -14,5 +15,7 @@ public interface CovidTestResultRepository extends CrudRepository<CovidTestResul
 	void deleteById(long id);
 
 	List<CovidTestResult> findAll();
-
+	
+	//List<CovidTestResult>fetchAllByTestingDate(Date testingDate);
+    List<CovidTestResult> findByTestResult(String result);
 }

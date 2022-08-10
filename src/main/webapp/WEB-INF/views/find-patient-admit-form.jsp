@@ -13,38 +13,38 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getPatientAdmits">
 				<div>
-					<label for="admitId">admitId</label>
+					<label for="admitId">AdmitId</label>
 					<div>
 						<form:input path="admitId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="aadharNo">aadharNo</label>
+					<label for="aadharNumber">AadharNumber</label>
 					<div>
 						<form:input path="aadharNo" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="centreId">centreId</label>
+					<label for="centreId">CentreId</label>
 					<div>
 						<form:input path="centreId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffId">staffId</label>
+					<label for="staffId">StaffId</label>
 					<div>
 						<form:input path="staffId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="admitDate">admitDate</label>
+					<label for="admitDate">AdmitDate</label>
 					<div>
 						<form:input path="admitDate" readonly="true" />
 					</div>
 
 				</div>
 				<div>
-					<label for="dischargeDate">dischargeDate</label>
+					<label for="dischargeDate">DischargeDate</label>
 					<div>
 						<form:input path="dischargeDate" readonly="true" />
 					</div>

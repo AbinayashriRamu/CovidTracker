@@ -13,55 +13,55 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getPatientSymptoms">
 				<div>
-					<label for="aadharNo">aadharNo</label>
+					<label for="aadharNumber">AadharNumber</label>
 					<div>
-						<form:input path="aadharNo" />
+						<form:input path="aadharNumber" />
 					</div>
 				</div>
 				<div>
-					<label for="observationDate">observationDate</label>
+					<label for="observationDate">ObservationDate</label>
 					<div>
 						<form:input path="observationDate" />
 					</div>
 				</div>
 				<div>
-					<label for="observationId">observationId</label>
+					<label for="observationId">ObservationId</label>
 					<div>
 						<form:input path="observationId" />
 					</div>
 				</div>
 				<div>
-					<label for="observatedBy">observatedBy</label>
+					<label for="observatedBy">ObservatedBy</label>
 					<div>
 						<form:input path="observatedBy" />
 					</div>
 				</div>
 				<div>
-					<label for=temperature>temperature</label>
+					<label for=temperature>Temperature</label>
 					<div>
 						<form:input path="temperature" />
 					</div>
 				</div>
 				<div>
-					<label for="cold">cold</label>
+					<label for="cold">Cold</label>
 					<div>
 						<form:input path="cold" />
 					</div>
 				</div>
 				<div>
-					<label for="cough">cough</label>
+					<label for="cough">Cough</label>
 					<div>
 						<form:input path="cough" />
 					</div>
 				</div>
 				<div>
-					<label for=smell>smell</label>
+					<label for=smell>Smell</label>
 					<div>
 						<form:input path="smell" />
 					</div>
 				</div>
 				<div>
-					<label for="taste">taste</label>
+					<label for="taste">Taste</label>
 					<div>
 						<form:input path="taste" />
 					</div>

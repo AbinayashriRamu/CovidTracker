@@ -28,14 +28,14 @@ public class CentreDetail {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "pin_code", nullable = false, insertable = false, updatable = false)
-	private LocationTable locationtable;
+	private PatientLocation patientlocation;
 
-	public LocationTable getLocationtable() {
-		return locationtable;
+	public PatientLocation getpatientLocation() {
+		return patientlocation;
 	}
 
-	public void setLocationtable(LocationTable locationtable) {
-		this.locationtable = locationtable;
+	public void setLocationtable(PatientLocation patientlocation) {
+		this.patientlocation = patientlocation;
 	}
 
 //	@OneToMany(mappedBy = "centreStaff", fetch = FetchType.LAZY)

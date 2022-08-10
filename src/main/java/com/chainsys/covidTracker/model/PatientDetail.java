@@ -1,5 +1,7 @@
 package com.chainsys.covidtracker.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -7,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,8 +18,8 @@ public class PatientDetail {
 	@Column(name = "patient_name")
 	private String patientName;
 	@Id
-	@Column(name = "aadhar_no")
-	private long aadharNo;
+	@Column(name = "aadhar_number")
+	private long aadharNumber;
 	@Column(name = "street")
 	private String street;
 	@Column(name = "pin_code")
@@ -33,15 +36,26 @@ public class PatientDetail {
 	private String deadDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "Pin_code", nullable = false, insertable = false, updatable = false)
-	private LocationTable locationtable;
+	@JoinColumn(name = "pin_code", nullable = false, insertable = false, updatable = false)
+	private PatientLocation patientlocation;
 
-	public LocationTable getlocationtable() {
-		return locationtable;
+	public PatientLocation getpatientlocation() {
+		return patientlocation;
 	}
 
-	public void setLocpincode(LocationTable locationtable) {
-		this.locationtable = locationtable;
+	public void setLocpincode(PatientLocation patientlocation) {
+		this.patientlocation = patientlocation;
+	}
+	
+	@OneToMany(mappedBy = "patientdetail", fetch = FetchType.LAZY)
+	private List<CovidTestResult> covidtestresult;
+	
+	public List<CovidTestResult> getCovidtestresult() {
+		return covidtestresult;
+	}
+
+	public void setCovidtestresult(List<CovidTestResult> covidtestresult) {
+		this.covidtestresult = covidtestresult;
 	}
 
 	public String getPatientName() {
@@ -52,12 +66,12 @@ public class PatientDetail {
 		this.patientName = patientName;
 	}
 
-	public long getAadharNo() {
-		return aadharNo;
+	public long getAadharNumber() {
+		return aadharNumber;
 	}
 
-	public void setAadharNo(long aadharNo) {
-		this.aadharNo = aadharNo;
+	public void setAadharNumber(long aadharNumber) {
+		this.aadharNumber = aadharNumber;
 	}
 
 	public String getStreet() {

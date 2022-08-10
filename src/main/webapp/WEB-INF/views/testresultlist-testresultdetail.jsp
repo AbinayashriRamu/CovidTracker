@@ -13,11 +13,11 @@
 		<table>
 			<thead>
 				<tr>
-					<th>testId</th>
-					<th>testingDate</th>
-					<th>testResult</th>
-					<th>aadharNo</th>
-					<th>testBy</th>
+					<th>TestId</th>
+					<th>TestingDate</th>
+					<th>TestResult</th>
+					<th>AadharNumber</th>
+					<th>TestBy</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,7 +26,7 @@
 						<td>${cen.testId}</td>
 						<td>${cen.testingDate}</td>
 						<td>${cen.testResult}</td>
-						<td>${cen.aadharNo}</td>
+						<td>${cen.aadharNumber}</td>
 						<td>${cen.testBy}</td>
 				</c:forEach>
 			</tbody>

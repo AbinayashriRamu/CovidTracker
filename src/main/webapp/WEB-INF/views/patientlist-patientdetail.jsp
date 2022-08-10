@@ -13,22 +13,22 @@
 		<table>
 			<thead>
 				<tr>
-					<th>patientName</th>
-					<th>aadharNo</th>
-					<th>street</th>
-					<th>pinCode</th>
-					<th>bloodGroup</th>
-					<th>phoneNo</th>
-					<th>lastTestId</th>
-					<th>activeStatus</th>
-					<th>deadDate</th>
+					<th>PatientName</th>
+					<th>AadharNumber</th>
+					<th>Street</th>
+					<th>PinCode</th>
+					<th>BloodGroup</th>
+					<th>PhoneNo</th>
+					<th>LastTestId</th>
+					<th>ActiveStatus</th>
+					<th>DeadDate</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="cen" items="${allPatientDetails}">
 					<tr>
 						<td>${cen.patientName}</td>
-						<td>${cen.aadharNo}</td>
+						<td>${cen.aadharNumber}</td>
 						<td>${cen.street}</td>
 						<td>${cen.pinCode}</td>
 						<td>${cen.bloodGroup}</td>

@@ -14,31 +14,31 @@
 			<form:form action="updatetestresult" method="post"
 				modelAttribute="updateTestresults">
 				<div>
-					<label for="testId">testId</label>
+					<label for="testId">TestId</label>
 					<div>
 						<form:input path="testId" />
 					</div>
 				</div>
 				<div>
-					<label for="testingDate">testingDate</label>
+					<label for="testingDate">TestingDate</label>
 					<div>
 						<form:input path="testingDate" />
 					</div>
 				</div>
 				<div>
-					<label for=testResult>testResult</label>
+					<label for=testResult>TestResult</label>
 					<div>
 						<form:input path="testResult" />
 					</div>
 				</div>
 				<div>
-					<label for="aadharNo">aadharNo</label>
+					<label for="aadharNumber">AadharNumber</label>
 					<div>
-						<form:input path="aadharNo" />
+						<form:input path="aadharNumber" />
 					</div>
 				</div>
 				<div>
-					<label for="testBy">testBy</label>
+					<label for="testBy">TestBy</label>
 					<div>
 						<form:input path="testBy" />
 					</div>

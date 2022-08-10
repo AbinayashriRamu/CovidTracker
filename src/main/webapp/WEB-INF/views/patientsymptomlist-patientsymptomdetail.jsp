@@ -13,21 +13,21 @@
 		<table>
 			<thead>
 				<tr>
-					<th>aadharNo</th>
-					<th>observationDate</th>
-					<th>observationId</th>
-					<th>observatedBy</th>
-					<th>temperature</th>
-					<th>cold</th>
-					<th>cough</th>
-					<th>smell</th>
-					<th>taste</th>
+					<th>AadharNumber</th>
+					<th>ObservationDate</th>
+					<th>ObservationId</th>
+					<th>ObservatedBy</th>
+					<th>Temperature</th>
+					<th>Cold</th>
+					<th>Cough</th>
+					<th>Smell</th>
+					<th>Taste</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="cen" items="${allPatientSymptoms}">
 					<tr>
-						<td>${cen.aadharNo}</td>
+						<td>${cen.aadharNumber}</td>
 						<td>${cen.observationDate}</td>
 						<td>${cen.observationId}</td>
 						<td>${cen.observatedBy}</td>

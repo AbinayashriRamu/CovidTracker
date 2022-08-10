@@ -10,8 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "LOCATION_TABLE")
-public class LocationTable {
+@Table(name = "PATIENT_LOCATIONS")
+public class PatientLocation {
 	@Id
 	@Column(name = "pin_code")
 	private int pinCode;
@@ -21,7 +21,7 @@ public class LocationTable {
 	private String stateName;
 	@Column(name = "country")
 	private String country;
-	@OneToMany(mappedBy = "locationtable", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "patientlocation", fetch = FetchType.LAZY)
 	private List<PatientDetail> patientdetail;
 
 	public List<PatientDetail> getPatientdetail() {
@@ -32,7 +32,7 @@ public class LocationTable {
 		this.patientdetail = patientdetail;
 	}
 
-	@OneToMany(mappedBy = "locationtable", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "patientlocation", fetch = FetchType.LAZY)
 	private List<CentreDetail> centreDetail;
 
 	public List<CentreDetail> getCentreDetail() {

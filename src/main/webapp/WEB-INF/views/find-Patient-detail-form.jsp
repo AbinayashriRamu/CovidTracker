@@ -13,55 +13,55 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getPatientDetails">
 				<div>
-					<label for="patientName">patientName</label>
+					<label for="patientName">PatientName</label>
 					<div>
 						<form:input path="patientName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="aadharNo">aadharNo</label>
+					<label for="aadharNumber">AadharNumber</label>
 					<div>
-						<form:input path="aadharNo" readonly="true" />
+						<form:input path="aadharNumber" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="street">street</label>
+					<label for="street">Street</label>
 					<div>
 						<form:input path="street" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="pinCode">pinCode</label>
+					<label for="pinCode">PinCode</label>
 					<div>
 						<form:input path="pinCode" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="bloodGroup">bloodGroup</label>
+					<label for="bloodGroup">BloodGroup</label>
 					<div>
 						<form:input path="bloodGroup" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="phoneNo">phoneNo</label>
+					<label for="phoneNo">PhoneNo</label>
 					<div>
 						<form:input path="phoneNo" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="lastTestId">lastTestId</label>
+					<label for="lastTestId">LastTestId</label>
 					<div>
 						<form:input path="lastTestId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="activeStatus">activeStatus</label>
+					<label for="activeStatus">ActiveStatus</label>
 					<div>
 						<form:input path="activeStatus" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="deadDate">deadDate</label>
+					<label for="deadDate">DeadDate</label>
 					<div>
 						<form:input path="deadDate" readonly="true" />
 					</div>

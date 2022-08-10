@@ -1,5 +1,6 @@
 package com.chainsys.covidtracker.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,11 @@ public class CovidTestResultService {
 	public void deleteById(long id) {
 		repository.deleteById(id);
 	}
-
+	
+	public List<CovidTestResult> findByTestResult() {
+		List<CovidTestResult> covidtestresult=repository.findAll();
+		return covidtestresult;
+	}
+	
+	
 }

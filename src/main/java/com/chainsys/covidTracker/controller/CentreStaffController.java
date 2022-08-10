@@ -31,7 +31,7 @@ public class CentreStaffController {
 
 	@GetMapping("/findcentrestaff")
 	public String findById(@RequestParam("id") int id, Model model) {
-		CentreStaff centrestaff = centrestaffservice.findById(id);
+		CentreStaff centrestaff = centrestaffservice.findByStaffId(id);
 		model.addAttribute("getAllCentreStaffs", centrestaff);
 		return "find-centre-staff-form";
 	}
@@ -50,20 +50,29 @@ public class CentreStaffController {
 	}
 
 	@GetMapping("/deletecentrestaff")
-	public String deleteCentreStaff(@RequestParam("centerId") int id) {
+	public String deleteCentreStaff(@RequestParam("staffId") int id) {
 		centrestaffservice.deleteById(id);
 		return "redirect:/centrestaffdetail/centrestafflist";
 	}
 
 	@GetMapping("/updatecentrestaffform")
-	public String showUpdateCentre(@RequestParam("centreId") int id, Model model) {
-		CentreStaff centrestaff = centrestaffservice.findById(id);
-		model.addAttribute("updatecentrestaffs", centrestaff);
+	public String showUpdateCentre(@RequestParam("staffId") int id, Model model) {
+		CentreStaff centrestaff = centrestaffservice.findByStaffId(id);
+		if (centrestaff==null) {
+			System.out.println("Debug:centrestaff is Null");
+		}
+		else
+		{
+			System.out.println("Debug: "+centrestaff.getStaffId());
+			System.out.println("Debug: "+centrestaff.getStaffName());
+		}
+		
+		model.addAttribute("abc", centrestaff);
 		return "update-centre-staff-form";
 	}
 
 	@PostMapping("updatecentrestaff")
-	public String updatecentrestaff(@ModelAttribute("updatecentrestaffs") CentreStaff centrestaff) {
+	public String updatecentrestaff(@ModelAttribute("abc") CentreStaff centrestaff) {
 		centrestaffservice.save(centrestaff);
 		return "redirect:/centrestaffdetail/centrestafflist";
 	}

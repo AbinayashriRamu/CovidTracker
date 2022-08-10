@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.covidtracker.model.CentreDetail;
 import com.chainsys.covidtracker.service.CentreDetailService;
-import com.chainsys.covidtracker.service.LocationTableService;
+import com.chainsys.covidtracker.service.PatientLocationService;
 
 @Controller
 @RequestMapping("/centredetail")
@@ -21,7 +21,7 @@ public class CentreDetailController {
 	@Autowired
 	CentreDetailService centredetailservice;
 	@Autowired
-	LocationTableService locationtableservice;
+	PatientLocationService patientlocationservice;
 
 	@GetMapping("/centrelist")
 	public String getAllCentreDetail(Model model) {
@@ -73,14 +73,14 @@ public class CentreDetailController {
 	public String getCentreLocationById(@RequestParam("centreId") int centreId, Model model) {
 		CentreDetail centredetail = centredetailservice.getCentreDetail(centreId);
 		model.addAttribute("fetchByCentrId", centredetail);
-		model.addAttribute("fetchCentreloctionById", locationtableservice.findById(centredetail.getPinCode()));
+		model.addAttribute("fetchCentreloctionById", patientlocationservice.findById(centredetail.getPinCode()));
 		return "find-by-id-centre-location-form";
 	}
 
 	@GetMapping("/listcentreBylocation")
 	public String listCentreLocationById(@RequestParam("pinCode") int pinCode, Model model) {
 		List<CentreDetail> centredetail = centredetailservice.fetchAllByPinCode(pinCode);
-		//model.addAttribute("fetchByCentreId", locationtableservice.findById(pinCode));
+		//model.addAttribute("fetchByCentreId", patientlocationservice.findById(pinCode));
 		model.addAttribute("fetchAllCentreloctionById", centredetail);
 		return "find-by-centre-location-form";
 	}

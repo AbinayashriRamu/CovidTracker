@@ -19,19 +19,19 @@
 					</div>
 				</div>
 				<div>
-					<label for="centreName">centreName</label>
+					<label for="centreName">CentreName</label>
 					<div>
 						<form:input path="centreName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="contactPersonName">ContactPersonPhoneNumber</label>
+					<label for="contactPersonName">Contact Person Phone Number</label>
 					<div>
 						<form:input path="contactPersonName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="contactPersonPhoneNo">ContactPersonPhoneNumber</label>
+					<label for="contactPersonPhoneNo">Contact Person Phone Number</label>
 					<div>
 						<form:input path="contactPersonPhoneNo" readonly="true" />
 					</div>
@@ -44,26 +44,26 @@
 			<form:form action="" method="post"
 				modelAttribute="fetchCentreloctionById">
 				<div>
-					<label for="district">district</label>
+					<label for="district">District</label>
 					<div>
 						<form:input path="district" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="pinCode">pinCode</label>
+					<label for="pinCode">PinCode</label>
 					<div>
 						<form:input path="pinCode" readonly="true" />
 					</div>
 
 				</div>
 				<div>
-					<label for="stateName">stateName</label>
+					<label for="stateName">StateName</label>
 					<div>
 						<form:input path="stateName" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="country">country</label>
+					<label for="country">Country</label>
 					<div>
 						<form:input path="country" readonly="true" />
 					</div>

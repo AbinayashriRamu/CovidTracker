@@ -14,10 +14,10 @@
 			<thead>
 				<tr>
 					
-					<th>district</th>
-					<th>pinCode</th>
-					<th>stateName</th>
-					<th>country</th>
+					<th>District</th>
+					<th>PinCode</th>
+					<th>StateName</th>
+					<th>Country</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +27,7 @@
 						<td>${cen.pinCode}</td>
 						<td>${cen.stateName}</td>
 						<td>${cen.country}</td>
+						</tr>
 				</c:forEach>
 			</tbody>
 		</table>

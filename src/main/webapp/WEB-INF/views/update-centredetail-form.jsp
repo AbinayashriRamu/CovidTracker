@@ -14,31 +14,31 @@
 			<form:form action="updatecentre" method="post"
 				modelAttribute="updatecentres">
 				<div>
-					<label for="centreId">centreId</label>
+					<label for="centreId">CentreId</label>
 					<div>
 						<form:input path="centreId" />
 					</div>
 				</div>
 				<div>
-					<label for="centreName">centreName</label>
+					<label for="centreName">CentreName</label>
 					<div>
 						<form:input path="centreName" />
 					</div>
 				</div>
 				<div>
-					<label for="pinCode">pinCode</label>
+					<label for="pinCode">PinCode</label>
 					<div>
 						<form:input path="pinCode" />
 					</div>
 				</div>
 				<div>
-					<label for="contactPersonName">contactPersonName</label>
+					<label for="contactPersonName">Contact Person Name</label>
 					<div>
 						<form:input path="contactPersonName" />
 					</div>
 				</div>
 				<div>
-					<label for="contactPersonPhoneNo">contactPersonPhoneNo</label>
+					<label for="contactPersonPhoneNo">Contact Person Phone No</label>
 					<div>
 						<form:input path="contactPersonPhoneNo" />
 					</div>

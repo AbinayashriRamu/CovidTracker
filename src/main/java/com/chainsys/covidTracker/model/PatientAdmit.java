@@ -16,8 +16,8 @@ public class PatientAdmit {
 	@Id
 	@Column(name = "admit_id")
 	private int admitId;
-	@Column(name = "aadhar_no")
-	private long aadharNo;
+	@Column(name = "aadhar_number")
+	private long aadharNumber;
 	@Column(name = "centre_id")
 	private int centreId;
 	@Column(name = "staff_id")
@@ -73,12 +73,12 @@ public class PatientAdmit {
 		this.admitId = admitId;
 	}
 
-	public long getAadharNo() {
-		return aadharNo;
+	public long getAadharNumber() {
+		return aadharNumber;
 	}
 
-	public void setAadharNo(long aadharNo) {
-		this.aadharNo = aadharNo;
+	public void setAadharNumber(long aadharNumber) {
+		this.aadharNumber = aadharNumber;
 	}
 
 	public int getCentreId() {

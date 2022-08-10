@@ -11,58 +11,58 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.covidtracker.model.LocationTable;
-import com.chainsys.covidtracker.service.LocationTableService;
+import com.chainsys.covidtracker.model.PatientLocation;
+import com.chainsys.covidtracker.service.PatientLocationService;
 
 @Controller
 @RequestMapping("/locationdetail")
-public class LocationTableController {
+public class PatientLocationController {
 	@Autowired
-	LocationTableService locationtableservice;
+	PatientLocationService patientlocationservice;
 
 	@GetMapping("/locationlist")
 	public String getLocationDetail(Model model) {
-		List<LocationTable> locationtable = locationtableservice.getLocationTable();
-		model.addAttribute("alllocations", locationtable);
+		List<PatientLocation> patientlocation = patientlocationservice.getLocationTable();
+		model.addAttribute("alllocations", patientlocation);
 		return "locationlist-locationdetail";
 	}
 
 	@GetMapping("/findlocation")
 	public String findById(@RequestParam("id") int id, Model model) {
-		LocationTable locationtable = locationtableservice.findById(id);
-		model.addAttribute("getLocations", locationtable);
+		PatientLocation patientlocation = patientlocationservice.findById(id);
+		model.addAttribute("getLocations", patientlocation);
 		return "find-location-form";
 	}
 
 	@GetMapping("addlocationform")
 	public String showLocation(Model model) {
-		LocationTable locationtable = new LocationTable();
-		model.addAttribute("addlocations", locationtable);
+		PatientLocation patientlocation = new PatientLocation();
+		model.addAttribute("addlocations", patientlocation);
 		return "add-location-form";
 	}
 
 	@PostMapping("/addlocation")
-	public String addNewLocation(@ModelAttribute("addlocations") LocationTable locationtable) {
-		locationtableservice.save(locationtable);
+	public String addNewLocation(@ModelAttribute("addlocations") PatientLocation patientlocation) {
+		patientlocationservice.save(patientlocation);
 		return "redirect:/locationdetail/locationlist";
 	}
 
 	@GetMapping("/deletelocation")
 	public String deleteLocation(@RequestParam("pinCode") int id) {
-		locationtableservice.deleteById(id);
+		patientlocationservice.deleteById(id);
 		return "redirect:/locationdetail/locationlist";
 	}
 
 	@GetMapping("/updatelocationform")
 	public String showUpdatelocation(@RequestParam("pinCode") int id, Model model) {
-		LocationTable locationtable = locationtableservice.findById(id);
-		model.addAttribute("updatelocations", locationtable);
+		PatientLocation patientlocation = patientlocationservice.findById(id);
+		model.addAttribute("updatelocations", patientlocation);
 		return "update-location-form";
 	}
 
 	@PostMapping("updatelocation")
-	public String updatelocation(@ModelAttribute("updatelocations") LocationTable locationtable) {
-		locationtableservice.save(locationtable);
+	public String updatelocation(@ModelAttribute("updatelocations") PatientLocation patientlocation) {
+		patientlocationservice.save(patientlocation);
 		return "redirect:/locationdetail/locationlist";
 	}
 

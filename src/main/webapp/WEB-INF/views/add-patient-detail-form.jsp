@@ -14,57 +14,57 @@
 			<form:form action="addpatient" method="post"
 				modelAttribute="addPatientDetails">
 				<div>
-					<label for="patientName">patientName</label>
+					<label for="patientName">Patient Name</label>
 					<div>
-						<form:input path="patientName" readonly="true" />
+						<form:input path="patientName"/>
 					</div>
 				</div>
 				<div>
-					<label for="aadharNo">aadharNo</label>
+					<label for="aadharNumber">AadharNumber</label>
 					<div>
-						<form:input path="aadharNo" readonly="true" />
+						<form:input path="aadharNumber"  />
 					</div>
 				</div>
 				<div>
-					<label for="street">street</label>
+					<label for="street">Street</label>
 					<div>
-						<form:input path="street" readonly="true" />
+						<form:input path="street"  />
 					</div>
 				</div>
 				<div>
-					<label for="pinCode">pinCode</label>
+					<label for="pinCode">PinCode</label>
 					<div>
-						<form:input path="pinCode" readonly="true" />
+						<form:input path="pinCode"  />
 					</div>
 				</div>
 				<div>
-					<label for="bloodGroup">bloodGroup</label>
+					<label for="bloodGroup">BloodGroup</label>
 					<div>
-						<form:input path="bloodGroup" readonly="true" />
+						<form:input path="bloodGroup"  />
 					</div>
 				</div>
 				<div>
-					<label for="phoneNo">phoneNo</label>
+					<label for="phoneNo">PhoneNo</label>
 					<div>
-						<form:input path="phoneNo" readonly="true" />
+						<form:input path="phoneNo"  />
 					</div>
 				</div>
 				<div>
-					<label for="lastTestId">lastTestId</label>
+					<label for="lastTestId">Last Test Id</label>
 					<div>
-						<form:input path="lastTestId" readonly="true" />
+						<form:input path="lastTestId"  />
 					</div>
 				</div>
 				<div>
-					<label for="activeStatus">activeStatus</label>
+					<label for="activeStatus">Active Status</label>
 					<div>
-						<form:input path="activeStatus" readonly="true" />
+						<form:input path="activeStatus"  />
 					</div>
 				</div>
 				<div>
-					<label for="deadDate">deadDate</label>
+					<label for="deadDate">Dead Date</label>
 					<div>
-						<form:input path="deadDate" readonly="true" />
+						<form:input path="deadDate"  />
 					</div>
 				</div>
 

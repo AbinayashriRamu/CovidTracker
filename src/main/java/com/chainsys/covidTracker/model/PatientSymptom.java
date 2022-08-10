@@ -9,8 +9,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PATIENT_SYMPTOMS")
 public class PatientSymptom {
-	@Column(name = "aadhar_no")
-	private long aadharNo;
+	@Column(name = "aadhar_number")
+	private long aadharNumber;
 	@Column(name = "observation_date")
 	private Date observationDate;
 	@Id
@@ -28,11 +28,11 @@ public class PatientSymptom {
 	private String smell;
 	@Column(name = "taste")
 	private String taste;
-	public long getAadharNo() {
-		return aadharNo;
+	public long getAadharNumber() {
+		return aadharNumber;
 	}
-	public void setAadharNo(long aadharNo) {
-		this.aadharNo = aadharNo;
+	public void setAadharNumber(long aadharNumber) {
+		this.aadharNumber = aadharNumber;
 	}
 	public Date getObservationDate() {
 		return observationDate;

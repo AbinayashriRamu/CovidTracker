@@ -15,25 +15,25 @@
 			<form:form action="updatelocation" method="post"
 				modelAttribute="updatelocations">
 				<div>
-					<label for="district">district</label>
+					<label for="district">District</label>
 					<div>
 						<form:input path="district" />
 					</div>
 				</div>
 				<div>
-					<label for=pinCode>pinCode</label>
+					<label for=pinCode>PinCode</label>
 					<div>
 						<form:input path="pinCode" />
 					</div>
 				</div>
 				<div>
-					<label for="stateName">stateName</label>
+					<label for="stateName">StateName</label>
 					<div>
 						<form:input path="stateName" />
 					</div>
 				</div>
 				<div>
-					<label for="country">country</label>
+					<label for="country">Country</label>
 					<div>
 						<form:input path="country" />
 					</div>

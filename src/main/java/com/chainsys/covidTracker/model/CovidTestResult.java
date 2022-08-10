@@ -4,7 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,10 +20,22 @@ public class CovidTestResult {
 	private Date testingDate;
 	@Column(name = "test_result")
 	private String testResult;
-	@Column(name = "aadhar_no")
-	private long aadharNo;
+	@Column(name = "aadhar_number")
+	private long aadharNumber;
 	@Column(name = "test_by")
 	private String testBy;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "aadhar_number", nullable = false, insertable = false, updatable = false)
+	private PatientDetail patientdetail;
+
+	public PatientDetail getPatientdetail() {
+		return patientdetail;
+	}
+
+	public void setPatientdetail(PatientDetail patientdetail) {
+		this.patientdetail = patientdetail;
+	}
 
 	public long getTestId() {
 		return testId;
@@ -46,12 +61,12 @@ public class CovidTestResult {
 		this.testResult = testResult;
 	}
 
-	public long getAadharNo() {
-		return aadharNo;
+	public long getAadharNumber() {
+		return aadharNumber;
 	}
 
-	public void setAadharNo(long aadharNo) {
-		this.aadharNo = aadharNo;
+	public void setAadharNumber(long aadharNumber) {
+		this.aadharNumber = aadharNumber;
 	}
 
 	public String getTestBy() {

@@ -1,5 +1,6 @@
 package com.chainsys.covidtracker.service;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class PatientDetailService {
 		return repository.save(patientdetail);
 	}
 
-	public PatientDetail findBypinCode(int pinCode) {
+	public PatientDetail findByPinCode(int pinCode) {
 		return repository.findByPinCode(pinCode);
 	}
 
@@ -31,8 +32,8 @@ public class PatientDetailService {
 		repository.deleteById(id);
 	}
 
-	public PatientDetail getPatientDetail(long aadharNo) {
-		return repository.findByAadharNo(aadharNo);
+	public PatientDetail getPatientDetail(long aadharNumber) {
+		return repository.findByAadharNumber(aadharNumber);
 
 	}
 
@@ -41,5 +42,12 @@ public class PatientDetailService {
 		return patientlist;
 
 	}
+	
+	public List<PatientDetail> findAllByAadharNumber(long aadharNumber) {
+		List<PatientDetail> patientlist = repository.findAllByAadharNumber(aadharNumber);
+		return patientlist;
+
+	}	
+	
 	
 }

@@ -1,5 +1,6 @@
 package com.chainsys.covidtracker.controller;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -13,14 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.covidtracker.model.CovidTestResult;
+import com.chainsys.covidtracker.model.PatientDetail;
 import com.chainsys.covidtracker.service.CovidTestResultService;
+import com.chainsys.covidtracker.service.PatientDetailService;
 
 @Controller
 @RequestMapping("/testresultdetail")
 public class CovidTestResultController {
 	@Autowired
 	CovidTestResultService covidtestresultservice;
-
+    @Autowired
+    PatientDetailService patientdetailservice;
+    
 	@GetMapping("/testresultlist")
 	public String getAllCovidTestResult(Model model) {
 		List<CovidTestResult> covidtestresult = covidtestresultservice.getAllCovidTestResultDetail();
@@ -60,5 +65,25 @@ public class CovidTestResultController {
 		covidtestresultservice.save(covidtestresult);
 		return "redirect:/testresultdetail/testresultlist";
 	}
+//	@PostMapping("/getTestResultDetail")
+//	public String getCovidTestDate(@RequestParam("TestingDate")Date testingDate,Model model) {
+//		List<PatientDetail> patientdetail=patientdetailservice.fetchAllByTestingDate(testingDate);
+//		CovidTestResult covidtestresult=covidtestresultservice.fetchAllByTestingDate(testingDate);
+//		model.addAttribute("fetchBytestdate",covidtestresult);
+//		model.addAttribute("fetchByPatientDetail",patientdetail);
+//		return "find-by-list-testing-date-form";
+//	}
+//	@GetMapping("/getPatientDetails")
+//	public String getPatientDetailById(@RequestParam ("TestResult")String result,Model model) 
+//	{
+//		List<CovidTestResult> covidtestresult=covidtestresultservice.findByTestResult(result);
+//		model.addAttribute("fetchTestResult", covidtestresult);
+//		List<PatientDetail>patientdetail=patientdetailservice.fetchAllByAadharNo(aadharNo);
+//		model.addAttribute("listpatientdetail", patientdetail);
+//		return "find-list-id-result";
+//	}
+	
+	
+	
 
 }

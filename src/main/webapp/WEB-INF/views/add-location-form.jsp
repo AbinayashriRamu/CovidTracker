@@ -14,27 +14,45 @@
 			<form:form action="addlocation" method="post"
 				modelAttribute="addlocations">
 				<div>
-					<label for=district>district</label>
+					<label for=district>District</label>
+					 <div>
+                        <form:select path="district" class="text-box" placeholder="District">
+                            <form:option value="Coimbatore">Coimbatore</form:option>
+                            <form:option value="Thiruchy">Thiruchy</form:option>
+                            <form:option value="Madurai">Madurai</form:option>
+                        </form:select>
+                        </div>
+				</div>
+				<div>
+					<label for="pinCode">PinCode</label>
 					<div>
-						<form:input path="district" />
+						 <div>
+                        <form:select path="pinCode" class="text-box" placeholder="PinCode">
+                            <form:option value="641654">641654</form:option>
+                            <form:option value="600311">600311</form:option>
+                            <form:option value="600032">600032</form:option>
+                        </form:select>
+                        </div>
 					</div>
 				</div>
 				<div>
-					<label for="pinCode">pinCode</label>
+					<label for="stateName">StateName</label>
 					<div>
-						<form:input path="pinCode" />
+						<div>
+                        <form:select path="stateName" class="text-box" placeholder="StateName">
+                            <form:option value="Tamilnadu">Tamilnadu</form:option>
+                        </form:select>
+                        </div>
 					</div>
 				</div>
 				<div>
-					<label for="stateName">stateName</label>
+					<label for="country">Country</label>
 					<div>
-						<form:input path="stateName" />
-					</div>
-				</div>
-				<div>
-					<label for="country">country</label>
-					<div>
-						<form:input path="country" />
+						<div>
+                        <form:select path="country" class="text-box" placeholder="Country">
+                            <form:option value="India">India</form:option>
+                        </form:select>
+                        </div>
 					</div>
 				</div>
 				<div>

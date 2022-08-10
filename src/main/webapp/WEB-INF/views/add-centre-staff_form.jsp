@@ -14,37 +14,37 @@
 			<form:form action="addcentrestaff" method="post"
 				modelAttribute="addcentrestaffs">
 				<div>
-					<label for="centreId">centreId</label>
+					<label for="centreId">CentreId</label>
 					<div>
 						<form:input path="centreId" />
 					</div>
 				</div>
 				<div>
-					<label for="staffName">staffName</label>
+					<label for="staffName">StaffName</label>
 					<div>
 						<form:input path="staffName" />
 					</div>
 				</div>
 				<div>
-					<label for="staffId">staffId</label>
+					<label for="staffId">StaffId</label>
 					<div>
 						<form:input path="staffId" />
 					</div>
 				</div>
 				<div>
-					<label for="staffRole">staffRole</label>
+					<label for="staffRole">StaffRole</label>
 					<div>
 						<form:input path="staffRole" />
 					</div>
 				</div>
 				<div>
-					<label for="staffGender">staffGender</label>
+					<label for="staffGender">StaffGender</label>
 					<div>
 						<form:input path="staffGender" />
 					</div>
 				</div>
 				<div>
-					<label for="staffDateOfBirth">staffDateOfBirth</label>
+					<label for="staffDateOfBirth">StaffDateOfBirth</label>
 					<div>
 						<form:input path="staffDateOfBirth" />
 					</div>

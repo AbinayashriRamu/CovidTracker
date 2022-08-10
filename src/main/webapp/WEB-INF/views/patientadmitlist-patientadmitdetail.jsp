@@ -13,12 +13,12 @@
 		<table>
 			<thead>
 				<tr>
-				    <th>admitId</th>
-					<th>staffId</th>
-					<th>aadharNo</th>
-					<th>centreId</th>
-					<th>admitDate</th>
-					<th>dischargeDate</th>
+				    <th>AdmitId</th>
+					<th>StaffId</th>
+					<th>AadharNumber</th>
+					<th>CentreId</th>
+					<th>AdmitDate</th>
+					<th>DischargeDate</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,7 +26,7 @@
 					<tr>
 					    <td>${cen.admitId}</td>
 						<td>${cen.staffId}</td>
-						<td>${cen.aadharNo}</td>
+						<td>${cen.aadharNumber}</td>
 						<td>${cen.centreId}</td>
 						<td>${cen.admitDate}</td>
 						<td>${cen.dischargeDate}</td>
