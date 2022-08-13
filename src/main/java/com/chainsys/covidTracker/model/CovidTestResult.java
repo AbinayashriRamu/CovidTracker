@@ -1,19 +1,27 @@
 package com.chainsys.covidtracker.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "COVID_TEST_RESULT")
 public class CovidTestResult {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "test_id_seq")
+	@SequenceGenerator(name = "test_id_seq", sequenceName = "test_id_seq", allocationSize = 1)
 	@Column(name = "test_id")
 	private long testId;
 	@Column(name = "testing_date")
@@ -23,9 +31,11 @@ public class CovidTestResult {
 	@Column(name = "aadhar_number")
 	private long aadharNumber;
 	@Column(name = "test_by")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter your valid name")
+	@Size(min = 2, max = 10, message = "*Invalid Name")
 	private String testBy;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "aadhar_number", nullable = false, insertable = false, updatable = false)
 	private PatientDetail patientdetail;
 

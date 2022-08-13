@@ -2,9 +2,12 @@ package com.chainsys.covidtracker.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,9 +47,14 @@ public class PatientDetailController {
 	}
 
 	@PostMapping("/addpatient")
-	public String addNewPatient(@ModelAttribute("addPatientDetails") PatientDetail patientdetail) {
-		patientdetailservice.save(patientdetail);
-		return "redirect:/patientdetail/patientlist";
+	public String addNewPatient(@Valid @ModelAttribute("addPatientDetails") PatientDetail patientdetail,
+			Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-patient-detail-form";
+		} else {
+			patientdetailservice.save(patientdetail);
+			return "redirect:/patientdetail/patientlist";
+		}
 	}
 
 	@GetMapping("/deletepatient")
@@ -54,7 +62,6 @@ public class PatientDetailController {
 		patientdetailservice.deleteById(id);
 		return "redirect:/patientdetail/patientlist";
 	}
-	// person-patient,
 
 	@GetMapping("/updatepatientform")
 	public String showUpdatePatient(@RequestParam("aadharNumber") long id, Model model) {
@@ -66,9 +73,12 @@ public class PatientDetailController {
 	@PostMapping("/updatepatient")
 	public String updatepatient(@ModelAttribute("updatePatientDetails") PatientDetail patientdetail) {
 		patientdetailservice.save(patientdetail);
+		//System.out.println(patientdetailservice.deadCaseCount());
 		return "redirect:/patientdetail/patientlist";
 	}
-
+	
+	//---------------------------------functionalities-----------------------------------
+	//aadharnumber->patientdetail,patientlocation
 	@GetMapping("/getpatientlocation")
 	public String getPatientLocationById(@RequestParam("aadharNumber") long aadharNumber, Model model) {
 		PatientDetail patientdetail = patientdetailservice.getPatientDetail(aadharNumber);
@@ -76,6 +86,8 @@ public class PatientDetailController {
 		model.addAttribute("fetchPatientloctionById", patientlocationservice.findById(patientdetail.getPinCode()));
 		return "find-by-id-patient-location-form";
 	}
+	
+	//pincode->location,patientdetails
 
 	@GetMapping("/listpatientBylocation")
 	public String listPatientLocationById(@RequestParam("pinCode") int pinCode, Model model) {
@@ -84,6 +96,5 @@ public class PatientDetailController {
 		model.addAttribute("fetchAllPatientloctionById", patientdetail);
 		return "find-by-patient-location-form";
 	}
-	
 
 }

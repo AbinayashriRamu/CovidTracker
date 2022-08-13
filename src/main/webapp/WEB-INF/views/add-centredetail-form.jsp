@@ -51,52 +51,62 @@ td {
 	border-radius: 5px;
 	color: white;
 }
-.label-text{
-font-size: 21px;
-    color: wheat;}
+
+.label-text {
+	font-size: 21px;
+	color: wheat;
+}
 </style>
 
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="addcentre" method="post" style="margin-left: 20px;"
-				modelAttribute="addcentres">
+			<form:form action="addcentre" method="post"
+				style="margin-left: 20px;" modelAttribute="addcentres">
 				<div>
-				<h1 style="font-size: 40px;color: white;">Centre Details</h1>
-				<div style="margin: 10px 0px 10px 0px;">
-					<label for="centreId" class="lable-size label-text">Centre Id</label>
-					<div>
-						<form:input path="centreId" class="text-box" />
+					<h1 style="font-size: 40px; color: white;">Centre Details</h1>
+					<div style="margin: 10px 0px 10px 0px;">
+						<label for="centreName" class="lable-size label-text">Centre
+							Name</label>
+						<div>
+							<form:input path="centreName" class="text-box" placaholder="CentreName"
+								title="Name must be required" 
+								pattern="^[a-zA-Z]+$" required="true"/>
+						</div>
 					</div>
-				</div>
-				<div style="margin: 10px 0px 10px 0px;">
-					<label for="centreName" class="lable-size label-text">Centre Name</label>
-					<div>
-						<form:input path="centreName" class="text-box" />
+					<form:errors path="centreName" Class="text-danger"></form:errors>
+					<div style="margin: 10px 0px 10px 0px;">
+						<label for="pinCode" class="lable-size label-text">PinCode</label>
+						<div>
+							<form:input path="pinCode" class="text-box" placaholder="PinCode"
+								title="Id must be required" required="true" />
+						</div>
 					</div>
-				</div>
-				<div style="margin: 10px 0px 10px 0px;">
-					<label for="pinCode" class="lable-size label-text">PinCode</label>
-					<div>
-						<form:input path="pinCode" class="text-box"/>
+					<form:errors path="pinCode" Class="text-danger"></form:errors>
+					<div style="margin: 10px 0px 10px 0px;">
+						<label for="contactPersonName" class="lable-size label-text">Contact
+							Person Name</label>
+						<div>
+							<form:input path="contactPersonName" class="text-box" placaholder="ContactPersonName"
+								title="Name must be required" 
+								pattern="^[a-zA-Z]+$" required="true" />
+						</div>
 					</div>
-				</div>
-				<div style="margin: 10px 0px 10px 0px;">
-					<label for="contactPersonName" class="lable-size label-text">Contact Person Name</label>
-					<div>
-						<form:input path="contactPersonName" class="text-box"/>
+					<form:errors path="contactPersonName" Class="text-danger"></form:errors>
+					<div style="margin: 10px 0px 10px 0px;">
+						<label for="contactPersonPhoneNo" class="lable-size label-text">Contact
+							Person PhoneNo</label>
+						<div>
+							<form:input path="contactPersonPhoneNo" class="text-box" placaholder="contactPersonPhoneNo"
+								title="PhoneNumber must be required"
+								pattern="[1-9]{1}[0-9]{9}" required="true" />
+						</div>
 					</div>
-				</div>
-				<div style="margin: 10px 0px 10px 0px;">
-					<label for="contactPersonPhoneNo" class="lable-size label-text">Contact Person PhoneNo</label>
+					<form:errors path="contactPersonPhoneNo" Class="text-danger"></form:errors>
 					<div>
-						<form:input path="contactPersonPhoneNo" class="text-box"/>
+						<button class="button">Add New</button>
 					</div>
-				</div>
-				<div>
-					<button class="button">Add New</button>
-				</div>
 				</div>
 			</form:form>
 		</div>

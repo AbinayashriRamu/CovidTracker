@@ -1,14 +1,19 @@
 package com.chainsys.covidtracker.model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "CENTRE_STAFF")
@@ -16,13 +21,21 @@ public class CentreStaff {
 	@Column(name = "centre_id")
 	private int centreId;
 	@Column(name = "staff_name")
+	@Pattern(regexp = "^[A-Za-z\s]\\w{3,20}$", message = "*Enter your valid name")
+	@Size(min = 2, max = 20, message = "*Invalid Name")
 	private String staffName;
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "staff_id_seq")
+	@SequenceGenerator(name = "staff_id_seq", sequenceName = "staff_id_seq", allocationSize = 1)
 	@Column(name = "staff_id")
 	private int staffId;
 	@Column(name = "staff_role")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter your valid name")
+	@Size(min = 2, max = 20, message = "*Invalid Name")
 	private String staffRole;
 	@Column(name = "staff_gender")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter your valid name")
+	@Size(min = 2, max = 20, message = "*Invalid Name")
 	private String staffGender;
 	@Column(name = "staff_date_of_birth")
 	private Date staffDateOfBirth;

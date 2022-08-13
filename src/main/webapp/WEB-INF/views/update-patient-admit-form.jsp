@@ -47,7 +47,7 @@
 				<div>
 					<label for="dischargeDate">DischargeDate</label>
 					<div>
-						<form:input path="dischargeDate" />
+						<form:input path="dischargeDate" type="date"/>
 					</div>
 				</div>
 				<div>

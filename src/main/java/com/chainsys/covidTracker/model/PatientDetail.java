@@ -11,11 +11,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "PATIENT_DETAILS")
 public class PatientDetail {
 	@Column(name = "patient_name")
+	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter your valid name")
+	@Size(min = 2, max = 20, message = "*Invalid Name")
 	private String patientName;
 	@Id
 	@Column(name = "aadhar_number")
@@ -46,17 +50,17 @@ public class PatientDetail {
 	public void setLocpincode(PatientLocation patientlocation) {
 		this.patientlocation = patientlocation;
 	}
-	
-	@OneToMany(mappedBy = "patientdetail", fetch = FetchType.LAZY)
-	private List<CovidTestResult> covidtestresult;
-	
-	public List<CovidTestResult> getCovidtestresult() {
-		return covidtestresult;
-	}
 
-	public void setCovidtestresult(List<CovidTestResult> covidtestresult) {
-		this.covidtestresult = covidtestresult;
-	}
+//	@OneToMany(mappedBy = "patientdetail", fetch = FetchType.LAZY)
+//	private List<CovidTestResult> covidtestresult;
+//
+//	public List<CovidTestResult> getCovidtestresult() {
+//		return covidtestresult;
+//	}
+//
+//	public void setCovidtestresult(List<CovidTestResult> covidtestresult) {
+//		this.covidtestresult = covidtestresult;
+//	}
 
 	public String getPatientName() {
 		return patientName;

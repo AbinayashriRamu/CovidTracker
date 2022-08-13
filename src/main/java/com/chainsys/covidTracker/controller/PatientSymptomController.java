@@ -2,9 +2,12 @@ package com.chainsys.covidtracker.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,9 +45,14 @@ public class PatientSymptomController {
 	}
 
 	@PostMapping("/addpatientsymptom")
-	public String addNewPatientsymptom(@ModelAttribute("addPatientSymptoms") PatientSymptom Patientsymptom) {
-		patientsymptomservice.save(Patientsymptom);
-		return "redirect:/patientsymptomdetail/patientsymptomlist";
+	public String addNewPatientsymptom(@Valid @ModelAttribute("addPatientSymptoms") PatientSymptom Patientsymptom,
+			Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-patient-symptom-form";
+		} else {
+			patientsymptomservice.save(Patientsymptom);
+			return "redirect:/patientsymptomdetail/patientsymptomlist";
+		}
 	}
 
 	@GetMapping("/deletepatientsymptom")

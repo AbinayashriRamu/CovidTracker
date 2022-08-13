@@ -13,43 +13,36 @@
 		<div id="form">
 			<form:form action="addpatientadmit" method="post"
 				modelAttribute="addPatientAdmits">
-				<div>
-					<label for="admitId">AdmitId</label>
-					<div>
-						<form:input path="admitId" />
-					</div>
-				</div>
+
 				<div>
 					<label for=aadharNumber>AadharNumber</label>
 					<div>
-						<form:input path="aadharNumber" />
+						<form:input path="aadharNumber" class="text-box"
+							title="Id must be required" required="true" />
 					</div>
 				</div>
 				<div>
 					<label for="centreId">CentreId</label>
 					<div>
-						<form:input path="centreId" />
+						<form:input path="centreId" class="text-box"
+							title="Id must be required" required="true" />
 					</div>
 				</div>
 				<div>
 					<label for="staffId">StaffId</label>
 					<div>
-						<form:input path="staffId" />
+						<form:input path="staffId" class="text-box"
+							title="Id must be required" required="true" />
 					</div>
 				</div>
 				<div>
 					<label for="admitDate">AdmitDate</label>
 					<div>
-						<form:input path="admitDate" type="date"/>
+						<form:input path="admitDate" type="date" />
 					</div>
 				</div>
-				<div>
-					<label for="dischargeDate">Discharge Date</label>
-					<div>
-						<form:input path="dischargeDate" />
-					</div>
-				</div>
-				
+
+
 				<div>
 					<form:button>Add New</form:button>
 				</div>

@@ -42,12 +42,16 @@ public class PatientDetailService {
 		return patientlist;
 
 	}
-	
+
 	public List<PatientDetail> findAllByAadharNumber(long aadharNumber) {
 		List<PatientDetail> patientlist = repository.findAllByAadharNumber(aadharNumber);
 		return patientlist;
 
-	}	
-	
-	
+	}
+
+	// logic
+	public long deadCaseCount() {
+		return repository.count();
+	}
+
 }

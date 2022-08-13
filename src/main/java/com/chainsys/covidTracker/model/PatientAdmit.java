@@ -1,19 +1,24 @@
 package com.chainsys.covidtracker.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "PATIENT_ADMIT")
 public class PatientAdmit {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "admit_id_seq")
+	@SequenceGenerator(name = "admit_id_seq", sequenceName = "admit_id_seq", allocationSize = 1)
 	@Column(name = "admit_id")
 	private int admitId;
 	@Column(name = "aadhar_number")
@@ -25,7 +30,7 @@ public class PatientAdmit {
 	@Column(name = "admit_date")
 	private Date admitDate;
 	@Column(name = "discharge_date")
-	private String dischargeDate;
+	private Date dischargeDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "Staff_id", nullable = false, insertable = false, updatable = false)
@@ -62,8 +67,6 @@ public class PatientAdmit {
 	public void setCentreDetail(CentreDetail centreDetail) {
 		this.centreDetail = centreDetail;
 	}
-	
-	
 
 	public int getAdmitId() {
 		return admitId;
@@ -105,11 +108,11 @@ public class PatientAdmit {
 		this.admitDate = admitDate;
 	}
 
-	public String getDischargeDate() {
+	public Date getDischargeDate() {
 		return dischargeDate;
 	}
 
-	public void setDischargeDate(String dischargeDate) {
+	public void setDischargeDate(Date dischargeDate) {
 		this.dischargeDate = dischargeDate;
 	}
 

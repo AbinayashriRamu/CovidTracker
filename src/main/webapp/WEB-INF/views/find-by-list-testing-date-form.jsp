@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>patient admit detail</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<div id="table root">
@@ -13,26 +13,25 @@
 		<table>
 			<thead>
 				<tr>
-					<th>AdmitId</th>
-					<th>StaffId</th>
+					<th>TestId</th>
+					<th>TestingDate</th>
+					<th>TestResult</th>
 					<th>AadharNumber</th>
-					<th>CentreId</th>
-					<th>AdmitDate</th>
-					<th>DischargeDate</th>
+					<th>TestBy</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="cen" items="${fetchAllStaffAdmitById}">
+				<c:forEach var="cen" items="${fetchBytestdateandresult}">
 					<tr>
-						<td>${cen.admitId}</td>
-						<td>${cen.staffId}</td>
+						<td>${cen.testId}</td>
+						<td>${cen.testingDate}</td>
+						<td>${cen.testResult}</td>
 						<td>${cen.aadharNumber}</td>
-						<td>${cen.centreId}</td>
-						<td>${cen.admitDate}</td>
-						<td>${cen.dischargeDate}</td>
+						<td>${cen.testBy}</td>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
+
 </body>
 </html>

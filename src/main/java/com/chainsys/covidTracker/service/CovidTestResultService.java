@@ -15,8 +15,7 @@ public class CovidTestResultService {
 	private CovidTestResultRepository repository;
 
 	public List<CovidTestResult> getAllCovidTestResultDetail() {
-		List<CovidTestResult> resultlist = repository.findAll();
-		return resultlist;
+		return repository.findAll();
 	}
 
 	public CovidTestResult save(CovidTestResult covidtestresult) {
@@ -36,5 +35,19 @@ public class CovidTestResultService {
 		return covidtestresult;
 	}
 	
+	//if positive open admit table
+	public CovidTestResult getTestIdAndTestResult(long testId,String testResult)
+	{
+		return repository.findByTestIdAndTestResult(testId,testResult);
+	}
+
+	public List<CovidTestResult> fetchAllByTestingDateAndResult(Date testingDate,String result) {
+		return repository.findAllByTestingDateAndTestResult(testingDate,result);
+	}
+	//logic
+	public long confirmedCaseCount() 
+	{
+	return repository.count();
+	}
 	
 }

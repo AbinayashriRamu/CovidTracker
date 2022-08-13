@@ -2,9 +2,12 @@ package com.chainsys.covidtracker.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,9 +48,13 @@ public class CentreDetailController {
 	}
 
 	@PostMapping("/addcentre")
-	public String addNewCentreDetail(@ModelAttribute("addcentres") CentreDetail centredetail) {
-		centredetailservice.save(centredetail);
-		return "redirect:/centredetail/centrelist";
+	public String addNewCentreDetail(@Valid @ModelAttribute("addcentres") CentreDetail centredetail, Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-centredetail-form";
+		} else {
+			centredetailservice.save(centredetail);
+			return "redirect:/centredetail/centrelist";
+		}
 	}
 
 	@GetMapping("/deletecentre")
@@ -64,10 +71,17 @@ public class CentreDetailController {
 	}
 
 	@PostMapping("/updatecentre")
-	public String updateCentreDetail(@ModelAttribute("updatecentres") CentreDetail centredetail) {
-		centredetailservice.save(centredetail);
-		return "redirect:/centredetail/centrelist";
+	public String updateCentreDetail(@ModelAttribute("updatecentres") CentreDetail centredetail, Errors errors) {
+		if (errors.hasErrors()) {
+			return "update-centredetail-form";
+		} else {
+			centredetailservice.save(centredetail);
+			return "redirect:/centredetail/centrelist";
+		}
 	}
+//-----------------------------functionalities-----------------------------
+
+	// centreid->centredetail,centrelocation
 
 	@GetMapping("/getcentrelocation")
 	public String getCentreLocationById(@RequestParam("centreId") int centreId, Model model) {
@@ -77,10 +91,11 @@ public class CentreDetailController {
 		return "find-by-id-centre-location-form";
 	}
 
+	// pincode->centredetail
+
 	@GetMapping("/listcentreBylocation")
 	public String listCentreLocationById(@RequestParam("pinCode") int pinCode, Model model) {
 		List<CentreDetail> centredetail = centredetailservice.fetchAllByPinCode(pinCode);
-		//model.addAttribute("fetchByCentreId", patientlocationservice.findById(pinCode));
 		model.addAttribute("fetchAllCentreloctionById", centredetail);
 		return "find-by-centre-location-form";
 	}

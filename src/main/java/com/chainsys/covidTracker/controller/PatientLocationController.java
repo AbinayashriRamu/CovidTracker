@@ -2,9 +2,12 @@ package com.chainsys.covidtracker.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,9 +45,13 @@ public class PatientLocationController {
 	}
 
 	@PostMapping("/addlocation")
-	public String addNewLocation(@ModelAttribute("addlocations") PatientLocation patientlocation) {
+	public String addNewLocation(@Valid @ModelAttribute("addlocations") PatientLocation patientlocation,Errors errors) {
+		if(errors.hasErrors()) {
+			return "add-location-form";
+		}else {
 		patientlocationservice.save(patientlocation);
 		return "redirect:/locationdetail/locationlist";
+		}
 	}
 
 	@GetMapping("/deletelocation")

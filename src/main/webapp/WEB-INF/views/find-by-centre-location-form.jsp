@@ -9,38 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="root">
-		<div id="form">
-			<form:form action="" method="post"
-				modelAttribute="fetchByCentreId">
-				<div>
-					<label for="district">District</label>
-					<div>
-						<form:input path="district" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="pinCode">PinCode</label>
-					<div>
-						<form:input path="pinCode" readonly="true" />
-					</div>
-
-				</div>
-				<div>
-					<label for="stateName">StateName</label>
-					<div>
-						<form:input path="stateName" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="country">Country</label>
-					<div>
-						<form:input path="country" readonly="true" />
-					</div>
-				</div>
-			</form:form>
-		</div>
-	</div>
+	
 	<div id="table root">
 
 		<table>

@@ -16,55 +16,55 @@
 				<div>
 					<label for="patientName">PatientName</label>
 					<div>
-						<form:input path="patientName" readonly="true" />
+						<form:input path="patientName" />
 					</div>
 				</div>
 				<div>
 					<label for="aadharNumber">AadharNumber</label>
 					<div>
-						<form:input path="aadharNumber" readonly="true" />
+						<form:input path="aadharNumber" />
 					</div>
 				</div>
 				<div>
 					<label for="street">Street</label>
 					<div>
-						<form:input path="street" readonly="true" />
+						<form:input path="street" />
 					</div>
 				</div>
 				<div>
 					<label for="pinCode">PinCode</label>
 					<div>
-						<form:input path="pinCode" readonly="true" />
+						<form:input path="pinCode" />
 					</div>
 				</div>
 				<div>
 					<label for="bloodGroup">BloodGroup</label>
 					<div>
-						<form:input path="bloodGroup" readonly="true" />
+						<form:input path="bloodGroup" />
 					</div>
 				</div>
 				<div>
 					<label for="phoneNo">PhoneNo</label>
 					<div>
-						<form:input path="phoneNo" readonly="true" />
+						<form:input path="phoneNo" />
 					</div>
 				</div>
 				<div>
 					<label for="lastTestId">LastTestId</label>
 					<div>
-						<form:input path="lastTestId" readonly="true" />
+						<form:input path="lastTestId" />
 					</div>
 				</div>
 				<div>
 					<label for="activeStatus">ActiveStatus</label>
 					<div>
-						<form:input path="activeStatus" readonly="true" />
+						<form:input path="activeStatus" />
 					</div>
 				</div>
 				<div>
 					<label for="deadDate">DeadDate</label>
 					<div>
-						<form:input path="deadDate" readonly="true" />
+						<form:input path="deadDate" />
 					</div>
 				</div>
 				<div>

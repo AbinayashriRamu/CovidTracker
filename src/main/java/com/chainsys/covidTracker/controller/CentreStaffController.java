@@ -4,9 +4,12 @@ import java.util.List;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,9 +47,13 @@ public class CentreStaffController {
 	}
 
 	@PostMapping("/addcentrestaff")
-	public String addNewCentreStaff(@ModelAttribute("addcentrestaffs") CentreStaff centrestaff) {
-		centrestaffservice.save(centrestaff);
-		return "redirect:/centrestaffdetail/centrestafflist";
+	public String addNewCentreStaff(@Valid @ModelAttribute("addcentrestaffs") CentreStaff centrestaff, Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-centre-staff_form";
+		} else {
+			centrestaffservice.save(centrestaff);
+			return "redirect:/centrestaffdetail/centrestafflist";
+		}
 	}
 
 	@GetMapping("/deletecentrestaff")
@@ -58,15 +65,6 @@ public class CentreStaffController {
 	@GetMapping("/updatecentrestaffform")
 	public String showUpdateCentre(@RequestParam("staffId") int id, Model model) {
 		CentreStaff centrestaff = centrestaffservice.findByStaffId(id);
-		if (centrestaff==null) {
-			System.out.println("Debug:centrestaff is Null");
-		}
-		else
-		{
-			System.out.println("Debug: "+centrestaff.getStaffId());
-			System.out.println("Debug: "+centrestaff.getStaffName());
-		}
-		
 		model.addAttribute("abc", centrestaff);
 		return "update-centre-staff-form";
 	}

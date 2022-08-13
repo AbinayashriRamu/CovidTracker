@@ -1,13 +1,17 @@
 package com.chainsys.covidtracker.controller;
 
-import java.util.Date;
+import java.sql.Date;
+
 import java.util.List;
 
-import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -56,9 +60,14 @@ public class PatientAdmitController {
 	}
 
 	@PostMapping("/addpatientadmit")
-	public String addNewPatientAdmit(@ModelAttribute("addPatientAdmits") PatientAdmit patientadmit) {
-		patientadmitservice.save(patientadmit);
-		return "redirect:/patientadmitdetail/patientadmitlist";
+	public String addNewPatientAdmit(@Valid @ModelAttribute("addPatientAdmits") PatientAdmit patientadmit,
+			Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-patient-admit-form";
+		} else {
+			patientadmitservice.save(patientadmit);
+			return "redirect:/patientadmitdetail/patientadmitlist";
+		}
 	}
 
 	@GetMapping("/deletepatientadmit")
@@ -80,16 +89,23 @@ public class PatientAdmitController {
 		return "redirect:/patientadmitdetail/patientadmitlist";
 	}
 
-//	--------------------------------------
+//-------------------------------functionalities---------------------
+	
+	//admitId->findpatdetail,admitdetail,centredtail,staffdetail
+	
+	
 	@GetMapping("/getadmitcentrestaff")
 	public String getAdmitCentreStaffById(@RequestParam("admitId") int admitId, Model model) {
 		PatientAdmit patientadmit = patientadmitservice.getPatientAdmit(admitId);
 		model.addAttribute("fetchByAdmitId", patientadmit);
 		model.addAttribute("fetchStaffAdmitById", centrestaffservice.findByStaffId(patientadmit.getStaffId()));
 		model.addAttribute("fetchCentreAdmitById", centredetailservice.findById(patientadmit.getCentreId()));
-		model.addAttribute("fetchPatientDetailById", patientDetailService.getPatientDetail(patientadmit.getAadharNumber()));
+		model.addAttribute("fetchPatientDetailById",
+				patientDetailService.getPatientDetail(patientadmit.getAadharNumber()));
 		return "find-by-id-admit-centrestaff-form";
 	}
+	
+	//staffId->findout admit details
 
 	@GetMapping("/listadmitcenstaff")
 	public String listAdmitCentreStaffById(@RequestParam("staffId") int staffId, Model model) {
@@ -97,6 +113,8 @@ public class PatientAdmitController {
 		model.addAttribute("fetchAllStaffAdmitById", patientadmit);
 		return "find-by-admit-centrestaff-form";
 	}
+	
+	//centreId->admitfindout
 
 	@GetMapping("/listadmitcentredetail")
 	public String listAdmitCentreDetailById(@RequestParam("centreId") int centreId, Model model) {
@@ -105,6 +123,8 @@ public class PatientAdmitController {
 		model.addAttribute("fetchAllCentreAdmitById", patientadmit);
 		return "find-by-admit-centredetails-form";
 	}
+	
+	//admitDate->find admit list that date
 
 	@GetMapping("/ListPatientAdmitDetail")
 	public String listpatientAdmitDate(@RequestParam("admitDate") Date admitDate, Model model) {
@@ -113,6 +133,7 @@ public class PatientAdmitController {
 		model.addAttribute("fetchByAdmitDate", patientadmit);
 		return "find-by-list-patient-admit-date-form";
 	}
+	//centreid->centredetail,centreadmitdetail
 
 	@GetMapping("/getCentreAdmitdetail")
 	public String getCentreAdmitById(@RequestParam("centreId") int centreId, Model model) {
@@ -122,6 +143,7 @@ public class PatientAdmitController {
 		model.addAttribute("fetchadmitDetail", patientadmit);
 		return "find-by-list-id-centre-admit-form";
 	}
+	//staffId->staffdetail,admissionlist
 
 	@GetMapping("/getStaffAdmitdetail")
 	public String getStaffAdmitById(@RequestParam("staffId") int staffId, Model model) {

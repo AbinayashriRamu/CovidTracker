@@ -16,19 +16,15 @@
 				<div>
 					<label for="aadharNumber">AadharNumber</label>
 					<div>
-						<form:input path="aadharNumber" />
+						<form:input path="aadharNumber" class="text-box"
+							title="Id must be required" required="true" />
 					</div>
 				</div>
 				<div>
 					<label for="observationDate">ObservationDate</label>
 					<div>
-						<form:input path="observationDate" />
-					</div>
-				</div>
-				<div>
-					<label for="observationId">ObservationId</label>
-					<div>
-						<form:input path="observationId" />
+						<form:input path="observationDate" class="text-box"
+							title="Id must be required" required="true" />
 					</div>
 				</div>
 				<div>
