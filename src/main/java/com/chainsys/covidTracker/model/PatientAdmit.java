@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 
 @Entity
 @Table(name = "PATIENT_ADMIT")
@@ -43,18 +44,6 @@ public class PatientAdmit {
 	public void setCentrestaff(CentreStaff centrestaff) {
 		this.centrestaff = centrestaff;
 	}
-
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "Centre_id", nullable = false, insertable = false, updatable = false)
-//	private CentreStaff centreStaff;
-//
-//	public CentreStaff getCentreStaff() {
-//		return centrestaff;
-//	}
-//
-//	public void setCentreStaff(CentreStaff centreStaff) {
-//		this.centreStaff = centreStaff;
-//	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "Centre_id", nullable = false, insertable = false, updatable = false)

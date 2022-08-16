@@ -53,7 +53,7 @@ public class CentreDetailController {
 			return "add-centredetail-form";
 		} else {
 			centredetailservice.save(centredetail);
-			return "redirect:/centredetail/centrelist";
+			return "successfulpage";
 		}
 	}
 
@@ -76,7 +76,7 @@ public class CentreDetailController {
 			return "update-centredetail-form";
 		} else {
 			centredetailservice.save(centredetail);
-			return "redirect:/centredetail/centrelist";
+			return "successfulpage";
 		}
 	}
 //-----------------------------functionalities-----------------------------

@@ -56,8 +56,7 @@ public class CovidTestResultController {
 			return "add-test-result-form";
 		} else {
 			covidtestresultservice.save(covidtestresult);
-			System.out.println("Debug:CovidTestResultController.");
-			return "redirect:/testresultdetail/testresultlist";
+			return "successfulpage";
 		}
 	}
 
@@ -81,15 +80,15 @@ public class CovidTestResultController {
 				covidtestresult.getTestResult());
 //		System.out.println(covidtestresultservice.confirmedCaseCount());
 		if ("Positive".equals(covidtestresults.getTestResult())) {
-		return "redirect:/patientadmitdetail/addpatientadmitform";
+			return "redirect:/patientadmitdetail/addpatientadmitform";
 		} else {
-			return "redirect:/testresultdetail/testresultlist";
+			return "successfulpage";
 		}
-		
+
 	}
-	
-	//---------------------functionalities-----------------------------------
-	//tstDate->positivecase or negative case find that specfic date
+
+	// ---------------------functionalities-----------------------------------
+	// tstDate->positivecase or negative case find that specfic date
 
 	@GetMapping("/getTestResultDetail")
 	public String getCovidTestDate(@RequestParam("TestingDate") Date testingDate, @RequestParam("Result") String result,

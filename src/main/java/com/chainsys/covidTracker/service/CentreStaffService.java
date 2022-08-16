@@ -24,14 +24,7 @@ public class CentreStaffService {
 	}
 
 	public CentreStaff findByStaffId(int id) {
-		System.out.println("Debug: " + this.getClass().getName() + " id=" + id);
 		CentreStaff staff = repository.findByStaffId(id);
-		if (staff == null) {
-			System.out.println("Debug:centrestaff is Null");
-		} else {
-			System.out.println("Debug: " + staff.getStaffId());
-			System.out.println("Debug: " + staff.getStaffName());
-		}
 		return staff;
 	}
 

@@ -55,7 +55,9 @@ public class PatientAdmitService {
 		List<PatientAdmit>patientadmit=repository.findAllByAdmitDate(AdmitDate);
 		return patientadmit;
 	}
-	//logic
-	//public long recoveryCase
+	// logic
+		public long recoveryCaseCount() {
+			return repository.count();
+		}
 
 }

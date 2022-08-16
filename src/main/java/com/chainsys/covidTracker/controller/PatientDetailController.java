@@ -53,7 +53,7 @@ public class PatientDetailController {
 			return "add-patient-detail-form";
 		} else {
 			patientdetailservice.save(patientdetail);
-			return "redirect:/patientdetail/patientlist";
+			return "successfulpage";
 		}
 	}
 
@@ -71,14 +71,18 @@ public class PatientDetailController {
 	}
 
 	@PostMapping("/updatepatient")
-	public String updatepatient(@ModelAttribute("updatePatientDetails") PatientDetail patientdetail) {
+	public String updatepatient(@ModelAttribute("updatePatientDetails") PatientDetail patientdetail,Errors errors) {
+		if(errors.hasErrors()) {
+			return "update-patient-detail-form";
+		}else {
 		patientdetailservice.save(patientdetail);
 		//System.out.println(patientdetailservice.deadCaseCount());
-		return "redirect:/patientdetail/patientlist";
+		return "successfulpage";
 	}
-	
-	//---------------------------------functionalities-----------------------------------
-	//aadharnumber->patientdetail,patientlocation
+	}
+
+	// ---------------------------------functionalities-----------------------------------
+	// aadharnumber->patientdetail,patientlocation
 	@GetMapping("/getpatientlocation")
 	public String getPatientLocationById(@RequestParam("aadharNumber") long aadharNumber, Model model) {
 		PatientDetail patientdetail = patientdetailservice.getPatientDetail(aadharNumber);
@@ -86,8 +90,8 @@ public class PatientDetailController {
 		model.addAttribute("fetchPatientloctionById", patientlocationservice.findById(patientdetail.getPinCode()));
 		return "find-by-id-patient-location-form";
 	}
-	
-	//pincode->location,patientdetails
+
+	// pincode->location,patientdetails
 
 	@GetMapping("/listpatientBylocation")
 	public String listPatientLocationById(@RequestParam("pinCode") int pinCode, Model model) {

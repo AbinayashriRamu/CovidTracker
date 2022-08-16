@@ -4,7 +4,7 @@ package com.chainsys.covidtracker.repository;
 import java.sql.Date;
 import java.util.List;
 
-
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.covidtracker.model.PatientAdmit;
@@ -32,5 +32,9 @@ public interface PatientAdmitRepository extends CrudRepository<PatientAdmit, Int
 	
 	
 	List<PatientAdmit> findAllByAdmitDate(Date admitDate);
+	
+	
+	@Query(value = "select count(*) from patient_admit where discharge_date is not null", nativeQuery = true)
+	long count();
 
 }

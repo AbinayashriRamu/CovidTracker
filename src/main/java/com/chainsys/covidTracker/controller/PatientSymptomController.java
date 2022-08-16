@@ -51,7 +51,7 @@ public class PatientSymptomController {
 			return "add-patient-symptom-form";
 		} else {
 			patientsymptomservice.save(Patientsymptom);
-			return "redirect:/patientsymptomdetail/patientsymptomlist";
+			return "successfulpage";
 		}
 	}
 
@@ -69,9 +69,14 @@ public class PatientSymptomController {
 	}
 
 	@PostMapping("/updatepatientsymptom")
-	public String updatepatientsymptom(@ModelAttribute("updatePatientSymptoms") PatientSymptom patientsymptom) {
-		patientsymptomservice.save(patientsymptom);
-		return "redirect:/patientsymptomdetail/patientsymptomlist";
+	public String updatepatientsymptom(@ModelAttribute("updatePatientSymptoms") PatientSymptom patientsymptom,
+			Errors errors) {
+		if (errors.hasErrors()) {
+			return "update-patient-symptom-form";
+		} else {
+			patientsymptomservice.save(patientsymptom);
+			return "successfulpage";
+		}
 	}
 
 }

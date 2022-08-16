@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -31,8 +32,6 @@ public class CovidTestResult {
 	@Column(name = "aadhar_number")
 	private long aadharNumber;
 	@Column(name = "test_by")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter your valid name")
-	@Size(min = 2, max = 10, message = "*Invalid Name")
 	private String testBy;
 
 	@OneToOne(fetch = FetchType.LAZY)

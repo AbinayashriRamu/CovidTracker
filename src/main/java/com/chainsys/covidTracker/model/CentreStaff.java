@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -21,8 +22,8 @@ public class CentreStaff {
 	@Column(name = "centre_id")
 	private int centreId;
 	@Column(name = "staff_name")
-	@Pattern(regexp = "^[A-Za-z\s]\\w{3,20}$", message = "*Enter your valid name")
-	@Size(min = 2, max = 20, message = "*Invalid Name")
+	@Size(max = 20, min = 1, message = "*StaffName length should be 1 to 20")
+	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter your valid name")
 	private String staffName;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "staff_id_seq")
@@ -30,14 +31,11 @@ public class CentreStaff {
 	@Column(name = "staff_id")
 	private int staffId;
 	@Column(name = "staff_role")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter your valid name")
-	@Size(min = 2, max = 20, message = "*Invalid Name")
 	private String staffRole;
 	@Column(name = "staff_gender")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter your valid name")
-	@Size(min = 2, max = 20, message = "*Invalid Name")
 	private String staffGender;
 	@Column(name = "staff_date_of_birth")
+	@Past
 	private Date staffDateOfBirth;
 
 	@OneToMany(mappedBy = "centrestaff", fetch = FetchType.LAZY)

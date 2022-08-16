@@ -22,27 +22,36 @@
 				<div>
 					<label for="centreName">CentreName</label>
 					<div>
-						<form:input path="centreName" />
+						<form:input path="centreName" title="Name must be required"
+							pattern="^[a-zA-Z]+$" required="true" />
 					</div>
 				</div>
+				<form:errors path="centreName" Class="text-danger"></form:errors>
 				<div>
 					<label for="pinCode">PinCode</label>
 					<div>
 						<form:input path="pinCode" />
 					</div>
 				</div>
+				<form:errors path="pinCode" Class="text-danger"></form:errors>
 				<div>
 					<label for="contactPersonName">Contact Person Name</label>
 					<div>
-						<form:input path="contactPersonName" />
+						<form:input path="contactPersonName" title="Name must be required"
+							pattern="^[a-zA-Z]+$" required="true" />
 					</div>
 				</div>
+				<form:errors path="contactPersonName" Class="text-danger"></form:errors>
 				<div>
 					<label for="contactPersonPhoneNo">Contact Person Phone No</label>
 					<div>
-						<form:input path="contactPersonPhoneNo" />
+						<form:input path="contactPersonPhoneNo"
+							title="PhoneNumber must be required" pattern="[1-9]{1}[0-9]{9}"
+							required="true" />
+						/>
 					</div>
 				</div>
+				<form:errors path="contactPersonPhoneNo" Class="text-danger"></form:errors>
 				<div>
 					<form:button>Update centre</form:button>
 				</div>

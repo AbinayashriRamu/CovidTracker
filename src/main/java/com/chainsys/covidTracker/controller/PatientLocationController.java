@@ -45,12 +45,13 @@ public class PatientLocationController {
 	}
 
 	@PostMapping("/addlocation")
-	public String addNewLocation(@Valid @ModelAttribute("addlocations") PatientLocation patientlocation,Errors errors) {
-		if(errors.hasErrors()) {
+	public String addNewLocation(@Valid @ModelAttribute("addlocations") PatientLocation patientlocation,
+			Errors errors) {
+		if (errors.hasErrors()) {
 			return "add-location-form";
-		}else {
-		patientlocationservice.save(patientlocation);
-		return "redirect:/locationdetail/locationlist";
+		} else {
+			patientlocationservice.save(patientlocation);
+			return "successfulpage";
 		}
 	}
 
@@ -68,9 +69,13 @@ public class PatientLocationController {
 	}
 
 	@PostMapping("updatelocation")
-	public String updatelocation(@ModelAttribute("updatelocations") PatientLocation patientlocation) {
-		patientlocationservice.save(patientlocation);
-		return "redirect:/locationdetail/locationlist";
+	public String updatelocation(@ModelAttribute("updatelocations") PatientLocation patientlocation, Errors errors) {
+		if (errors.hasErrors()) {
+			return "update-location-form";
+		} else {
+			patientlocationservice.save(patientlocation);
+			return "successfulpage";
+		}
 	}
 
 }

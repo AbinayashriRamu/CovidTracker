@@ -1,78 +1,112 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Covid Tracker</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-.header {
-  overflow: hidden;
-  padding: 20px 10px;
-  background-color: #ddd;
-}
-/* Style the header links */
-.header a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
+body {
+	background-image:
+		url("https://www.domo.com/covid19/images/product-google-og-coronavirus-tracker.jpg");
+	background-height: 786px;
+	background-width: 1366px;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
+h1 {
+	font-family: ui-monospace;
+	color: white;
+	text-align: left;
 }
 
-/* Change the background color on mouse-over */
-.header a:hover {
-  background-color: #ddd;
-  color: black;
+.navbar {
+	overflow: hidden;
+	/*     background-color: #38fca4; */
 }
 
-/* Style the active/current link*/
-.header a.active {
-  background-color: dodgerblue;
-  color: white;
+.navbar a {
+	float: left;
+	font-size: 16px;
+	/* color: white; */
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
-/* Float the link section to the right */
-.header-right {
-  float: right;
+.dropdown {
+	float: left;
+	overflow: hidden;
 }
 
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: none;
-  }
+.dropdown .dropbtn {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
 }
+
+a:hover, .dropdown:hover .dropbtn {
+	/*     background-color: #fff;
+ */
+	
+}
+h1{
+   text-align: center;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
 </style>
 </head>
 <body>
-<header class="header">
- <div class="header">
-  <a href="#default" class="logo">Medical Shop</a>
-  <div class="header-right">
-    <a class="active" href="/user/index">Home</a>
-    <a href="/user/login">Login</a>
-    <a href="/user/adduserform">SignUp</a>
-    <a href="/medicine/medlist">Medicines</a>
-  </div>
-</div>
-</header>
-<img src="file:///C:/Users/abin3133/eclipse-workspace/covidTracker/src/main/resources/images/tracker.jpg" style="width:100%;">
+	<div class="navbar">
+		<div class="dropdown">
+			<button class="dropbtn">
+				Staff<em class="fa fa-caret-down"></em>
+			</button>
+			<div class="dropdown-content">
+				<a href="/home/ForAllTables">Add Details</a> <a
+					href="/home/ForViewList">View Details</a>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

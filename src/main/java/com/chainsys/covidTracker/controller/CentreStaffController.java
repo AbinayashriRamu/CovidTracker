@@ -52,7 +52,7 @@ public class CentreStaffController {
 			return "add-centre-staff_form";
 		} else {
 			centrestaffservice.save(centrestaff);
-			return "redirect:/centrestaffdetail/centrestafflist";
+			return "successfulpage";
 		}
 	}
 
@@ -70,9 +70,13 @@ public class CentreStaffController {
 	}
 
 	@PostMapping("updatecentrestaff")
-	public String updatecentrestaff(@ModelAttribute("abc") CentreStaff centrestaff) {
+	public String updatecentrestaff(@ModelAttribute("abc") CentreStaff centrestaff,Errors errors) {
+		if(errors.hasErrors()) {
+			return "update-centre-staff-form";
+		}else {
 		centrestaffservice.save(centrestaff);
-		return "redirect:/centrestaffdetail/centrestafflist";
+		return "successfulpage";
 	}
+		}
 
 }

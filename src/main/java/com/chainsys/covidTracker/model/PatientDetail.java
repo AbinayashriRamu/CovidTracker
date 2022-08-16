@@ -1,5 +1,6 @@
 package com.chainsys.covidtracker.model;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -31,13 +34,14 @@ public class PatientDetail {
 	@Column(name = "blood_group")
 	private String bloodGroup;
 	@Column(name = "phone_no")
+	@Digits(message = "*Invalid Mobile Number", integer = 10, fraction = 0)
 	private long phoneNo;
 	@Column(name = "last_test_id")
 	private long lastTestId;
 	@Column(name = "active_status")
 	private String activeStatus;
 	@Column(name = "dead_date")
-	private String deadDate;
+	private Date deadDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "pin_code", nullable = false, insertable = false, updatable = false)
@@ -126,11 +130,11 @@ public class PatientDetail {
 		this.activeStatus = activeStatus;
 	}
 
-	public String getDeadDate() {
+	public Date getDeadDate() {
 		return deadDate;
 	}
 
-	public void setDeadDate(String deadDate) {
+	public void setDeadDate(Date deadDate) {
 		this.deadDate = deadDate;
 	}
 

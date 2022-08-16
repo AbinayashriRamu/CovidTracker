@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 
 @Entity
 @Table(name = "PATIENT_SYMPTOMS")
@@ -15,6 +16,7 @@ public class PatientSymptom {
 	@Column(name = "aadhar_number")
 	private long aadharNumber;
 	@Column(name = "observation_date")
+	@Past
 	private Date observationDate;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "observation_id_seq")

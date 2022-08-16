@@ -1,112 +1,172 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Add Centre</title>
-<style>
+<style type="text/css">
+h1 {
+	color: rgb(210, 210, 210);
+	float: center;
+	text-align: center;
+}
+
+tr {
+	color: red;
+}
+
+label {
+	color: white;
+	font-size: 1.3em;
+	display: flex;
+	margin: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+#btn {
+	width: 150px;
+	height: 30px;
+	border: black;
+	border-radius: 3px;
+	padding-left: 8px;
+	color: white;
+	background-color: maroon;
+	display: inline-block;
+	float: right;
+}
+
+#log {
+	width: 150px;
+	height: 30px;
+	border: black;
+	border-radius: 3px;
+	padding-left: 8px;
+	color: white;
+	background-color: maroon;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	float: center;
+}
+
+.box {
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	float: center;
+	font-weight: 600;
+	width: 600px;
+}
+
+#centreName {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+}
+
+#pinCode {
+	width: 260px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+}
+
+#contactPersonName {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+}
+
+#contactPersonPhoneNo {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+}
+
+#log {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
 body {
 	background-image:
-		url(https://dublingazette.com/wp-content/uploads/2021/05/coronavirus-4914026_1920-scaled.jpg);
-	background-height: 786px;
-	background-width: 1366px;
+		url("https://ak.picdn.net/shutterstock/videos/1066547653/thumb/12.jpg?ip=x480");
+	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: cover;
-}
-
-table, th, td {table , th, td { border:1pxsolidblack;
-	border-collapse: collapse;
-}
-
-}
-th {
-	background-color: #04AA6D;
-	color: white;
-}
-
-td {
-	backgoung-colour: #c4f5dc;
-}
-
-.label-size {
-	font-size: 28px;
-}
-
-.text-box {
-	height: 28px;
-	width: 237px;
-	border-radius: 3px;
-	font-size: 15px;
-}
-
-.button {
-	margin-top: 20px;
-	width: 100px;
-	height: 38px;
-	font-size: 15px;
-	background-color: blue;
-	border: 2px solid blue;
-	border-radius: 5px;
-	color: white;
-}
-
-.label-text {
-	font-size: 21px;
-	color: wheat;
+	background-size: 100% 100%;
+	background-color: #080710;
 }
 </style>
-
+<meta charset="ISO-8859-1">
+<title>Add Centre</title>
 </head>
 <body>
+	<h1>Centre Detail</h1>
+	<a href="/centredetail/centrelist">
+		<button id="btn">List</button>
+	</a>
 	<div id="root">
-		<div id="form">
+		<div id="form" class="box">
 			<form:form action="addcentre" method="post"
-				style="margin-left: 20px;" modelAttribute="addcentres">
+				modelAttribute="addcentres">
 				<div>
-					<h1 style="font-size: 40px; color: white;">Centre Details</h1>
-					<div style="margin: 10px 0px 10px 0px;">
-						<label for="centreName" class="lable-size label-text">Centre
-							Name</label>
-						<div>
-							<form:input path="centreName" class="text-box" placaholder="CentreName"
-								title="Name must be required" 
-								pattern="^[a-zA-Z]+$" required="true"/>
-						</div>
-					</div>
-					<form:errors path="centreName" Class="text-danger"></form:errors>
-					<div style="margin: 10px 0px 10px 0px;">
-						<label for="pinCode" class="lable-size label-text">PinCode</label>
-						<div>
-							<form:input path="pinCode" class="text-box" placaholder="PinCode"
-								title="Id must be required" required="true" />
-						</div>
-					</div>
-					<form:errors path="pinCode" Class="text-danger"></form:errors>
-					<div style="margin: 10px 0px 10px 0px;">
-						<label for="contactPersonName" class="lable-size label-text">Contact
-							Person Name</label>
-						<div>
-							<form:input path="contactPersonName" class="text-box" placaholder="ContactPersonName"
-								title="Name must be required" 
-								pattern="^[a-zA-Z]+$" required="true" />
-						</div>
-					</div>
-					<form:errors path="contactPersonName" Class="text-danger"></form:errors>
-					<div style="margin: 10px 0px 10px 0px;">
-						<label for="contactPersonPhoneNo" class="lable-size label-text">Contact
-							Person PhoneNo</label>
-						<div>
-							<form:input path="contactPersonPhoneNo" class="text-box" placaholder="contactPersonPhoneNo"
-								title="PhoneNumber must be required"
-								pattern="[1-9]{1}[0-9]{9}" required="true" />
-						</div>
-					</div>
-					<form:errors path="contactPersonPhoneNo" Class="text-danger"></form:errors>
+					<label for="centreName">Centre Name</label>
 					<div>
-						<button class="button">Add New</button>
+						<form:input path="centreName" class="text-box"
+							placaholder="CentreName" title="Name must be required"
+							pattern="^[a-zA-Z]+$" required="true" />
 					</div>
+				</div>
+				<form:errors path="centreName" Class="text-danger"></form:errors>
+				<div>
+					<label for="pinCode">PinCode</label>
+					<div>
+						<form:select path="pinCode" class="text-box" placeholder="PinCode"
+							title="Id must be required" required="true">
+							<form:option value="641654">641654</form:option>
+							<form:option value="600311">600311</form:option>
+							<form:option value="600032">600032</form:option>
+						</form:select>
+					</div>
+				</div>
+				<form:errors path="pinCode" Class="text-danger"></form:errors>
+				<div>
+					<label for="contactPersonName">Contact Person Name</label>
+					<div>
+						<form:input path="contactPersonName" class="text-box"
+							placaholder="ContactPersonName" title="Name must be required"
+							pattern="^[a-zA-Z]+$" required="true" />
+					</div>
+				</div>
+				<form:errors path="contactPersonName" Class="text-danger"></form:errors>
+				<div>
+					<label for="contactPersonPhoneNo">Contact Person PhoneNo</label>
+					<div>
+						<form:input path="contactPersonPhoneNo" class="text-box"
+							placaholder="contactPersonPhoneNo"
+							title="PhoneNumber must be required" pattern="[1-9]{1}[0-9]{9}"
+							required="true" />
+					</div>
+				</div>
+				<form:errors path="contactPersonPhoneNo" Class="text-danger"></form:errors>
+				<div>
+					<form:button id="log">Add New</form:button>
 				</div>
 			</form:form>
 		</div>

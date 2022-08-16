@@ -66,7 +66,7 @@ public class PatientAdmitController {
 			return "add-patient-admit-form";
 		} else {
 			patientadmitservice.save(patientadmit);
-			return "redirect:/patientadmitdetail/patientadmitlist";
+			return "successfulpage";
 		}
 	}
 
@@ -84,9 +84,14 @@ public class PatientAdmitController {
 	}
 
 	@PostMapping("updatepatientadmit")
-	public String updateResult(@ModelAttribute("updatePatientAdmits") PatientAdmit patientadmit) {
+	
+	public String updateResult(@ModelAttribute("updatePatientAdmits") PatientAdmit patientadmit,Errors errors) {
+		if(errors.hasErrors()) {
+			return "update-patient-admit-form";
+		}else {
 		patientadmitservice.save(patientadmit);
-		return "redirect:/patientadmitdetail/patientadmitlist";
+		return "successfulpage";
+	}
 	}
 
 //-------------------------------functionalities---------------------
@@ -119,7 +124,6 @@ public class PatientAdmitController {
 	@GetMapping("/listadmitcentredetail")
 	public String listAdmitCentreDetailById(@RequestParam("centreId") int centreId, Model model) {
 		List<PatientAdmit> patientadmit = patientadmitservice.fetchAllByCentreId(centreId);
-		// model.addAttribute("fetchByCenteId",patientdetail);
 		model.addAttribute("fetchAllCentreAdmitById", patientadmit);
 		return "find-by-admit-centredetails-form";
 	}
@@ -128,7 +132,6 @@ public class PatientAdmitController {
 
 	@GetMapping("/ListPatientAdmitDetail")
 	public String listpatientAdmitDate(@RequestParam("admitDate") Date admitDate, Model model) {
-		System.out.println(admitDate);
 		List<PatientAdmit> patientadmit = patientadmitservice.fetchAllByAdmitDate(admitDate);
 		model.addAttribute("fetchByAdmitDate", patientadmit);
 		return "find-by-list-patient-admit-date-form";

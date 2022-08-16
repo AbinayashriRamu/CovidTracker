@@ -22,7 +22,9 @@
 				<div>
 					<label for="staffName">StaffName</label>
 					<div>
-						<form:input path="staffName" />
+						<form:input path="staffName" class="text-box" placaholder="CentreName"
+								title="Name must be required" 
+								pattern="^[a-zA-Z]+$" required="true"/>
 					</div>
 				</div>
 				<div>

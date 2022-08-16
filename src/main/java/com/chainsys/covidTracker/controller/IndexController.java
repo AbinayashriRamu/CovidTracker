@@ -14,8 +14,29 @@ public class IndexController {
 		return "index";
 	}
 
-//		@GetMapping("/staffuse")
-//		public String StaffAcess(Model model) {
-//			return "staffpage";
-//		}
+	@GetMapping("/ForAllTables")
+	public String staffAcess(Model model) {
+		return "addalltables";
+	}
+	
+//	@GetMapping("/ListTable")
+//	public String stafflistaccess(Model model) {
+//		return "listtables";
+//	}
+
+//	@GetMapping("/ForUpdateTable")
+//	public String staffUpdate(Model model) {
+//		return "updatetables";
+//	}
+
+	@GetMapping("/ForViewList")
+	public String staffView(Model model) {
+		return "viewdetails";
+	}
+	
+	@GetMapping("/Count")
+	public String countview(Model model) {
+		return "countcase";
+	}
+
 }
