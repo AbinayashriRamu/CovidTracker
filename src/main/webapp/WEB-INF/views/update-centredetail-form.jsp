@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Centre staff</title>
@@ -48,7 +48,7 @@
 						<form:input path="contactPersonPhoneNo"
 							title="PhoneNumber must be required" pattern="[1-9]{1}[0-9]{9}"
 							required="true" />
-						/>
+						
 					</div>
 				</div>
 				<form:errors path="contactPersonPhoneNo" Class="text-danger"></form:errors>

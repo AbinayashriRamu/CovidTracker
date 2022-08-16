@@ -158,6 +158,7 @@ body {
 						Test Result </a></li>
 				<li><a href="/patientadmitdetail/addpatientadmitform">Patient
 						Admit </a></li>
+				<li><a href="/home/index">Back</a>
 			</ul>
 		</div>
 	</nav>

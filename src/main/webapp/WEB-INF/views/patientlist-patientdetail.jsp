@@ -45,6 +45,7 @@ align-items: center;
 	<div id="table root">
 		<div align="center">
 		<table border="2">
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>PatientName</th>

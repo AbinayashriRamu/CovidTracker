@@ -19,15 +19,6 @@ public class IndexController {
 		return "addalltables";
 	}
 	
-//	@GetMapping("/ListTable")
-//	public String stafflistaccess(Model model) {
-//		return "listtables";
-//	}
-
-//	@GetMapping("/ForUpdateTable")
-//	public String staffUpdate(Model model) {
-//		return "updatetables";
-//	}
 
 	@GetMapping("/ForViewList")
 	public String staffView(Model model) {
