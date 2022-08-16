@@ -1,7 +1,6 @@
 package com.chainsys.covidtracker.model;
 
 import java.sql.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 
@@ -10,10 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 

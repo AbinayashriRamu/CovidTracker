@@ -22,13 +22,13 @@ public interface PatientAdmitRepository extends CrudRepository<PatientAdmit, Int
 
 	
 	
-	PatientAdmit findByStaffId(int StaffId);
+	PatientAdmit findByStaffId(int staffId);
 
 	List<PatientAdmit> findAllByStaffId(int staffId);
 
-	PatientAdmit findByCentreId(int CentreId);
+	PatientAdmit findByCentreId(int centreId);
 
-	List<PatientAdmit> findAllByCentreId(int centeId);
+	List<PatientAdmit> findAllByCentreId(int centreId);
 	
 	
 	List<PatientAdmit> findAllByAdmitDate(Date admitDate);

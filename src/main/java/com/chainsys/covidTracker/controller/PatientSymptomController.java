@@ -45,12 +45,12 @@ public class PatientSymptomController {
 	}
 
 	@PostMapping("/addpatientsymptom")
-	public String addNewPatientsymptom(@Valid @ModelAttribute("addPatientSymptoms") PatientSymptom Patientsymptom,
+	public String addNewPatientsymptom(@Valid @ModelAttribute("addPatientSymptoms") PatientSymptom patientsymptom,
 			Errors errors) {
 		if (errors.hasErrors()) {
 			return "add-patient-symptom-form";
 		} else {
-			patientsymptomservice.save(Patientsymptom);
+			patientsymptomservice.save(patientsymptom);
 			return "successfulpage";
 		}
 	}
@@ -69,12 +69,12 @@ public class PatientSymptomController {
 	}
 
 	@PostMapping("/updatepatientsymptom")
-	public String updatepatientsymptom(@ModelAttribute("updatePatientSymptoms") PatientSymptom patientsymptom,
+	public String updatepatientsymptom(@ModelAttribute("updatePatientSymptoms") PatientSymptom patientsymptoms,
 			Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-patient-symptom-form";
 		} else {
-			patientsymptomservice.save(patientsymptom);
+			patientsymptomservice.save(patientsymptoms);
 			return "successfulpage";
 		}
 	}

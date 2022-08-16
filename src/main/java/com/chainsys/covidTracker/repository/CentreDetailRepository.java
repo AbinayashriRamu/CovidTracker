@@ -15,7 +15,7 @@ public interface CentreDetailRepository extends CrudRepository<CentreDetail, Int
 
 	List<CentreDetail> findAll();
 
-	CentreDetail findByPinCode(int PinCode);
+	CentreDetail findByPinCode(int pinCode);
 
 	List<CentreDetail> findAllByPinCode(int pinCode);
 	

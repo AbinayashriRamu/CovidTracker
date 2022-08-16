@@ -51,8 +51,8 @@ public class PatientAdmitService {
 		return patientadmit;
 	}
 	
-	public List<PatientAdmit> fetchAllByAdmitDate(Date AdmitDate){
-		List<PatientAdmit>patientadmit=repository.findAllByAdmitDate(AdmitDate);
+	public List<PatientAdmit> fetchAllByAdmitDate(Date admitDate){
+		List<PatientAdmit>patientadmit=repository.findAllByAdmitDate(admitDate);
 		return patientadmit;
 	}
 	// logic
