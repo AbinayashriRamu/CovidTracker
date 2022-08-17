@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 
 @Entity
 @Table(name = "COVID_TEST_RESULT")
@@ -22,6 +23,7 @@ public class CovidTestResult {
 	@Column(name = "test_id")
 	private long testId;
 	@Column(name = "testing_date")
+	@Past
 	private Date testingDate;
 	@Column(name = "test_result")
 	private String testResult;

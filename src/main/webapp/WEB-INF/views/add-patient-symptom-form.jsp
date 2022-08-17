@@ -173,15 +173,14 @@ body {
 				<div>
 					<label for="observationDate">ObservationDate</label>
 					<div>
-						<form:input type="date" path="observationDate" class="text-box"
-							title="Id must be required" required="true" />
+						<form:input type="date" path="observationDate" class="text-box" />
 					</div>
 				</div>
 				<div>
 					<label for="observatedBy">ObservatedBy</label>
 					<div>
 						<form:select path="observatedBy" class="text-box"
-							placeholder="ObservatedBy" title="Id must be required"
+							placeholder="ObservatedBy"
 							required="true">
 							<form:option value="Nurse">Nurse</form:option>
 							<form:option value="Doctor">Doctor</form:option>
@@ -197,10 +196,9 @@ body {
 				<div>
 					<label for="cold">Cold</label>
 					<div>
-						<form:select path="cold" class="text-box" placeholder="cold"
-							title="Id must be required" required="true">
-							<form:option value="Nurse">Nurse</form:option>
-							<form:option value="Doctor">Doctor</form:option>
+						<form:select path="cold" class="text-box" placeholder="cold">
+							<form:option value="No">No</form:option>
+							<form:option value="Yes">Yes</form:option>
 						</form:select>
 					</div>
 				</div>
@@ -227,8 +225,7 @@ body {
 				<div>
 					<label for="taste">Taste</label>
 					<div>
-						<form:select path="taste" class="text-box" placeholder="Taste"
-							title="Id must be required" required="true">
+						<form:select path="taste" class="text-box" placeholder="Taste">
 							<form:option value="Yes">Yes</form:option>
 							<form:option value="No">No</form:option>
 						</form:select>

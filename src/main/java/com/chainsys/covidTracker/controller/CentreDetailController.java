@@ -53,7 +53,7 @@ public class CentreDetailController {
 			return "add-centredetail-form";
 		} else {
 			centredetailservice.save(centredetail);
-			return "successfulpage";
+			return "redirect:/centrestaffdetail/addcentrestaffform";
 		}
 	}
 

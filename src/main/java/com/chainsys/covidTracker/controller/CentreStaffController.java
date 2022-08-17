@@ -51,7 +51,7 @@ public class CentreStaffController {
 			return "add-centre-staff_form";
 		} else {
 			centrestaffservice.save(centrestaff);
-			return "successfulpage";
+			return "redirect:/patientdetail/addpatientdetailform";
 		}
 	}
 

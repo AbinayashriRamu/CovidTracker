@@ -64,7 +64,7 @@ nav .menu {
 	color: #fff;
 	font-size: 15px;
 	font-weight: 600;
-	padding: 8px 15px;
+	padding: 8px 11px;
 	border-radius: 5px;
 	transition: all 0.3s ease;
 }
@@ -158,8 +158,10 @@ body {
 						Test Result </a></li>
 				<li><a href="/patientadmitdetail/addpatientadmitform">Patient
 						Admit </a></li>
+				<li><a href="/home/ForViewList">View Details</a>
 				<li><a href="/home/index">Back</a>
 			</ul>
+
 		</div>
 	</nav>
 </body>

@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -23,6 +24,7 @@ public class PatientDetail {
 	private String patientName;
 	@Id
 	@Column(name = "aadhar_number")
+	@Digits(message = "*Invalid aadhar Number", integer = 12, fraction = 0)
 	private long aadharNumber;
 	@Column(name = "street")
 	private String street;
@@ -38,6 +40,7 @@ public class PatientDetail {
 	@Column(name = "active_status")
 	private String activeStatus;
 	@Column(name = "dead_date")
+	@Past
 	private Date deadDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)

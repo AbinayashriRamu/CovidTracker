@@ -1,12 +1,9 @@
 package com.chainsys.covidtracker.repository;
 
-import java.lang.annotation.Native;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
 
-import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

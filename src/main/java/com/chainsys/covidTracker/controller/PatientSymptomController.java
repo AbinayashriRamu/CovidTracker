@@ -51,7 +51,7 @@ public class PatientSymptomController {
 			return "add-patient-symptom-form";
 		} else {
 			patientsymptomservice.save(patientsymptom);
-			return "successfulpage";
+			return "redirect:/testresultdetail/addtestresultform";
 		}
 	}
 

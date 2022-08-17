@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 
 @Entity
 @Table(name = "PATIENT_ADMIT")
@@ -28,8 +29,10 @@ public class PatientAdmit {
 	@Column(name = "staff_id")
 	private int staffId;
 	@Column(name = "admit_date")
+	@Past
 	private Date admitDate;
 	@Column(name = "discharge_date")
+	@Past
 	private Date dischargeDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)

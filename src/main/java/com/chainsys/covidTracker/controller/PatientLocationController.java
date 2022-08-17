@@ -51,7 +51,7 @@ public class PatientLocationController {
 			return "add-location-form";
 		} else {
 			patientlocationservice.save(patientlocation);
-			return "successfulpage";
+			return "redirect:/centredetail/addcentreform";
 		}
 	}
 

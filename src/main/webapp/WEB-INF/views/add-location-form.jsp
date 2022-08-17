@@ -100,7 +100,7 @@ body {
 					<div>
 						<form:input path="district" class="text-box"
 							placeholder="District" title="Id must be required"
-							required="true" />
+							pattern="^[a-zA-Z]+$" required="true" />
 
 					</div>
 				</div>
@@ -110,7 +110,7 @@ body {
 					<div>
 						<div>
 							<form:input path="pinCode" class="text-box" placeholder="PinCode"
-								title="Id must be required" required="true" />
+							 title="Id must be required" required="true" />
 
 
 						</div>
@@ -123,7 +123,7 @@ body {
 						<div>
 							<form:input path="stateName" class="text-box"
 								placeholder="StateName" title="Id must be required"
-								required="true" />
+								pattern="^[a-zA-Z]+$" required="true" />
 
 
 						</div>
@@ -135,7 +135,7 @@ body {
 					<div>
 						<div>
 							<form:input path="country" class="text-box" placeholder="Country"
-								title="Id must be required" required="true" />
+								pattern="^[a-zA-Z]+$" title="Id must be required" required="true" />
 
 						</div>
 					</div>

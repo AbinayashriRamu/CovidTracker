@@ -1,12 +1,10 @@
 package com.chainsys.covidtracker.repository;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.covidtracker.model.CovidTestResult;
 import com.chainsys.covidtracker.model.PatientDetail;
 
 public interface PatientDetailRepository extends CrudRepository<PatientDetail, Long> {
@@ -23,8 +21,8 @@ public interface PatientDetailRepository extends CrudRepository<PatientDetail, L
 	List<PatientDetail> findAllByPinCode(int pinCode);
 
 	List<PatientDetail> findAllByAadharNumber(long aadharNumber);
-	
-	//count dead
+
+	// count dead
 
 	@Query(value = "select count(*) from patient_details u where u.active_status<>'Alive'", nativeQuery = true)
 	long count();

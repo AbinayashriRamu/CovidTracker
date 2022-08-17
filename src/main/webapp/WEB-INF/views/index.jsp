@@ -64,8 +64,9 @@ a:hover, .dropdown:hover .dropbtn {
  */
 	
 }
-h1{
-   text-align: center;
+
+h1 {
+	text-align: center;
 }
 
 .dropdown-content {
@@ -93,18 +94,17 @@ h1{
 .dropdown:hover .dropdown-content {
 	display: block;
 }
-
 </style>
 </head>
 <body>
+	<h1>COVID TRACKER</h1>
 	<div class="navbar">
 		<div class="dropdown">
 			<button class="dropbtn">
 				Staff<em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
-				<a href="/home/ForAllTables">Add Details</a> <a
-					href="/home/ForViewList">View Details</a>
+				<a href="/home/ForAllTables">Add Details</a>
 			</div>
 		</div>
 	</div>

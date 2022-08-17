@@ -90,10 +90,10 @@ label {
 	border-radius: 3px;
 	padding-left: 8px;
 }
-.container{
-   text-align: center;
-   
-  }
+
+.container {
+	text-align: center;
+}
 
 #street {
 	width: 250px;
@@ -102,6 +102,7 @@ label {
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #pinCode {
 	width: 250px;
 	height: 30px;
@@ -109,6 +110,7 @@ label {
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #bloodGroup {
 	width: 250px;
 	height: 30px;
@@ -116,6 +118,7 @@ label {
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #phoneNo {
 	width: 250px;
 	height: 30px;
@@ -123,6 +126,7 @@ label {
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #activeStatus {
 	width: 250px;
 	height: 30px;
@@ -130,7 +134,6 @@ label {
 	border-radius: 3px;
 	padding-left: 8px;
 }
-
 
 }
 #log {
@@ -152,21 +155,21 @@ body {
 
 </head>
 <body>
-	
-		<h1>Patient Details</h1>
-		<a href="/patientdetail/patientlist">
+
+	<h1>Patient Details</h1>
+	<a href="/patientdetail/patientlist">
 		<button id="btn">List</button>
-		</a>
-		<div id="root">
+	</a>
+	<div id="root">
 		<div id="form" class="box">
 			<form:form action="addpatient" method="post"
 				modelAttribute="addPatientDetails">
 				<div>
 					<label for="patientName">Patient Name</label>
 					<div>
-						<form:input path="patientName" class="text-box" placaholder="PatientName"
-								title="Name must be required" 
-								pattern="^[a-zA-Z]+$" required="true"/>
+						<form:input path="patientName" class="text-box"
+							placaholder="PatientName" title="Name must be required"
+							pattern="^[a-zA-Z]+$" required="true" />
 					</div>
 				</div>
 				<form:errors path="patientName" Class="text-danger"></form:errors>
@@ -219,9 +222,9 @@ body {
 				<div>
 					<label for="phoneNo">PhoneNo</label>
 					<div>
-						<form:input path="phoneNo" class="text-box" placaholder="PhoneNumber"
-								title="PhoneNumber must be required"
-								pattern="[1-9]{1}[0-9]{9}" required="true" />
+						<form:input path="phoneNo" class="text-box"
+							placaholder="PhoneNumber" title="PhoneNumber must be required"
+							pattern="[1-9]{1}[0-9]{9}" required="true" />
 					</div>
 				</div>
 				<form:errors path="phoneNo" Class="text-danger"></form:errors>
@@ -239,7 +242,7 @@ body {
 						<form:select path="activeStatus" class="text-box"
 							placeholder="ActiveStatus" title="Id must be required"
 							required="true">
-							<form:option value="Alive">Alive</form:option>	
+							<form:option value="Alive">Alive</form:option>
 						</form:select>
 					</div>
 				</div>

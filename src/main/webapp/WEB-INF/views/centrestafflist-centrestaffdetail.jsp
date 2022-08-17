@@ -19,7 +19,7 @@ th, td {
 }
 
 td {
-	color: #000000
+	color: white;
 }
 
 body {
@@ -33,6 +33,7 @@ body {
 h1
 {
 align-items: center;
+color: white;
 }
 
 </style>

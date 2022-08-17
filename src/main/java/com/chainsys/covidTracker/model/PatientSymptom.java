@@ -1,6 +1,6 @@
 package com.chainsys.covidtracker.model;
 
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +16,7 @@ public class PatientSymptom {
 	@Column(name = "aadhar_number")
 	private long aadharNumber;
 	@Column(name = "observation_date")
-	@Past
+	@Past(message="*must be past date")
 	private Date observationDate;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "observation_id_seq")

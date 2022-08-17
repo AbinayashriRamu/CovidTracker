@@ -8,7 +8,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.covidtracker.model.CentreDetail;
 import com.chainsys.covidtracker.model.PatientAdmit;
 import com.chainsys.covidtracker.repository.PatientAdmitRepository;
 

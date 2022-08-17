@@ -53,7 +53,7 @@ public class PatientDetailController {
 			return "add-patient-detail-form";
 		} else {
 			patientdetailservice.save(patientdetail);
-			return "successfulpage";
+			return "redirect:/patientsymptomdetail/addpatientsymptomform";
 		}
 	}
 
