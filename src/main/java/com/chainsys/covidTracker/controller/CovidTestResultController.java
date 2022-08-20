@@ -38,13 +38,18 @@ public class CovidTestResultController {
 	public String findById(@RequestParam("id") long id, Model model) {
 		CovidTestResult covidtestresult = covidtestresultservice.findById(id);
 		model.addAttribute("getTestResults", covidtestresult);
-		return "find-test-result-form";
+		if (covidtestresult != null) {
+			return "find-test-result-form";
+		} else {
+			return "redirect:/home/Error";
+		}
 	}
 
 	@GetMapping("addtestresultform")
-	public String showTestResult(Model model) {
+	public String showTestResult(@RequestParam("id") long id, Model model) {
 		CovidTestResult covidtestresult = new CovidTestResult();
 		model.addAttribute("addTestResults", covidtestresult);
+		covidtestresult.setAadharNumber(id);
 		return "add-test-result-form";
 	}
 
@@ -77,7 +82,7 @@ public class CovidTestResultController {
 		covidtestresultservice.save(covidtestresult);
 		CovidTestResult covidtestresults = covidtestresultservice.getTestIdAndTestResult(covidtestresult.getTestId(),
 				covidtestresult.getTestResult());
-//		System.out.println(covidtestresultservice.confirmedCaseCount());
+		System.out.println(covidtestresultservice.confirmedCaseCount());
 		if ("Positive".equals(covidtestresults.getTestResult())) {
 			return "redirect:/patientadmitdetail/addpatientadmitform";
 		} else {

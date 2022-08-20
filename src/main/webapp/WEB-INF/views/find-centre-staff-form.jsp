@@ -4,15 +4,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+<%@include file="/WEB-INF/css/find-centre-staff-form.css"%>
+</style>
 <meta charset="ISO-8859-1">
 <title>Find Staff Detail</title>
 
 </head>
 <body>
+	<h1>Get Staff Detail</h1>
 	<div id="root">
-		<div id="form">
-			<form:form action="" method="post"
-				modelAttribute="getAllCentreStaffs">
+		<div id="form" class="box">
+			<form:form action="" method="get" modelAttribute="getAllCentreStaffs">
 				<div>
 					<label for="centreId">CentreId</label>
 					<div>
@@ -49,9 +52,11 @@
 						<form:input path="staffDateOfBirth" readonly="true" />
 					</div>
 				</div>
-
-
+				<br>
 			</form:form>
+				<a href="/home/ForAllTables">
+						<button class="btn">Back</button>
+					</a>
 		</div>
 	</div>
 </body>

@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import java.util.List;
 
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +47,11 @@ public class PatientAdmitController {
 	public String findById(@RequestParam("id") int id, Model model) {
 		PatientAdmit patientadmit = patientadmitservice.findById(id);
 		model.addAttribute("getPatientAdmits", patientadmit);
-		return "find-patient-admit-form";
+		if (patientadmit != null) {
+			return "find-patient-admit-form";
+		} else {
+			return "redirect:/home/Error";
+		}
 	}
 
 	@GetMapping("addpatientadmitform")
@@ -83,21 +86,21 @@ public class PatientAdmitController {
 	}
 
 	@PostMapping("updatepatientadmit")
-	
-	public String updateResult(@ModelAttribute("updatePatientAdmits") PatientAdmit patientadmit,Errors errors) {
-		if(errors.hasErrors()) {
+
+	public String updateResult(@ModelAttribute("updatePatientAdmits") PatientAdmit patientadmit, Errors errors) {
+		if (errors.hasErrors()) {
 			return "update-patient-admit-form";
-		}else {
-		patientadmitservice.save(patientadmit);
-		return "successfulpage";
-	}
+		} else {
+			patientadmitservice.save(patientadmit);
+			System.out.println(patientadmitservice.recoveryCaseCount());
+			return "successfulpage";
+		}
 	}
 
 //-------------------------------functionalities---------------------
-	
-	//admitId->findpatdetail,admitdetail,centredtail,staffdetail
-	
-	
+
+	// admitId->findpatdetail,admitdetail,centredtail,staffdetail
+
 	@GetMapping("/getadmitcentrestaff")
 	public String getAdmitCentreStaffById(@RequestParam("admitId") int admitId, Model model) {
 		PatientAdmit patientadmit = patientadmitservice.getPatientAdmit(admitId);
@@ -108,8 +111,8 @@ public class PatientAdmitController {
 				patientDetailService.getPatientDetail(patientadmit.getAadharNumber()));
 		return "find-by-id-admit-centrestaff-form";
 	}
-	
-	//staffId->findout admit details
+
+	// staffId->findout admit details
 
 	@GetMapping("/listadmitcenstaff")
 	public String listAdmitCentreStaffById(@RequestParam("staffId") int staffId, Model model) {
@@ -117,8 +120,8 @@ public class PatientAdmitController {
 		model.addAttribute("fetchAllStaffAdmitById", patientadmit);
 		return "find-by-admit-centrestaff-form";
 	}
-	
-	//centreId->admitfindout
+
+	// centreId->admitfindout
 
 	@GetMapping("/listadmitcentredetail")
 	public String listAdmitCentreDetailById(@RequestParam("centreId") int centreId, Model model) {
@@ -126,8 +129,8 @@ public class PatientAdmitController {
 		model.addAttribute("fetchAllCentreAdmitById", patientadmit);
 		return "find-by-admit-centredetails-form";
 	}
-	
-	//admitDate->find admit list that date
+
+	// admitDate->find admit list that date
 
 	@GetMapping("/ListPatientAdmitDetail")
 	public String listpatientAdmitDate(@RequestParam("admitDate") Date admitDate, Model model) {
@@ -135,7 +138,7 @@ public class PatientAdmitController {
 		model.addAttribute("fetchByAdmitDate", patientadmit);
 		return "find-by-list-patient-admit-date-form";
 	}
-	//centreid->centredetail,centreadmitdetail
+	// centreid->centredetail,centreadmitdetail
 
 	@GetMapping("/getCentreAdmitdetail")
 	public String getCentreAdmitById(@RequestParam("centreId") int centreId, Model model) {
@@ -145,7 +148,7 @@ public class PatientAdmitController {
 		model.addAttribute("fetchadmitDetail", patientadmit);
 		return "find-by-list-id-centre-admit-form";
 	}
-	//staffId->staffdetail,admissionlist
+	// staffId->staffdetail,admissionlist
 
 	@GetMapping("/getStaffAdmitdetail")
 	public String getStaffAdmitById(@RequestParam("staffId") int staffId, Model model) {

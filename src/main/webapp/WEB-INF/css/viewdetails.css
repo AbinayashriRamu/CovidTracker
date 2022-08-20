@@ -1,0 +1,47 @@
+body {
+	background-image:
+		url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKti71bcJ1OCxAW1Hayc907d8jKfPwqO6ZFg&usqp=CAU");
+	background-height: 786px;
+	background-width: 1366px;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	font-family: ui-monospace;
+	color: white;
+	text-align: left;
+}
+
+h1 {
+	text-align: center;
+}
+
+.s {
+	background-color: lightgrey;
+	Height: 570px;
+	width: 50%;
+	outline-color: black;
+	outline-style: double;
+	padding: 10px;
+	color: red;
+	font-family: Century Gothic; 
+	padding-left: 180;
+	text-align: center;
+	margin-left: 23%;
+}
+
+.list {
+	color: Black;
+	text-align: center;
+	/* morgin:20px;
+    tab-size: 20; */
+	font-size: 15px;
+	text-decoration: none;
+}
+#btn{
+ padding: 0;
+ border: none;
+ background: none;
+}

@@ -34,13 +34,20 @@ public class PatientSymptomController {
 	public String findById(@RequestParam("id") long id, Model model) {
 		PatientSymptom patientsymptom = patientsymptomservice.findById(id);
 		model.addAttribute("getPatientSymptoms", patientsymptom);
-		return "find-patient-symptom-form";
+		if (patientsymptom != null) {
+			return "find-patient-symptom-form";
+		} else
+
+		{
+			return "redirect:/home/Error";
+		}
 	}
 
 	@GetMapping("addpatientsymptomform")
-	public String showPatientsymptom(Model model) {
+	public String showPatientsymptom(@RequestParam("id") long id, Model model) {
 		PatientSymptom patientsymptom = new PatientSymptom();
 		model.addAttribute("addPatientSymptoms", patientsymptom);
+		patientsymptom.setAadharNumber(id);
 		return "add-patient-symptom-form";
 	}
 
@@ -51,7 +58,8 @@ public class PatientSymptomController {
 			return "add-patient-symptom-form";
 		} else {
 			patientsymptomservice.save(patientsymptom);
-			return "redirect:/testresultdetail/addtestresultform";
+			long id = patientsymptom.getAadharNumber();
+			return "redirect:/testresultdetail/addtestresultform?id=" + id;
 		}
 	}
 

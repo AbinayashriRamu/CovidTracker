@@ -10,52 +10,18 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {
-	background-image:
-		url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKti71bcJ1OCxAW1Hayc907d8jKfPwqO6ZFg&usqp=CAU");
-	background-height: 786px;
-	background-width: 1366px;
-	background-attachment: fixed;
-	background-size: cover;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-h1 {
-	font-family: ui-monospace;
-	color: white;
-	text-align: left;
-}
-
-h1 {
-	text-align: center;
-}
-
-.s {
-	background-color: lightgrey;
-	Height: 570px;
-	width: 50%;
-	outline-color: black;
-	outline-style: double;
-	padding: 10px;
-	color: red;
-	font-family: Century Gothic ";
-	padding-left: 180;
-	text-align: center;
-	margin-left: 23%;
-}
-
-.list {
-	color: Black;
-	text-align: center;
-	/* morgin:20px;
-    tab-size: 20; */
-	font-size: 15px;
-	text-decoration: none;
-}
+<%@include file="/WEB-INF/css/viewdetails.css"%>
 </style>
 </head>
 <body>
+	<div>
+
+		<button id="btn" onclick="history.back()">
+			<span class="fa fa-home" style="font-size: 36px"></span>
+		</button>
+	</div>
 	<div class=s>
+
 		<div style="margin-top: 20px">
 			<a class=list
 				href="/patientdetail/getpatientlocation?aadharNumber=135790864211">List
@@ -132,9 +98,7 @@ h1 {
 				<hr>
 			</a><br>
 		</div>
-		<div>
-			<li><a href="/home/ForAllTables">Back</a>
-		</div>
+
 
 
 	</div>

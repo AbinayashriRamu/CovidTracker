@@ -37,7 +37,11 @@ public class CentreDetailController {
 	public String findById(@RequestParam("id") int id, Model model) {
 		CentreDetail centredetail = centredetailservice.findById(id);
 		model.addAttribute("getcentres", centredetail);
-		return "find-centredetail-form";
+		if (centredetail != null) {
+			return "find-centredetail-form";
+		} else {
+			return "redirect:/home/Error";
+		}
 	}
 
 	@GetMapping("/addcentreform")
@@ -53,7 +57,8 @@ public class CentreDetailController {
 			return "add-centredetail-form";
 		} else {
 			centredetailservice.save(centredetail);
-			return "redirect:/centrestaffdetail/addcentrestaffform";
+			int id = centredetail.getCentreId();
+			return "redirect:/centrestaffdetail/addcentrestaffform?id=" + id;
 		}
 	}
 

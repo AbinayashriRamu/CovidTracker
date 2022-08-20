@@ -18,16 +18,16 @@ public class IndexController {
 	public String staffAcess(Model model) {
 		return "addalltables";
 	}
-	
 
 	@GetMapping("/ForViewList")
 	public String staffView(Model model) {
 		return "viewdetails";
 	}
-	
-	@GetMapping("/Count")
-	public String countview(Model model) {
-		return "countcase";
+
+
+	@GetMapping("/Error")
+	public String whitelable(Model model) {
+		return "whitelableerror";
 	}
 
 }

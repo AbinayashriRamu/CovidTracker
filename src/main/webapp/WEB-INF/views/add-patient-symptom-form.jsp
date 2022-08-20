@@ -6,149 +6,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style type="text/css">
-h1 {
-	color: rgb(210, 210, 210);
-	float: center;
-	text-align: center;
-}
-
-tr {
-	color: red;
-}
-
-label {
-	color: white;
-	font-size: 1.3em;
-	display: flex;
-	margin: 5px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: .5s ease-in-out;
-}
-
-#btn {
-	width: 150px;
-	height: 30px;
-	border: black;
-	border-radius: 3px;
-	padding-left: 8px;
-	color: white;
-	background-color: maroon;
-	display: inline-block;
-	float: right;
-}
-
-#log {
-	width: 150px;
-	height: 30px;
-	border: black;
-	border-radius: 3px;
-	padding-left: 8px;
-	color: white;
-	background-color: maroon;
-	display: inline-block;
-	margin: 4px 2px;
-	cursor: pointer;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	float: center;
-}
-
-.box {
-	overflow: hidden;
-	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
-	margin: auto;
-	padding: 10px;
-	text-align: center;
-	float: center;
-	font-weight: 600;
-	width: 600px;
-}
-
-#aadharNumber {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#observationDate {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#observatedBy {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-.container {
-	text-align: center;
-}
-
-#temperature {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#cold {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#cough {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#smell {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#taste {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-}
-#log {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
-}
-
-body {
-	background-image:
-		url("https://ak.picdn.net/shutterstock/videos/1066547653/thumb/12.jpg?ip=x480");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	background-color: #080710;
-}
+<style>
+<%@include file="/WEB-INF/css/add-patient-symptom-form.css"%>
 </style>
 <meta charset="ISO-8859-1">
 <title>patient symptom</title>
@@ -180,8 +39,7 @@ body {
 					<label for="observatedBy">ObservatedBy</label>
 					<div>
 						<form:select path="observatedBy" class="text-box"
-							placeholder="ObservatedBy"
-							required="true">
+							placeholder="ObservatedBy" required="true">
 							<form:option value="Nurse">Nurse</form:option>
 							<form:option value="Doctor">Doctor</form:option>
 						</form:select>
@@ -233,6 +91,7 @@ body {
 				</div>
 				<div>
 					<form:button id="log">Add New</form:button>
+					<button id="log" onclick="history.back()">Go Back</button>
 				</div>
 			</form:form>
 		</div>

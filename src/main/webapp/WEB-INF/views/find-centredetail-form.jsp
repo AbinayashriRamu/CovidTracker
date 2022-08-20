@@ -4,14 +4,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+<%@include file="/WEB-INF/css/find-centredetail-form.css"%>
+</style>
 <meta charset="ISO-8859-1">
 <title>Find Centre id</title>
 
 </head>
 <body>
+	<h1>Get Center Detail</h1>
 	<div id="root">
-		<div id="form">
-			<form:form action="" method="post" modelAttribute="getcentres">
+		<div id="form" class="box">
+			<form:form action="" method="get" modelAttribute="getcentres">
 				<div>
 					<label for="centreId">CentreId</label>
 					<div>
@@ -37,13 +41,19 @@
 					</div>
 				</div>
 				<div>
-					<label for="contactPersonPhoneNo">Contact Person Phone Number</label>
+					<label for="contactPersonPhoneNo">Contact Person Phone
+						Number</label>
 					<div>
 						<form:input path="contactPersonPhoneNo" readonly="true" />
 					</div>
 				</div>
+				<br>
 			</form:form>
+			<a href="/home/ForAllTables">
+				<button class="btn">Back</button>
+			</a>
 		</div>
+
 	</div>
 </body>
 </html>

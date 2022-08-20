@@ -35,13 +35,18 @@ public class CentreStaffController {
 	public String findById(@RequestParam("id") int id, Model model) {
 		CentreStaff centrestaff = centrestaffservice.findByStaffId(id);
 		model.addAttribute("getAllCentreStaffs", centrestaff);
+		if(centrestaff!=null) {
 		return "find-centre-staff-form";
+	}else {
+		return "redirect:/home/Error";
+	}
 	}
 
 	@GetMapping("addcentrestaffform")
-	public String showCentreStaff(Model model) {
+	public String showCentreStaff(@RequestParam("id")int id,Model model) {
 		CentreStaff centrestaff = new CentreStaff();
 		model.addAttribute("addcentrestaffs", centrestaff);
+		centrestaff.setCentreId(id);
 		return "add-centre-staff_form";
 	}
 

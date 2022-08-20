@@ -36,7 +36,11 @@ public class PatientDetailController {
 	public String findById(@RequestParam("id") long id, Model model) {
 		PatientDetail patientdetail = patientdetailservice.getPatientDetail(id);
 		model.addAttribute("getPatientDetails", patientdetail);
-		return "find-Patient-detail-form";
+		if (patientdetail != null) {
+			return "find-Patient-detail-form";
+		} else {
+			return "redirect:/home/Error";
+		}
 	}
 
 	@GetMapping("/addpatientdetailform")
@@ -53,7 +57,8 @@ public class PatientDetailController {
 			return "add-patient-detail-form";
 		} else {
 			patientdetailservice.save(patientdetail);
-			return "redirect:/patientsymptomdetail/addpatientsymptomform";
+			long id = patientdetail.getAadharNumber();
+			return "redirect:/patientsymptomdetail/addpatientsymptomform?id=" + id;
 		}
 	}
 
@@ -71,14 +76,14 @@ public class PatientDetailController {
 	}
 
 	@PostMapping("/updatepatient")
-	public String updatepatient(@ModelAttribute("updatePatientDetails") PatientDetail patientdetail,Errors errors) {
-		if(errors.hasErrors()) {
+	public String updatepatient(@ModelAttribute("updatePatientDetails") PatientDetail patientdetail, Errors errors) {
+		if (errors.hasErrors()) {
 			return "update-patient-detail-form";
-		}else {
-		patientdetailservice.save(patientdetail);
-		//System.out.println(patientdetailservice.deadCaseCount());
-		return "successfulpage";
-	}
+		} else {
+			patientdetailservice.save(patientdetail);
+			System.out.println(patientdetailservice.deadCaseCount());
+			return "successfulpage";
+		}
 	}
 
 	// ---------------------------------functionalities-----------------------------------

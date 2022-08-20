@@ -1,0 +1,15 @@
+body {
+	background-image:
+		url("https://media.istockphoto.com/photos/note-paper-with-exclamation-mark-on-panoramic-orange-background-picture-id1203903460?b=1&k=20&m=1203903460&s=170667a&w=0&h=p26B93CHqCVU6CCcfpwHzGpkh8j6un-TmaQDnEq0pI0=");
+	background-height: 486px;
+	background-width: 866px;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style:bold;
+}
+h1{
+font-size:35;
+font-color:black;
+text-align:center;
+}

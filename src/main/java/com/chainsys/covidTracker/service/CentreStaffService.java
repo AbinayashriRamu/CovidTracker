@@ -30,5 +30,5 @@ public class CentreStaffService {
 	public void deleteById(int id) {
 		repository.deleteById(id);
 	}
-
-}
+	
+	}

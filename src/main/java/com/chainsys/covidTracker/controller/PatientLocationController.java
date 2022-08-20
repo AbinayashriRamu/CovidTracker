@@ -34,7 +34,11 @@ public class PatientLocationController {
 	public String findById(@RequestParam("id") int id, Model model) {
 		PatientLocation patientlocation = patientlocationservice.findById(id);
 		model.addAttribute("getLocations", patientlocation);
-		return "find-location-form";
+		if (patientlocation != null) {
+			return "find-location-form";
+		} else {
+			return "redirect:/home/Error";
+		}
 	}
 
 	@GetMapping("addlocationform")

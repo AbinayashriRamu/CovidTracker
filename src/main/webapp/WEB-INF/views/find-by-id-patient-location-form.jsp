@@ -6,20 +6,7 @@
 <html lang="en">
 <head>
 <style>
-.grid-container {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-gap: 15px;
-	background-color: blue;
-	padding: 20px;
-}
-
-.grid-container>div {
-	background-color: rgba(255, 255, 255, 0.8);
-	text-align: center;
-	padding: 10px;
-	font-size: 20px;
-}
+<%@include file="/WEB-INF/css/find-by-id-patient-location-form.css"%>
 </style>
 <meta charset="ISO-8859-1">
 <title>patient location</title>
@@ -115,7 +102,7 @@
 					</div>
 				</form:form>
 			</div>
-			<li><a href="/home/ForViewList">Back</a>
+			<button onclick="history.back()">Go Back</button>
 		</div>
 </body>
 </html>

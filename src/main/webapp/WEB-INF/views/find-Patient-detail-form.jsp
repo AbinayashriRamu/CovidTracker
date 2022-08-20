@@ -4,14 +4,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+<%@include file="/WEB-INF/css/find-Patient-detail-form.css"%>
+</style>
 <meta charset="ISO-8859-1">
 <title>Find Patient Detail</title>
 
 </head>
 <body>
+	<h1>Patient Detail</h1>
 	<div id="root">
-		<div id="form">
-			<form:form action="" method="post" modelAttribute="getPatientDetails">
+		<div id="form" class="box">
+			<form:form action="" method="get" modelAttribute="getPatientDetails">
 				<div>
 					<label for="patientName">PatientName</label>
 					<div>
@@ -66,7 +70,11 @@
 						<form:input path="deadDate" readonly="true" />
 					</div>
 				</div>
+				<br>
 			</form:form>
+			<a href="/home/ForAllTables">
+				<button class="btn">Back</button>
+			</a>
 		</div>
 	</div>
 </body>

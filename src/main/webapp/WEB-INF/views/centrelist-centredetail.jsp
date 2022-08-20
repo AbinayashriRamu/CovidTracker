@@ -6,35 +6,7 @@
 <head>
 
 <style>
-table, tb {
-	width: 50%;
-	padding: 15px;
-	text-align: left;
-}
-
-th, td {
-	border: solid 1px #777;
-	padding: 10px;
-	border-color: #cc0033;
-	
-}
-
-td {
-	color: white;
-}
-
-body {
-	background-image:
-		url("https://klewtv.com/resources/media/602530ea-4d79-450e-8d04-403edfdee83d-originalBlur_covid.jpg?1658334367243");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
-
-h1 {
-	align: center;
-	color: white;
-}
+<%@include file="/WEB-INF/css/centrelist-centredetail.css"%>
 </style>
 
 <meta charset="ISO-8859-1">
@@ -44,6 +16,7 @@ h1 {
 	<h1>Centre Detail List</h1>
 	<div id="table root">
 		<div align="center">
+
 			<table border="2">
 				<caption></caption>
 				<thead>
@@ -68,5 +41,7 @@ h1 {
 				</tbody>
 			</table>
 		</div>
+		
+	<button id="log" onclick="history.back()">Go Back</button>
 </body>
 </html>

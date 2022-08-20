@@ -14,4 +14,6 @@ public interface CentreStaffRepository extends CrudRepository<CentreStaff, Integ
 	void deleteById(int id);
 
 	List<CentreStaff> findAll();
-}
+	
+	
+	}

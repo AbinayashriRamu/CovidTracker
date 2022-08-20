@@ -1,0 +1,60 @@
+
+
+body {
+	background-image:
+		url("https://www.edgeeffect.org/wp-content/uploads/2020/04/covid_smaller.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+h1 {
+	color: #060606;
+	text-align: center;
+}
+
+label {
+	color: #060606;
+	font-size: 1.3em;
+	display: flex;
+	margin: 9px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+#email {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+}
+
+#password {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+}
+
+#log {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+	color: blue;
+}
+
+.box {
+	width: 269px;
+	height: 189px;
+	overflow: hidden;
+	border-radius: 37px;
+	box-shadow: 83px 80px 146px #141313;
+	margin: auto;
+	padding: 45px;
+	text-align: center;
+}
