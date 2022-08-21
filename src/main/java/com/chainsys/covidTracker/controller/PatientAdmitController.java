@@ -67,8 +67,12 @@ public class PatientAdmitController {
 		if (errors.hasErrors()) {
 			return "add-patient-admit-form";
 		} else {
+			try {
 			patientadmitservice.save(patientadmit);
 			return "successfulpage";
+			}catch(Exception er) {
+				return "add-patient-admit-form";
+			}
 		}
 	}
 

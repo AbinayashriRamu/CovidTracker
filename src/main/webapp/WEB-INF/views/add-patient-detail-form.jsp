@@ -51,12 +51,7 @@
 				<div>
 					<label for="pinCode">PinCode</label>
 					<div>
-						<form:input path="pincode" class="text-box"
-                        placeholder="Enter a pincode"
-                        title="Pincode must contain only numbers or it should be exactly 6 digits"
-                        pattern="^[1-9][0-9]{5}$" required="true" />
-
-							
+						<form:input path="pinCode" class="text-box" placeholder="Enter a pincode" required="true" />		
 					</div>
 				</div>
 				<form:errors path="pinCode" Class="text-danger"></form:errors>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
 </head>
 <body>
 	<h1>
-		<u>COVID TRACKER 
+		COVID TRACKER
 	</h1>
 	<div class="navbar">
 		<div class="dropdown">
@@ -29,5 +30,49 @@
 				<a id="log" href="/home/ForViewList">View Details</a>
 			</div>
 		</div>
+		</div>
+		<div class="row">
+		<div class="column" style="background-color:red">
+		        <table>
+		        <caption></caption>
+		        <tr>
+		        <th>Positive Cases</th>
+		        </tr>
+				<tr>
+				<td>
+				<c:out value="${pcount}"></c:out>
+		         </td>
+		         </tr>
+		         </table>
+		 </div>
+		     <div class="column" style="background-color:orange">
+		            <table>
+		            <caption></caption>
+		            <tr>
+		            <th>Dead Cases</th>
+		            </tr>
+		            <tr>
+		            <td>
+		            <c:out value="${dcount}"></c:out>
+		            </td>
+		            </tr>
+		        </table>
+		    </div>
+		
+		    <div class="column" style="background-color:yellow">
+		          <table>
+		          <caption></caption>
+		           <tr>
+		           <th>Recovery</th>
+		           </tr>
+		           <tr>
+		           <td>
+		            <c:out value="${rcount}"></c:out>
+		            </td>
+		            </tr>
+		            </table>
+		    </div>
+		 </div>
+		
 </body>
 </html>

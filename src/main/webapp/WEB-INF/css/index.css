@@ -1,6 +1,6 @@
 body {
 	background-image:
-		url("https://www.socialistinternational.org/fileadmin/_processed_/7/f/csm_3d_globe_SI_image_cut_2_2447c27082.jpg");
+		url("https://www.statnews.com/wp-content/uploads/2020/03/corona-tracker-social-image.png");
 	background-height: 786px;
 	background-width: 1366px;
 	background-attachment: fixed;
@@ -10,8 +10,9 @@ body {
 
 h1 {
 	font-family: ui-monospace;
-	color: #c51414;
+	color:white;
 	text-align: center;
+	text-decoration: underline;
 }
 
 .navbar {
@@ -37,13 +38,13 @@ h1 {
 	font-size: 20px;
 	border: none;
 	outline: none;
-	color: #c51414;
+	color:white;
 	padding: 14px 16px;
 	background-color: inherit;
 	font-family: inherit;
 	margin: 0;
 	outline: none;
-	color: #c51414;
+	color:white;
 	padding: 14px 16px;
 	background-color: inherit;
 	font-family: inherit;
@@ -104,4 +105,47 @@ h1 {
 #log {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.19);
+}
+
+
+* {
+  box-sizing: content-box;;
+}
+
+.row {
+    margin-left: 313px;
+    margin-right: -114px;
+    margin-top: 373px;
+}
+.column {
+  
+    width: 16%;
+    padding: 12px;
+    float: left;
+    border-radius: 13px;
+
+}
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid black;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: grey;
 }

@@ -54,8 +54,12 @@ public class PatientLocationController {
 		if (errors.hasErrors()) {
 			return "add-location-form";
 		} else {
+			try {
 			patientlocationservice.save(patientlocation);
 			return "redirect:/centredetail/addcentreform";
+			}catch(Exception er){
+				return  "add-location-form";
+			}
 		}
 	}
 

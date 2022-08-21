@@ -1,9 +1,7 @@
 package com.chainsys.covidtracker.controller;
 
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.chainsys.covidtracker.model.CentreDetail;
 import com.chainsys.covidtracker.service.CentreDetailService;
 import com.chainsys.covidtracker.service.PatientLocationService;

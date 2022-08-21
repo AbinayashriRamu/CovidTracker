@@ -53,6 +53,7 @@
 				Patient Detail <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
+			<a href="/patientdetail/addpatientdetailform">Add Patient</a><br>
 				<a href="/patientdetail/patientlist">List Patient</a><br> <a
 					href="/patientdetail/findpatientdetail?id=135790864211">Get
 					Patient ID</a>
@@ -84,6 +85,7 @@
 				Admit Detail <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
+			<a href="/patientadmitdetail/addpatientadmitform">Add Admit</a><br>
 				<a href="/patientadmitdetail/patientadmitlist">List Admit</a><br>
 				<a href="/patientadmitdetail/findpatientadmit?id=1000">Get Admit
 					ID</a>

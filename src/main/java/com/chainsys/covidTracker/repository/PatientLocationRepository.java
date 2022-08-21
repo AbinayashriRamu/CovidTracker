@@ -14,4 +14,6 @@ public interface PatientLocationRepository extends CrudRepository<PatientLocatio
 	void deleteById(int id);
 
 	List<PatientLocation> findAll();
+	
+	
 }
