@@ -56,9 +56,13 @@ public class PatientDetailController {
 		if (errors.hasErrors()) {
 			return "add-patient-detail-form";
 		} else {
-			patientdetailservice.save(patientdetail);
-			long id = patientdetail.getAadharNumber();
-			return "redirect:/patientsymptomdetail/addpatientsymptomform?id=" + id;
+			try {
+				patientdetailservice.save(patientdetail);
+				long id = patientdetail.getAadharNumber();
+				return "redirect:/patientsymptomdetail/addpatientsymptomform?id=" + id;
+			} catch (Exception er) {
+				return "add-patient-detail-form";
+			}
 		}
 	}
 
