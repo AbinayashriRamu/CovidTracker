@@ -82,7 +82,6 @@ public class CovidTestResultController {
 		covidtestresultservice.save(covidtestresult);
 		CovidTestResult covidtestresults = covidtestresultservice.getTestIdAndTestResult(covidtestresult.getTestId(),
 				covidtestresult.getTestResult());
-		System.out.println(covidtestresultservice.confirmedCaseCount());
 		if ("Positive".equals(covidtestresults.getTestResult())) {
 			return "redirect:/patientadmitdetail/addpatientadmitform";
 		} else {

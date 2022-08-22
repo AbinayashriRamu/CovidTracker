@@ -16,35 +16,37 @@
 	<h1>Patient Admit Detail</h1>
 	<div id="table root">
 		<div align="center">
-		<table border="2">
-		<caption></caption>
-			<thead>
-				<tr>
-				    <th>AdmitId</th>
-					<th>StaffId</th>
-					<th>AadharNumber</th>
-					<th>CentreId</th>
-					<th>AdmitDate</th>
-					<th>DischargeDate</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="cen" items="${allAdmitResults}">
+			<table border="2">
+				<caption></caption>
+				<thead>
 					<tr>
-					    <td>${cen.admitId}</td>
-						<td>${cen.staffId}</td>
-						<td>${cen.aadharNumber}</td>
-						<td>${cen.centreId}</td>
-						<td>${cen.admitDate}</td>
-						<td>${cen.dischargeDate}</td>
-						
-						<td><a href="updatepatientadmitform?id=${cen.admitId}">
-								<input onclick="change()" type="button" value="Update"
-								id="myButton1"></input></a></td>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-	<button id="log" onclick="history.back()">Go Back</button>
+						<th>AdmitId</th>
+						<th>StaffId</th>
+						<th>AadharNumber</th>
+						<th>CentreId</th>
+						<th>AdmitDate</th>
+						<th>DischargeDate</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="cen" items="${allAdmitResults}">
+						<tr>
+							<td>${cen.admitId}</td>
+							<td>${cen.staffId}</td>
+							<td>${cen.aadharNumber}</td>
+							<td>${cen.centreId}</td>
+							<td>${cen.admitDate}</td>
+							<td>${cen.dischargeDate}</td>
+
+							<td><a href="updatepatientadmitform?id=${cen.admitId}">
+									<input onclick="change()" type="button" value="Update"
+									id="myButton1"></input>
+							</a></td>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		<button id="log" onclick="history.back()">Go Back</button>
+		</div>
 </body>
 </html>

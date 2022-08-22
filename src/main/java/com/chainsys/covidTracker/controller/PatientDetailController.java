@@ -85,7 +85,6 @@ public class PatientDetailController {
 			return "update-patient-detail-form";
 		} else {
 			patientdetailservice.save(patientdetail);
-			System.out.println(patientdetailservice.deadCaseCount());
 			return "successfulpage";
 		}
 	}

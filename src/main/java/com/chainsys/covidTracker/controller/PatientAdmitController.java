@@ -96,7 +96,6 @@ public class PatientAdmitController {
 			return "update-patient-admit-form";
 		} else {
 			patientadmitservice.save(patientadmit);
-			System.out.println(patientadmitservice.recoveryCaseCount());
 			return "successfulpage";
 		}
 	}
