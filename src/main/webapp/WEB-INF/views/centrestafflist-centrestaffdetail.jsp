@@ -14,9 +14,9 @@
 </head>
 <body>
 	<h1>Centre Staff</h1>
-	<div id="table root">
-		<div align="center">
-			<table border="2">
+	<div>
+		<div>
+			<table id="root">
 				<caption></caption>
 				<thead>
 					<tr>
@@ -40,6 +40,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
+		</div>
 		</div>
 		<button id="log" onclick="history.back()">Go Back</button>
 </body>

@@ -25,7 +25,7 @@ public class CentreDetailService {
 	public CentreDetail findById(int id) {
 		return repository.findByCentreId(id);
 	}
-
+    
 	public void deleteById(int id) {
 		repository.deleteById(id);
 	}

@@ -12,6 +12,7 @@ import com.chainsys.covidtracker.model.CovidTestResult;
 public interface CovidTestResultRepository extends CrudRepository<CovidTestResult, Long> {
 	CovidTestResult findById(long id);
 
+	@SuppressWarnings("unchecked")
 	CovidTestResult save(CovidTestResult centretestrepository);
 
 	void deleteById(long id);

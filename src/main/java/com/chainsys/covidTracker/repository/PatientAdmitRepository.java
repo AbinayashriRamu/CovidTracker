@@ -12,6 +12,7 @@ import com.chainsys.covidtracker.model.PatientAdmit;
 public interface PatientAdmitRepository extends CrudRepository<PatientAdmit, Integer> {
 	PatientAdmit findById(int id);
 
+	@SuppressWarnings("unchecked")
 	PatientAdmit save(PatientAdmit patientadmit);
 
 	void deleteById(int id);

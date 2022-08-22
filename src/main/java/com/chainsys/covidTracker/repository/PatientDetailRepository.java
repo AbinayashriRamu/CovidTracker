@@ -10,6 +10,7 @@ import com.chainsys.covidtracker.model.PatientDetail;
 public interface PatientDetailRepository extends CrudRepository<PatientDetail, Long> {
 	PatientDetail findByPinCode(int pinCode);
 
+	@SuppressWarnings("unchecked")
 	PatientDetail save(PatientDetail patientdetail);
 
 	void deleteById(long id);

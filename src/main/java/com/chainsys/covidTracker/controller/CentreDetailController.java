@@ -81,7 +81,7 @@ public class CentreDetailController {
 			return "successfulpage";
 		}
 	}
-//-----------------------------functionalities-----------------------------
+//-----------------------------functionalities---------------------------------------
 
 	// centreid->centredetail,centrelocation
 

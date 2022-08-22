@@ -9,6 +9,7 @@ import com.chainsys.covidtracker.model.CentreDetail;
 public interface CentreDetailRepository extends CrudRepository<CentreDetail, Integer> {
 	CentreDetail findById(int id);
 
+	@SuppressWarnings("unchecked")
 	CentreDetail save(CentreDetail centredetail);
 
 	void deleteById(int id);

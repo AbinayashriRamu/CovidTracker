@@ -1,8 +1,7 @@
 body {
 	background-image:
 		url("https://www.statnews.com/wp-content/uploads/2020/03/corona-tracker-social-image.png");
-	background-height: 786px;
-	background-width: 1366px;
+	
 	background-attachment: fixed;
 	background-size: cover;
 	font-family: Arial, Helvetica, sans-serif;
@@ -43,18 +42,9 @@ h1 {
 	background-color: inherit;
 	font-family: inherit;
 	margin: 0;
-	outline: none;
-	color:white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit;
-}
-
-a:hover, .dropdown:hover .dropbtn {
-	/*     background-color: #fff;
- */
 	
 }
+
 
 h1 {
 	text-align: center;

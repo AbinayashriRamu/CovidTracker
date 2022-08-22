@@ -1,8 +1,6 @@
 body {
 	background-image:
 		url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKti71bcJ1OCxAW1Hayc907d8jKfPwqO6ZFg&usqp=CAU");
-	background-height: 786px;
-	background-width: 1366px;
 	background-attachment: fixed;
 	background-size: cover;
 	font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +24,6 @@ h1 {
 	outline-style: double;
 	padding: 10px;
 	color: red;
-	font-family: Century Gothic; 
 	padding-left: 180;
 	text-align: center;
 	margin-left: 23%;

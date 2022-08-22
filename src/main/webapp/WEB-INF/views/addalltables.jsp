@@ -20,7 +20,7 @@
 	<div class="navbar">
 		<div class="dropdown">
 			<button class="dropbtn">
-				Location Detail <i class="fa fa-caret-down"></i>
+				Location Detail <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/locationdetail/addlocationform">Add Location</a><br>
@@ -30,7 +30,7 @@
 		</div>
 		<div class="dropdown">
 			<button class="dropbtn">
-				Centre Detail <i class="fa fa-caret-down"></i>
+				Centre Detail <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/centredetail/addcentreform">Add Centre</a><br> <a
@@ -40,7 +40,7 @@
 		</div>
 		<div class="dropdown">
 			<button class="dropbtn">
-				Centre Staff <i class="fa fa-caret-down"></i>
+				Centre Staff <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/centrestaffdetail/centrestafflist">List Staff</a> <br>
@@ -50,7 +50,7 @@
 		</div>
 		<div class="dropdown">
 			<button class="dropbtn">
-				Patient Detail <i class="fa fa-caret-down"></i>
+				Patient Detail <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 			<a href="/patientdetail/addpatientdetailform">Add Patient</a><br>
@@ -61,7 +61,7 @@
 		</div>
 		<div class="dropdown">
 			<button class="dropbtn">
-				Patient Symptom <i class="fa fa-caret-down"></i>
+				Patient Symptom <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/patientsymptomdetail/patientsymptomlist">List Symptom</a>
@@ -73,7 +73,7 @@
 		</div>
 		<div class="dropdown">
 			<button class="dropbtn">
-				Test Result <i class="fa fa-caret-down"></i>
+				Test Result <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/testresultdetail/testresultlist">List TestResult</a> <br>
@@ -82,7 +82,7 @@
 		</div>
 		<div class="dropdown">
 			<button class="dropbtn">
-				Admit Detail <i class="fa fa-caret-down"></i>
+				Admit Detail <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 			<a href="/patientadmitdetail/addpatientadmitform">Add Admit</a><br>

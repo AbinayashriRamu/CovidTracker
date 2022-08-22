@@ -1,7 +1,5 @@
 package com.chainsys.covidtracker.model;
-
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -50,18 +48,6 @@ public class CentreDetail {
 	public void setLocationtable(PatientLocation patientlocation) {
 		this.patientlocation = patientlocation;
 	}
-
-//	@OneToMany(mappedBy = "centreStaff", fetch = FetchType.LAZY)
-//	private List<PatientAdmit> patientadmit;
-//
-//	public List<PatientAdmit> getPatientadmit() {
-//		return patientadmit;
-//	}
-//
-//	public void setPatientadmit(List<PatientAdmit> patientadmit) {
-//		this.patientadmit = patientadmit;
-//	}
-
 	@OneToMany(mappedBy = "centreDetail", fetch = FetchType.LAZY)
 	private List<PatientAdmit> patientadmit;
 
